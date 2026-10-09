@@ -1,0 +1,406 @@
+/* ==========================================================================
+   ItemLog (아이템로그) - Global Stylesheet
+   ========================================================================== */
+
+/* 1. Root Variables & Theme System */
+:root {
+  --bg: #FAF9F7;
+  --card: #FFFFFF;
+  --ink: #191919;
+  --sub: #707070;
+  --accent: #E06100;
+  --accent-hover: #C55500;
+  --accent-text: #FFFFFF;
+  --accent2: #FFF2E8;
+  --line: #EBE8E3;
+  --radius: 8px;
+  --radius-sm: 5px;
+  --font: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121212;
+    --card: #1E1E1E;
+    --ink: #F0F0F0;
+    --sub: #A0A0A0;
+    --accent: #FF852C;
+    --accent-hover: #FF9A4D;
+    --accent-text: #121212; /* 명도 대비 4.5:1 이상 확보 */
+    --accent2: #2A1D14;
+    --line: #2C2C2C;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #121212;
+  --card: #1E1E1E;
+  --ink: #F0F0F0;
+  --sub: #A0A0A0;
+  --accent: #FF852C;
+  --accent-hover: #FF9A4D;
+  --accent-text: #121212;
+  --accent2: #2A1D14;
+  --line: #2C2C2C;
+}
+
+/* 2. Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 3. Layout Outer Wrap */
+.wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 12px 32px;
+}
+
+@media (min-width: 768px) {
+  .wrap {
+    padding: 24px 16px 48px;
+  }
+}
+
+/* 4. Header & Hero (Compact Mode for First Screen Visibility) */
+.hero {
+  text-align: center;
+  padding: 8px 0 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero img {
+  width: 84px;
+  height: auto;
+  margin: 0 auto 6px;
+}
+
+.hero h1 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.hero h1 b {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 11px;
+  color: var(--sub);
+  margin-bottom: 10px;
+}
+
+.chips {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.chips a {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 9px;
+  border-radius: 20px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--sub);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.chips a.main {
+  background: var(--accent2);
+  color: var(--accent);
+  border-color: transparent;
+  font-weight: 700;
+}
+
+/* Links Top Header */
+.top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.top img {
+  width: 40px;
+  height: auto;
+}
+
+.top h1 {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.top p {
+  font-size: 11px;
+  color: var(--sub);
+}
+
+.search {
+  width: 100%;
+  height: 36px;
+  padding: 0 12px;
+  font-size: 12px;
+  font-family: inherit;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  color: var(--ink);
+  margin-bottom: 16px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.search:focus {
+  border-color: var(--accent);
+}
+
+/* 5. Section Header */
+section {
+  margin-bottom: 24px;
+}
+
+.sec-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.sec-head h2 {
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sec-head h2 span {
+  display: inline-block;
+  width: 3px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.sec-head a {
+  font-size: 11px;
+  color: var(--sub);
+  font-weight: 500;
+}
+
+/* 6. Grid Layout (Mobile 3, Tablet 5, PC 6+) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px 6px;
+}
+
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px 8px;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px 12px;
+  }
+}
+
+/* 7. Unified Card Component */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 5px;
+  height: 100%;
+}
+
+/* Thumbnail (Aspect Ratio 3:4) */
+.thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: calc(var(--radius) - 3px);
+  overflow: hidden;
+  background-color: var(--line);
+  display: block;
+  margin-bottom: 6px;
+  flex-shrink: 0;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Crop Youtube Letterboxing */
+.thumb img.yt {
+  transform: scale(1.34);
+  transform-origin: center center;
+}
+
+.new {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background: var(--accent);
+  color: var(--accent-text);
+  font-size: 8.5px;
+  font-weight: 800;
+  padding: 1px 4px;
+  border-radius: 3px;
+  line-height: 1.2;
+  z-index: 2;
+}
+
+/* Card Typography & Fixed Line Heights */
+.card h3 {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--ink);
+  height: 2.6em; /* Strictly 2 Lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 6px;
+}
+
+/* Product List Page Title Override (Strictly 1 Line) */
+body.list .card h3 {
+  height: 1.3em;
+  -webkit-line-clamp: 1;
+}
+
+/* Buttons & Secondary Action Aligned to Bottom */
+.card .btn {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 26px;
+  font-size: 10.5px;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: var(--accent-text);
+  border: 1px solid var(--accent);
+  text-align: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.card .btn.ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.card .watch {
+  display: block;
+  text-align: center;
+  font-size: 9.5px;
+  color: var(--sub);
+  margin-top: 4px;
+  text-decoration: underline;
+  flex-shrink: 0;
+}
+
+.card .watch.off {
+  color: var(--sub);
+  opacity: 0.4;
+  text-decoration: none;
+}
+
+/* 8. Footer & Extra Notes */
+.note {
+  font-size: 10.5px;
+  color: var(--sub);
+  text-align: center;
+  margin-top: 14px;
+  opacity: 0.85;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  margin-top: 24px;
+  font-size: 10.5px;
+  color: var(--sub);
+  text-align: center;
+}
+
+footer a {
+  text-decoration: underline;
+  margin-left: 4px;
+}
+
+/* 9. PC Desktop Interactions */
+@media (hover: hover) {
+  .chips a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .card:hover {
+    border-color: #D6D2CA;
+  }
+  .card .btn:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+  }
+  .card .btn.ghost:hover {
+    background: var(--accent2);
+  }
+}
