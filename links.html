@@ -1,39 +1,181 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>itemlog 제품 링크</title>
+<title>살림템 모아보기 | itemlog</title>
+<meta name="description" content="영상에서 직접 소개한 살림템 27개를 한곳에. 주방·생활·뷰티 제품을 판매 화면 기준 정보로 정리했어요.">
 <link rel="icon" type="image/png" href="/favicon-v3.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta property="og:image" content="https://itemlogin.com/logo.png">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.min.css"><link rel="stylesheet" href="/site.css?v=1791530515"></head><body class="list"><div class="wrap">
-<div class="top"><a href="/"><img src="/logo.png" alt="ItemLog 홈"></a><div><h1>살림템 모아보기</h1><p>영상에서 소개한 제품을 한곳에 · 27개</p></div></div>
-<input class="search" type="search" placeholder="제품 이름으로 찾기 (예: 가습기)" oninput="const q=this.value.trim().toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=!q||c.dataset.k.includes(q)?'':'none')">
+<meta property="og:image" content="https://itemlogin.com/logo.png"><meta property="og:title" content="살림템 모아보기 | itemlog">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.min.css">
+<style>:root{--bg:#141414;--card:#1d1d1d;--line:#2b2b2b;--text:#f4f4f4;--sub:#a3a3a3;--accent:#ff8a1f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Pretendard,system-ui,sans-serif}
+.wrap{max-width:1120px;margin:0 auto;padding:22px 16px 60px}
+.top{display:flex;align-items:center;gap:14px}.top img{width:52px;height:52px;border-radius:12px;background:#fff}
+.top h1{margin:0;font-size:26px;letter-spacing:-.02em}.top p{margin:2px 0 0;color:var(--sub);font-size:14px}.top a{text-decoration:none;color:inherit}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:22px 0 18px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tabs button{font:inherit;font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--sub);cursor:pointer}
+.tabs button.on{background:var(--text);color:#111;border-color:var(--text)}
+.search{flex:1;min-width:200px;font:inherit;padding:11px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--text)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.pc{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s}
+.pc:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(0,0,0,.45);border-color:rgba(255,138,31,.45)}
+.img{position:relative;display:block;aspect-ratio:1;background:#fff;overflow:hidden}
+.img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}.pc:hover .img img{transform:scale(1.05)}
+.img img.ph{object-fit:contain;padding:14px}
+.cat{position:absolute;left:12px;top:12px;background:rgba(255,255,255,.92);color:#222;font-size:12px;font-weight:800;padding:5px 10px;border-radius:999px;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.body small{color:var(--accent);font-weight:700;font-size:13px}
+.body h3{margin:4px 0 10px;font-size:20px;line-height:1.3;letter-spacing:-.01em}
+.body ul{margin:0 0 16px;padding:0;list-style:none;color:#d6d6d6;font-size:14.5px;line-height:1.55}
+.body li{padding-left:20px;position:relative;margin:4px 0}.body li:before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:900}
+.buy{margin-top:auto;display:flex;justify-content:space-between;align-items:center;text-decoration:none;font-weight:800;color:#111;background:var(--accent);padding:12px 16px;border-radius:12px}
+.buy span{transition:transform .2s}.buy:hover span{transform:translateX(4px)}
+.watch{display:block;text-align:center;margin-top:8px;color:var(--sub);font-size:13px;text-decoration:none}.watch:hover{color:var(--text)}
+.note{color:var(--sub);font-size:13px;margin-top:26px;text-align:center}
+footer{text-align:center;color:var(--sub);font-size:13px;margin-top:18px}footer a{color:inherit}</style></head><body><div class="wrap">
+<div class="top"><a href="https://itemlogin.com/"><img src="/logo.png" alt="itemlog 홈"></a><div><h1>살림템 모아보기</h1><p>영상에서 직접 소개한 제품 27개 · 판매 화면 기준 정보</p></div></div>
+<div class="bar"><div class="tabs"><button data-t="전체" class=on>전체</button><button data-t="주방">주방</button><button data-t="생활">생활</button><button data-t="뷰티·헤어">뷰티·헤어</button><button data-t="가전">가전</button><button data-t="디지털">디지털</button><button data-t="패션">패션</button></div><input class="search" type="search" placeholder="제품 이름으로 찾기 (예: 드라이기)"></div>
 <div class="grid">
-<article class="card" data-k="클레파 무선청소기"><a class="thumb" href="/klepavac"><span class="new">NEW</span><img loading="lazy" src="/t_klepavac.jpg" alt="클레파 무선청소기"></a><h3>클레파 무선청소기</h3><a class="btn" href="/klepavac">제품 보기</a><span class="watch off">영상 준비 중</span></article>
-<article class="card" data-k="빙그레 더단백"><a class="thumb" href="/thedanbaek"><span class="new">NEW</span><img loading="lazy" src="/t_thedanbaek.jpg" alt="빙그레 더단백"></a><h3>빙그레 더단백</h3><a class="btn" href="/thedanbaek">제품 보기</a><span class="watch off">영상 준비 중</span></article>
-<article class="card" data-k="jmw m5001a 플러스 프로"><a class="thumb" href="/jmwdryer"><span class="new">NEW</span><img loading="lazy" src="/t_jmwdryer.jpg" alt="JMW M5001A 플러스 프로"></a><h3>JMW M5001A 플러스 프로</h3><a class="btn" href="/jmwdryer">제품 보기</a><a class="watch" href="https://www.youtube.com/shorts/uJ3STtli8F4" target="_blank" rel="noopener">영상 보기</a></article>
-<article class="card" data-k="위즈웰 진공포장기"><a class="thumb" href="/wiswellsealer"><span class="new">NEW</span><img loading="lazy" src="/t_wiswellsealer.jpg" alt="위즈웰 진공포장기"></a><h3>위즈웰 진공포장기</h3><a class="btn" href="/wiswellsealer">제품 보기</a><span class="watch off">영상 준비 중</span></article>
-<article class="card" data-k="브랜든 압축파우치"><a class="thumb" href="/brandenpouch"><img loading="lazy" src="/t_brandenpouch.jpg" alt="브랜든 압축파우치"></a><h3>브랜든 압축파우치</h3><a class="btn" href="/brandenpouch">제품 보기</a><span class="watch off">영상 준비 중</span></article>
-<article class="card" data-k="필립스 보풀제거기"><a class="thumb" href="/philipsshaver"><img loading="lazy" src="/t_philipsshaver.jpg" alt="필립스 보풀제거기"></a><h3>필립스 보풀제거기</h3><a class="btn" href="/philipsshaver">제품 보기</a><span class="watch off">영상 준비 중</span></article>
-<article class="card" data-k="쿠쿠 에코웨일 큐브"><a class="thumb" href="/cuckoocube"><img loading="lazy" src="/t_cuckoocube.jpg" alt="쿠쿠 에코웨일 큐브"></a><h3>쿠쿠 에코웨일 큐브</h3><a class="btn" href="/cuckoocube">제품 보기</a><span class="watch off">영상 준비 중</span></article>
-<article class="card" data-k="스킨수티컬즈 b5"><a class="thumb" href="/serumb5"><img loading="lazy" src="/t_serumb5.jpg" alt="스킨수티컬즈 B5"></a><h3>스킨수티컬즈 B5</h3><a class="btn" href="/serumb5">제품 보기</a><span class="watch off">영상 준비 중</span></article>
-<article class="card" data-k="미닉스 더플렌더 맥스"><a class="thumb" href="/minixmax"><img loading="lazy" src="/t_minixmax.jpg" alt="미닉스 더플렌더 맥스"></a><h3>미닉스 더플렌더 맥스</h3><a class="btn" href="/minixmax">제품 보기</a><span class="watch off">영상 준비 중</span></article>
-<article class="card" data-k="필립스 계란찜기"><a class="thumb" href="/eggsteamer"><img loading="lazy" src="/t_eggsteamer.jpg" alt="필립스 계란찜기"></a><h3>필립스 계란찜기</h3><a class="btn" href="/eggsteamer">제품 보기</a><a class="watch" href="https://www.youtube.com/shorts/XNAWRHmveek" target="_blank" rel="noopener">영상 보기</a></article>
-<article class="card" data-k="다이슨 에어스트레이트"><a class="thumb" href="/airstrait"><img loading="lazy" src="/t_airstrait.jpg" alt="다이슨 에어스트레이트"></a><h3>다이슨 에어스트레이트</h3><a class="btn" href="/airstrait">제품 보기</a><a class="watch" href="https://www.youtube.com/shorts/awO9281Umic" target="_blank" rel="noopener">영상 보기</a></article>
-<article class="card" data-k="유맥스 uhd50l"><a class="thumb" href="/umaxtv"><img loading="lazy" src="/t_umaxtv.jpg" alt="유맥스 UHD50L"></a><h3>유맥스 UHD50L</h3><a class="btn" href="/umaxtv">제품 보기</a><a class="watch" href="https://www.youtube.com/shorts/F_KIb7bpMlY" target="_blank" rel="noopener">영상 보기</a></article>
-<article class="card" data-k="더엣지 페이크 레더 봄버"><a class="thumb" href="/leatherjk"><img loading="lazy" src="/t_leatherjk.jpg" alt="더엣지 페이크 레더 봄버"></a><h3>더엣지 페이크 레더 봄버</h3><a class="btn" href="/leatherjk">제품 보기</a><a class="watch" href="https://www.youtube.com/shorts/81mFAdDa3Oc" target="_blank" rel="noopener">영상 보기</a></article>
-<article class="card" data-k="902l 4도어 냉장고"><a class="thumb" href="/fridge"><img loading="lazy" src="/t_fridge.jpg" alt="902L 4도어 냉장고"></a><h3>902L 4도어 냉장고</h3><a class="btn" href="/fridge">제품 보기</a><a class="watch" href="https://www.youtube.com/shorts/HFh7nT0RBKc" target="_blank" rel="noopener">영상 보기</a></article>
-<article class="card" data-k="아이폰 17 프로 256gb"><a class="thumb" href="/iphone17"><img loading="lazy" src="/t_iphone17.jpg" alt="아이폰 17 프로 256GB"></a><h3>아이폰 17 프로 256GB</h3><a class="btn" href="/iphone17">제품 보기</a><a class="watch" href="https://www.youtube.com/shorts/-Il9_dQUv1Q" target="_blank" rel="noopener">영상 보기</a></article>
-<article class="card" data-k="침대 틈새 수납장"><a class="thumb" href="/bedgap"><img loading="lazy" src="/t_bedgap.jpg" alt="침대 틈새 수납장"></a><h3>침대 틈새 수납장</h3><a class="btn" href="/bedgap">제품 보기</a><a class="watch" href="https://www.youtube.com/shorts/5jvjyxz4m1I" target="_blank" rel="noopener">영상 보기</a></article>
-<article class="card" data-k="싱크대 위 식기세척기"><a class="thumb" href="/dishwasher"><img loading="lazy" src="/t_dishwasher.jpg" alt="싱크대 위 식기세척기"></a><h3>싱크대 위 식기세척기</h3><a class="btn" href="/dishwasher">제품 보기</a><a class="watch" href="https://www.youtube.com/shorts/4B9GFJYmZnc" target="_blank" rel="noopener">영상 보기</a></article>
-<article class="card" data-k="lg 프라엘 멜라빔 토닝"><a class="thumb" href="/melabeam"><img loading="lazy" src="/t_melabeam.jpg" alt="LG 프라엘 멜라빔 토닝"></a><h3>LG 프라엘 멜라빔 토닝</h3><a class="btn" href="/melabeam">제품 보기</a><a class="watch" href="https://www.youtube.com/shorts/EhdWNmKhHVI" target="_blank" rel="noopener">영상 보기</a></article>
-<article class="card" data-k="제니퍼룸 bldc 프로"><a class="thumb" href="/standdryer"><img loading="lazy" src="/t_standdryer.jpg" alt="제니퍼룸 BLDC 프로"></a><h3>제니퍼룸 BLDC 프로</h3><a class="btn" href="/standdryer">제품 보기</a><a class="watch" href="https://www.youtube.com/shorts/D-vtHuxXVsw" target="_blank" rel="noopener">영상 보기</a></article>
-<article class="card" data-k="케어팟 큐브 x50v"><a class="thumb" href="/carepod"><img loading="lazy" src="/t_carepod.jpg" alt="케어팟 큐브 X50V"></a><h3>케어팟 큐브 X50V</h3><a class="btn" href="/carepod">제품 보기</a><a class="watch" href="https://www.youtube.com/shorts/Czpqus8wjpE" target="_blank" rel="noopener">영상 보기</a></article>
-<article class="card" data-k="끌리젠 스팀다리미"><a class="thumb" href="/steamer"><img loading="lazy" src="/t_steamer.jpg" alt="끌리젠 스팀다리미"></a><h3>끌리젠 스팀다리미</h3><a class="btn" href="/steamer">제품 보기</a><a class="watch" href="https://www.youtube.com/shorts/O4-43iS4bhQ" target="_blank" rel="noopener">영상 보기</a></article>
-<article class="card" data-k="에어메이드 아쿠아마린"><a class="thumb" href="/aquamarine"><img loading="lazy" src="/t_aquamarine.jpg" alt="에어메이드 아쿠아마린"></a><h3>에어메이드 아쿠아마린</h3><a class="btn" href="/aquamarine">제품 보기</a><a class="watch" href="https://www.youtube.com/shorts/-bvsltNcqzo" target="_blank" rel="noopener">영상 보기</a></article>
-<article class="card" data-k="공감도씨 iot 탄소매트"><a class="thumb" href="/carbonmat"><img loading="lazy" src="/t_carbonmat.jpg" alt="공감도씨 IoT 탄소매트"></a><h3>공감도씨 IoT 탄소매트</h3><a class="btn" href="/carbonmat">제품 보기</a><span class="watch off">영상 준비 중</span></article>
-<article class="card" data-k="스킨수티컬즈 피티옥스"><a class="thumb" href="/ptiox"><img loading="lazy" src="/t_ptiox.jpg" alt="스킨수티컬즈 피티옥스"></a><h3>스킨수티컬즈 피티옥스</h3><a class="btn" href="/ptiox">제품 보기</a><a class="watch" href="https://www.youtube.com/shorts/5cvSt7ZpOhc" target="_blank" rel="noopener">영상 보기</a></article>
-<article class="card" data-k="쿠쿠 사일런스 큐브"><a class="thumb" href="/cubecooker"><img loading="lazy" src="/t_cubecooker.jpg" alt="쿠쿠 사일런스 큐브"></a><h3>쿠쿠 사일런스 큐브</h3><a class="btn" href="/cubecooker">제품 보기</a><a class="watch" href="https://www.youtube.com/shorts/fak2vUvO4_M" target="_blank" rel="noopener">영상 보기</a></article>
-<article class="card" data-k="삼성 55인치 비즈니스 tv"><a class="thumb" href="/biztv"><img loading="lazy" src="/t_biztv.jpg" alt="삼성 55인치 비즈니스 TV"></a><h3>삼성 55인치 비즈니스 TV</h3><a class="btn" href="/biztv">제품 보기</a><a class="watch" href="https://www.youtube.com/shorts/03BCd8nj8AQ" target="_blank" rel="noopener">영상 보기</a></article>
-<article class="card" data-k="스파오 와이드 코튼 팬츠"><a class="thumb" href="/spaopants"><img loading="lazy" src="/t_spaopants.jpg" alt="스파오 와이드 코튼 팬츠"></a><h3>스파오 와이드 코튼 팬츠</h3><a class="btn" href="/spaopants">제품 보기</a><a class="watch" href="https://www.youtube.com/shorts/_7EHJCwYVuY" target="_blank" rel="noopener">영상 보기</a></article>
+<article class="pc" data-c="가전">
+  <a class="img" href="https://naver.me/GxrJJ0co" target="_blank" rel="noopener sponsored"><img src="/t_klepavac.jpg" alt="클레파 무선청소기" loading="lazy"><span class="cat">가전</span></a>
+  <div class="body"><small>무선청소기</small><h3>클레파 무선청소기</h3><ul><li>자동으로 먼지통을 비워요</li><li>손으로 털 필요가 없어요</li></ul>
+    <a class="buy" href="https://naver.me/GxrJJ0co" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a><a class="watch" href="https://www.youtube.com/shorts/F2XxdHnBETs" target="_blank" rel="noopener">▶ 영상으로 보기</a></div>
+</article>
+<article class="pc" data-c="주방">
+  <a class="img" href="https://naver.me/58q66X8J" target="_blank" rel="noopener sponsored"><img src="/p_thedanbaek.jpg" alt="빙그레 더단백" loading="lazy" class=ph><span class="cat">주방</span></a>
+  <div class="body"><small>단백질 음료</small><h3>빙그레 더단백</h3><ul><li>6가지 맛 18팩 구성이에요</li><li>한 팩에 250ml예요</li></ul>
+    <a class="buy" href="https://naver.me/58q66X8J" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a><a class="watch" href="https://www.youtube.com/shorts/co0b2sWKfYA" target="_blank" rel="noopener">▶ 영상으로 보기</a></div>
+</article>
+<article class="pc" data-c="뷰티·헤어">
+  <a class="img" href="https://naver.me/xRgOkB24" target="_blank" rel="noopener sponsored"><img src="/p_jmwdryer.jpg" alt="JMW M5001A 플러스 프로" loading="lazy" class=ph><span class="cat">뷰티·헤어</span></a>
+  <div class="body"><small>헤어드라이어</small><h3>JMW M5001A 플러스 프로</h3><ul><li>진짜 찬바람이 나와요</li><li>가벼워서 팔이 안 아파요</li></ul>
+    <a class="buy" href="https://naver.me/xRgOkB24" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a></div>
+</article>
+<article class="pc" data-c="주방">
+  <a class="img" href="https://naver.me/FaeWiqnW" target="_blank" rel="noopener sponsored"><img src="/p_wiswellsealer.jpg" alt="위즈웰 진공포장기" loading="lazy" class=ph><span class="cat">주방</span></a>
+  <div class="body"><small>진공포장기</small><h3>위즈웰 진공포장기</h3><ul><li>공기를 빼고 밀봉해요</li><li>냉동실이 납작해져요</li></ul>
+    <a class="buy" href="https://naver.me/FaeWiqnW" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a><a class="watch" href="https://www.youtube.com/shorts/w70bN2-QEp8" target="_blank" rel="noopener">▶ 영상으로 보기</a></div>
+</article>
+<article class="pc" data-c="생활">
+  <a class="img" href="https://naver.me/G9UJDmMO" target="_blank" rel="noopener sponsored"><img src="/p_brandenpouch.jpg" alt="브랜든 압축파우치" loading="lazy" class=ph><span class="cat">생활</span></a>
+  <div class="body"><small>압축파우치</small><h3>브랜든 압축파우치</h3><ul><li>손으로 누르며 닫아요</li><li>부피가 줄어들어요</li></ul>
+    <a class="buy" href="https://naver.me/G9UJDmMO" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a><a class="watch" href="https://www.youtube.com/shorts/1_QN2qPjymE" target="_blank" rel="noopener">▶ 영상으로 보기</a></div>
+</article>
+<article class="pc" data-c="생활">
+  <a class="img" href="https://naver.me/5RAi5Y6S" target="_blank" rel="noopener sponsored"><img src="/p_philipsshaver.jpg" alt="필립스 보풀제거기" loading="lazy" class=ph><span class="cat">생활</span></a>
+  <div class="body"><small>보풀제거기</small><h3>필립스 보풀제거기</h3><ul><li>지나간 자리가 매끈해요</li><li>크고 작은 보풀을 잡아요</li></ul>
+    <a class="buy" href="https://naver.me/5RAi5Y6S" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a><a class="watch" href="https://www.youtube.com/shorts/9N9RncZBwV4" target="_blank" rel="noopener">▶ 영상으로 보기</a></div>
+</article>
+<article class="pc" data-c="주방">
+  <a class="img" href="https://naver.me/Fz8iC1Ru" target="_blank" rel="noopener sponsored"><img src="/p_cuckoocube.jpg" alt="쿠쿠 에코웨일 큐브" loading="lazy" class=ph><span class="cat">주방</span></a>
+  <div class="body"><small>음식물처리기</small><h3>쿠쿠 에코웨일 큐브</h3><ul><li>뼈까지 갈아 말려요</li><li>냄새를 줄여 줘요</li></ul>
+    <a class="buy" href="https://naver.me/Fz8iC1Ru" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a><a class="watch" href="https://www.youtube.com/shorts/6yW2MNnzbS0" target="_blank" rel="noopener">▶ 영상으로 보기</a></div>
+</article>
+<article class="pc" data-c="뷰티·헤어">
+  <a class="img" href="https://naver.me/FBMXOkmC" target="_blank" rel="noopener sponsored"><img src="/p_serumb5.jpg" alt="스킨수티컬즈 B5" loading="lazy" class=ph><span class="cat">뷰티·헤어</span></a>
+  <div class="body"><small>페이스세럼</small><h3>스킨수티컬즈 B5</h3><ul><li>히알루론산 성분이에요</li><li>오일과 향료가 없어요</li></ul>
+    <a class="buy" href="https://naver.me/FBMXOkmC" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a><a class="watch" href="https://www.youtube.com/shorts/ppM6r1LyI58" target="_blank" rel="noopener">▶ 영상으로 보기</a></div>
+</article>
+<article class="pc" data-c="주방">
+  <a class="img" href="https://naver.me/5K6Hs8aj" target="_blank" rel="noopener sponsored"><img src="/p_minixmax.jpg" alt="미닉스 더플렌더 맥스" loading="lazy" class=ph><span class="cat">주방</span></a>
+  <div class="body"><small>음식물처리기</small><h3>미닉스 더플렌더 맥스</h3><ul><li>닭뼈나 씨앗도 갈려요</li><li>소음이 조용한 편이에요</li></ul>
+    <a class="buy" href="https://naver.me/5K6Hs8aj" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a><a class="watch" href="https://www.youtube.com/shorts/7pXCbKLU7BM" target="_blank" rel="noopener">▶ 영상으로 보기</a></div>
+</article>
+<article class="pc" data-c="주방">
+  <a class="img" href="https://naver.me/xfbMzYE6" target="_blank" rel="noopener sponsored"><img src="/p_eggsteamer.jpg" alt="필립스 계란찜기" loading="lazy" class=ph><span class="cat">주방</span></a>
+  <div class="body"><small>계란찜기</small><h3>필립스 계란찜기</h3><ul><li>눈금대로 물을 부어요</li><li>알림이 울려요</li></ul>
+    <a class="buy" href="https://naver.me/xfbMzYE6" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a></div>
+</article>
+<article class="pc" data-c="뷰티·헤어">
+  <a class="img" href="https://naver.me/GcA7kzcI" target="_blank" rel="noopener sponsored"><img src="/p_airstrait.jpg" alt="다이슨 에어스트레이트" loading="lazy" class=ph><span class="cat">뷰티·헤어</span></a>
+  <div class="body"><small>헤어스트레이트</small><h3>다이슨 에어스트레이트</h3><ul><li>젖은 머리에 바로 써요</li><li>바람으로 말리며 펴요</li></ul>
+    <a class="buy" href="https://naver.me/GcA7kzcI" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a></div>
+</article>
+<article class="pc" data-c="디지털">
+  <a class="img" href="https://naver.me/GO6Ed0na" target="_blank" rel="noopener sponsored"><img src="/p_umaxtv.jpg" alt="유맥스 UHD50L" loading="lazy" class=ph><span class="cat">디지털</span></a>
+  <div class="body"><small>텔레비전</small><h3>유맥스 UHD50L</h3><ul><li>50인치 크기예요</li><li>패널 고장 나면 2년간 교체해요</li></ul>
+    <a class="buy" href="https://naver.me/GO6Ed0na" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a></div>
+</article>
+<article class="pc" data-c="패션">
+  <a class="img" href="https://naver.me/FiPxZuF1" target="_blank" rel="noopener sponsored"><img src="/p_leatherjk.jpg" alt="더엣지 페이크 레더 봄버" loading="lazy"><span class="cat">패션</span></a>
+  <div class="body"><small>가죽재킷</small><h3>더엣지 페이크 레더 봄버</h3><ul><li>가볍게 걸치는 재킷이에요</li><li>품이 넉넉해요</li></ul>
+    <a class="buy" href="https://naver.me/FiPxZuF1" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a></div>
+</article>
+<article class="pc" data-c="가전">
+  <a class="img" href="https://naver.me/FlBkJQ3j" target="_blank" rel="noopener sponsored"><img src="/t_fridge.jpg" alt="902L 4도어 냉장고" loading="lazy"><span class="cat">가전</span></a>
+  <div class="body"><small>냉장고</small><h3>902L 4도어 냉장고</h3><ul><li>대용량으로 넉넉해요</li><li>에너지 효율 1등급이에요</li></ul>
+    <a class="buy" href="https://naver.me/FlBkJQ3j" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a></div>
+</article>
+<article class="pc" data-c="디지털">
+  <a class="img" href="https://naver.me/x2YAPZGU" target="_blank" rel="noopener sponsored"><img src="/p_iphone17.jpg" alt="아이폰 17 프로 256GB" loading="lazy" class=ph><span class="cat">디지털</span></a>
+  <div class="body"><small>스마트폰</small><h3>아이폰 17 프로 256GB</h3><ul><li>카메라 화소가 높아요</li><li>자급제로 살 수 있어요</li></ul>
+    <a class="buy" href="https://naver.me/x2YAPZGU" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a></div>
+</article>
+<article class="pc" data-c="생활">
+  <a class="img" href="https://naver.me/5suB9z9E" target="_blank" rel="noopener sponsored"><img src="/p_bedgap.jpg" alt="침대 틈새 수납장" loading="lazy" class=ph><span class="cat">생활</span></a>
+  <div class="body"><small>틈새수납장</small><h3>침대 틈새 수납장</h3><ul><li>침대 옆에 쏙 들어가요</li><li>손 닿는 곳에 두어요</li></ul>
+    <a class="buy" href="https://naver.me/5suB9z9E" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a></div>
+</article>
+<article class="pc" data-c="주방">
+  <a class="img" href="https://naver.me/xeFSHidn" target="_blank" rel="noopener sponsored"><img src="/t_dishwasher.jpg" alt="싱크대 위 식기세척기" loading="lazy"><span class="cat">주방</span></a>
+  <div class="body"><small>식기세척기</small><h3>싱크대 위 식기세척기</h3><ul><li>싱크대 위에 두는 제품이에요</li><li>고온수로 씻고 말려줘요</li></ul>
+    <a class="buy" href="https://naver.me/xeFSHidn" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a></div>
+</article>
+<article class="pc" data-c="뷰티·헤어">
+  <a class="img" href="https://naver.me/GSQ1X8fk" target="_blank" rel="noopener sponsored"><img src="/p_melabeam.jpg" alt="LG 프라엘 멜라빔 토닝" loading="lazy" class=ph><span class="cat">뷰티·헤어</span></a>
+  <div class="body"><small>뷰티기기</small><h3>LG 프라엘 멜라빔 토닝</h3><ul><li>세 가지 모드가 있어요</li><li>하루 5분 쓰면 돼요</li></ul>
+    <a class="buy" href="https://naver.me/GSQ1X8fk" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a></div>
+</article>
+<article class="pc" data-c="뷰티·헤어">
+  <a class="img" href="https://naver.me/56XKrwZn" target="_blank" rel="noopener sponsored"><img src="/p_standdryer.jpg" alt="제니퍼룸 BLDC 프로" loading="lazy" class=ph><span class="cat">뷰티·헤어</span></a>
+  <div class="body"><small>스탠드드라이기</small><h3>제니퍼룸 BLDC 프로</h3><ul><li>세워 두고 쓸 수 있어요</li><li>옷 말리기도 돼요</li></ul>
+    <a class="buy" href="https://naver.me/56XKrwZn" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a></div>
+</article>
+<article class="pc" data-c="가전">
+  <a class="img" href="https://naver.me/Gprz0Y9X" target="_blank" rel="noopener sponsored"><img src="/p_carepod.jpg" alt="케어팟 큐브 X50V" loading="lazy" class=ph><span class="cat">가전</span></a>
+  <div class="body"><small>가습기</small><h3>케어팟 큐브 X50V</h3><ul><li>물을 데워 주어요</li><li>스테인리스 소재예요</li></ul>
+    <a class="buy" href="https://naver.me/Gprz0Y9X" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a><a class="watch" href="https://www.youtube.com/shorts/Czpqus8wjpE" target="_blank" rel="noopener">▶ 영상으로 보기</a></div>
+</article>
+<article class="pc" data-c="생활">
+  <a class="img" href="https://naver.me/5suBnWH6" target="_blank" rel="noopener sponsored"><img src="/p_steamer.jpg" alt="끌리젠 스팀다리미" loading="lazy" class=ph><span class="cat">생활</span></a>
+  <div class="body"><small>스팀다리미</small><h3>끌리젠 스팀다리미</h3><ul><li>걸어 둔 채로 써요</li><li>예열이 빠르게 돼요</li></ul>
+    <a class="buy" href="https://naver.me/5suBnWH6" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a></div>
+</article>
+<article class="pc" data-c="가전">
+  <a class="img" href="https://naver.me/FDcSlOl2" target="_blank" rel="noopener sponsored"><img src="/p_aquamarine.jpg" alt="에어메이드 아쿠아마린" loading="lazy" class=ph><span class="cat">가전</span></a>
+  <div class="body"><small>가습기</small><h3>에어메이드 아쿠아마린</h3><ul><li>위에서 바로 물을 부어요</li><li>따뜻한 바람으로 말려줘요</li></ul>
+    <a class="buy" href="https://naver.me/FDcSlOl2" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a></div>
+</article>
+<article class="pc" data-c="생활">
+  <a class="img" href="https://naver.me/FrixZpjO" target="_blank" rel="noopener sponsored"><img src="/p_carbonmat.jpg" alt="공감도씨 IoT 탄소매트" loading="lazy" class=ph><span class="cat">생활</span></a>
+  <div class="body"><small>탄소매트</small><h3>공감도씨 IoT 탄소매트</h3><ul><li>앱으로 예약이 돼요</li><li>부드러운 겉감이에요</li></ul>
+    <a class="buy" href="https://naver.me/FrixZpjO" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a><a class="watch" href="https://www.youtube.com/shorts/ie8WTiryyPI" target="_blank" rel="noopener">▶ 영상으로 보기</a></div>
+</article>
+<article class="pc" data-c="뷰티·헤어">
+  <a class="img" href="https://naver.me/x52uZVii" target="_blank" rel="noopener sponsored"><img src="/p_ptiox.jpg" alt="스킨수티컬즈 피티옥스" loading="lazy" class=ph><span class="cat">뷰티·헤어</span></a>
+  <div class="body"><small>주름세럼</small><h3>스킨수티컬즈 피티옥스</h3><ul><li>이중 기능성 세럼이에요</li><li>아침저녁으로 발라요</li></ul>
+    <a class="buy" href="https://naver.me/x52uZVii" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a></div>
+</article>
+<article class="pc" data-c="주방">
+  <a class="img" href="https://naver.me/xVRDdoxp" target="_blank" rel="noopener sponsored"><img src="/p_cubecooker.jpg" alt="쿠쿠 사일런스 큐브" loading="lazy" class=ph><span class="cat">주방</span></a>
+  <div class="body"><small>전기밥솥</small><h3>쿠쿠 사일런스 큐브</h3><ul><li>큐브 디자인이에요</li><li>중간에 재료를 넣어요</li></ul>
+    <a class="buy" href="https://naver.me/xVRDdoxp" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a></div>
+</article>
+<article class="pc" data-c="디지털">
+  <a class="img" href="https://naver.me/F93jA3Ep" target="_blank" rel="noopener sponsored"><img src="/p_biztv.jpg" alt="삼성 55인치 비즈니스 TV" loading="lazy"><span class="cat">디지털</span></a>
+  <div class="body"><small>비즈니스티비</small><h3>삼성 55인치 비즈니스 TV</h3><ul><li>앱으로 사진을 바꿔요</li><li>55인치 큰 화면이에요</li></ul>
+    <a class="buy" href="https://naver.me/F93jA3Ep" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a></div>
+</article>
+<article class="pc" data-c="패션">
+  <a class="img" href="https://naver.me/5AuG2rNg" target="_blank" rel="noopener sponsored"><img src="/p_spaopants.jpg" alt="스파오 와이드 코튼 팬츠" loading="lazy" class=ph><span class="cat">패션</span></a>
+  <div class="body"><small>코튼팬츠</small><h3>스파오 와이드 코튼 팬츠</h3><ul><li>두께가 있어서 안 비쳐요</li><li>와이드핏으로 편안해요</li></ul>
+    <a class="buy" href="https://naver.me/5AuG2rNg" target="_blank" rel="noopener sponsored">제품 보기 <span>→</span></a></div>
+</article>
 </div>
 <p class="note">이 페이지의 링크는 제휴 마케팅 활동의 일환으로, 구매 시 수수료를 받을 수 있습니다. 가격·구성은 판매 화면에서 꼭 다시 확인해 주세요.</p>
-<footer><a href="/">← itemlog 홈</a> · <a href="/privacy.html">개인정보처리방침</a></footer>
-</div></body></html>
+<footer><a href="https://itemlogin.com/">← itemlog 홈</a> · <a href="/privacy.html">개인정보처리방침</a></footer>
+</div>
+<script>
+let tab="전체";const q=document.querySelector(".search");
+function f(){const s=q.value.trim().toLowerCase();document.querySelectorAll(".pc").forEach(c=>{const a=tab==="전체"||c.dataset.c===tab;const b=!s||c.innerText.toLowerCase().includes(s);c.style.display=a&&b?"":"none"})}
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tabs button").forEach(x=>x.classList.remove("on"));b.classList.add("on");tab=b.dataset.t;f()});
+q.oninput=f;
+</script></body></html>
