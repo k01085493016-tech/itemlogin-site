@@ -45,7 +45,14 @@ h1.t em{font-style:normal;color:var(--accent);background:linear-gradient(transpa
 .more{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
 .more a{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .more img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover}.more b{display:block;padding:8px 10px;font-size:14px;line-height:1.4}
-@media(max-width:640px){h1.t{font-size:27px}.hero2{grid-template-columns:1fr}.vid{max-width:250px;margin:0 auto}}</style></head>
+.prod{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center;background:var(--card);border:1px solid rgba(255,138,31,.45);border-radius:18px;padding:16px;margin-top:8px}
+.prod .pi{display:block;aspect-ratio:1;background:#fff;border-radius:12px;overflow:hidden}.prod .pi img{width:100%;height:100%;object-fit:contain;display:block}
+.prod small{color:var(--accent);font-weight:700;font-size:13px}.prod h3{margin:2px 0 6px;font-size:19px;line-height:1.35}
+.prod ul{margin:0 0 12px;padding:0;list-style:none;color:#d6d6d6;font-size:14.5px}.prod li{padding-left:18px;position:relative;margin:2px 0}.prod li:before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:900}
+.prod .row{display:flex;gap:8px;flex-wrap:wrap}.prod .pill{padding:10px 16px;font-size:15px}.prod .ghost{padding:10px 16px;font-size:15px;text-decoration:none}
+.disc{color:var(--sub);font-size:12.5px;margin:8px 2px 0}
+.shoplink{display:inline-block;margin-top:6px;color:var(--accent);font-weight:700;text-decoration:none}
+@media(max-width:640px){h1.t{font-size:27px}.hero2{grid-template-columns:1fr}.vid{max-width:250px;margin:0 auto}.prod{grid-template-columns:96px 1fr;gap:12px}}</style></head>
 <body>
 <header class="top"><img src="/logo.png" alt=""><a href="https://itemlogin.com/">itemlogin · 10초의 발견</a></header>
 <main>
@@ -75,6 +82,7 @@ h1.t em{font-style:normal;color:var(--accent);background:linear-gradient(transpa
 <p>감기약 먹고 커피는 두 시간 뒤에요. 감기약에 카페인이 든 경우가 많거든요. 커피까지 마시면 카페인이 겹쳐요. 가슴이 두근대고 잠을 설칠 수 있어요. 약 상자 성분표부터 확인하세요. 급하면 디카페인 커피로 바꿔요. 오늘 감기약 먹었다면 커피는 쉬세요.</p>
 <h2 class="sec">출처</h2><p class="src">헤럴드경제(2025-11-30), 닥터나우, 뉴시스(2020-12-31) 자료를 바탕으로 정리했어요.</p>
 <div class="tags"><span>#감기약</span><span>#커피</span><span>#카페인</span><span>#생활꿀팁</span></div>
+<p><a class="shoplink" href="/links.html">🛒 영상에서 소개한 살림템 모아보기 →</a></p>
 <h2 class="sec">다른 10초 꿀팁</h2>
 <div class="more">
 <a href="/tip/microfiber/"><img loading="lazy" src="/t_WXBuRnXwS-A.jpg" alt=""><b>극세사 이불 세탁법</b></a>
