@@ -259,7 +259,7 @@ ${C.payment&&C.payment.enabled?`<div class="testbadge" id="testbadge">테스트 
 <div class="done" id="done"><b>신청이 접수되었습니다</b><span style="color:var(--sub)">${esc(C.doneText||'')}</span></div>
 </section>
 ${C.faq&&C.faq.length?`<section><span class="eyebrow">FAQ</span><h2 class="reveal">자주 묻는 질문</h2>${C.faq.map(f=>`<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}${C.refund?`<div class="refund reveal"><b>환불 안내</b><br>${esc(C.refund)}</div>`:''}</section>`:''}
-<footer>${esc(C.business.name)}${C.business.rep?' · 대표 '+esc(C.business.rep):''}<br>${C.business.regno?'사업자등록번호 '+esc(C.business.regno)+'<br>':''}${C.business.salesno?'통신판매업 신고번호 '+esc(C.business.salesno)+'<br>':''}${C.business.contact?'문의 '+esc(C.business.contact)+'<br>':''}${esc(C.business.note||'')}</footer>`;
+<footer>${esc(C.business.name)}${C.business.rep?' · 대표 '+esc(C.business.rep):''}<br>${C.business.regno?'사업자등록번호 '+esc(C.business.regno)+'<br>':''}${C.business.salesno?'통신판매업 신고번호 '+esc(C.business.salesno)+'<br>':''}${C.business.contact?'문의 '+esc(C.business.contact)+'<br>':''}${esc(C.business.note||'')}${C.business.privacy&&/^(https:\/\/|[A-Za-z0-9_\-./]+$)/.test(C.business.privacy)?'<br><a href="'+esc(C.business.privacy)+'" target="_blank" rel="noopener" style="color:var(--gold)">개인정보처리방침</a>':''}</footer>`;
 
 // reveal
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
