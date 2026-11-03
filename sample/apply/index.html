@@ -141,6 +141,8 @@ footer{padding:34px 22px 120px;font-size:12px;color:#7f81a8;line-height:1.7;bord
 .fab{position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(90px);z-index:45;border:0;padding:15px 30px;border-radius:999px;background:linear-gradient(120deg,#c9a052,var(--gold2));color:#1a1530;font:900 17px 'Noto Sans KR';box-shadow:0 12px 34px rgba(0,0,0,.5),0 0 0 0 rgba(var(--ar),.6);cursor:pointer;transition:transform .5s;animation:pl 2.4s infinite}
 .fab.on{transform:translateX(-50%)}
 @keyframes pl{70%{box-shadow:0 12px 34px rgba(0,0,0,.5),0 0 0 16px rgba(var(--ar),0)}}
+.contactblk .cbtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}.contactblk .cb{display:inline-block;padding:13px 20px;border-radius:12px;border:1px solid var(--line);color:var(--gold2);text-decoration:none;font-weight:700;font-size:14.5px;background:rgba(255,255,255,.04)}.contactblk .caddr{margin:12px 0 0;font-size:13px;color:var(--sub)}
+.quick{position:fixed;right:max(12px,calc(50vw - 252px));bottom:86px;z-index:44;display:flex;flex-direction:column;gap:8px}.quick a{display:block;padding:10px 14px;border-radius:999px;font:700 13px 'Noto Sans KR';text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.45);text-align:center}.quick .qk{background:#fee500;color:#191919}.quick .qt{background:#fff;color:#14172e}
 .toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,30px);background:#fff;color:#111;padding:12px 22px;border-radius:12px;opacity:0;pointer-events:none;transition:.4s;z-index:100;font-weight:700;font-size:14px;max-width:90%}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.hero h1 span{opacity:1;transform:none}}
@@ -190,9 +192,17 @@ const THEMES={'민트':{'--gold':'#6fe3c1','--gold2':'#d9fff2','--gold3':'#2a9d7
 if(THEMES[C.theme])Object.entries(THEMES[C.theme]).forEach(([k,v])=>document.documentElement.style.setProperty(k,v));const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
 document.title=C.pageTitle||C.brand;
+const SEO=C.seo||{},TRK=C.track||{},CT=C.contact||{};
+const UTM=(()=>{try{const k='utm:'+(C.slug||'x');let v=sessionStorage.getItem(k);if(v===null){const q=new URLSearchParams(location.search);const p=['utm_source','utm_medium','utm_campaign','utm_content'].map(n=>(q.get(n)||'').replace(/[\n\r]/g,' ').slice(0,40));let ref='';try{ref=document.referrer?new URL(document.referrer).hostname:''}catch(e){}if(ref===location.hostname)ref='';const has=p.some(Boolean);v=(has?p.join('/').replace(/\/+$/,''):'')+(ref?(has?' | ':'')+'ref:'+ref:'');v=v||'직접';sessionStorage.setItem(k,v)}return v}catch(e){return ''}})();
+(function(){const ga=/^G-[A-Z0-9]{4,14}$/.test(TRK.ga4||'')?TRK.ga4:'',px=/^\d{8,20}$/.test(TRK.meta||'')?TRK.meta:'';
+ window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments)};
+ if(ga){const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+ga;document.head.appendChild(s);gtag('js',new Date());gtag('config',ga)}
+ if(px){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');window.fbq('init',px);window.fbq('track','PageView')}
+ window.__track=function(ev,data){try{if(ga)window.gtag('event',ev.ga,data||{});if(px&&window.fbq)window.fbq('track',ev.fb,data||{})}catch(e){}}})();
 const DL=C.deadline?new Date(C.deadline).getTime():null,EXPIRED=DL!==null&&Date.now()>=DL;
-[['og:title',C.pageTitle||C.brand],['og:description',(C.hero&&C.hero.sub)||''],['og:type','website']].forEach(([p,v])=>{const m=document.createElement('meta');m.setAttribute('property',p);m.content=v;document.head.appendChild(m)});
-const md=document.createElement('meta');md.name='description';md.content=(C.hero&&C.hero.sub)||'';document.head.appendChild(md);
+[['og:title',C.pageTitle||C.brand],['og:description',SEO.desc||(C.hero&&C.hero.sub)||''],['og:type','website'],...(SEO.image?[['og:image',SEO.image]]:[]),...(SEO.url?[['og:url',SEO.url]]:[])].forEach(([p,v])=>{const m=document.createElement('meta');m.setAttribute('property',p);m.content=v;document.head.appendChild(m)});
+const md=document.createElement('meta');md.name='description';md.content=SEO.desc||(C.hero&&C.hero.sub)||'';document.head.appendChild(md);
+if(SEO.url&&/^https:\/\//.test(SEO.url)){const lk=document.createElement('link');lk.rel='canonical';lk.href=SEO.url;document.head.appendChild(lk)}
 const sijin=[['unknown','모름 / 선택 안함'],['자시','자시 (子時) 23:30~01:29'],['축시','축시 (丑時) 01:30~03:29'],['인시','인시 (寅時) 03:30~05:29'],['묘시','묘시 (卯時) 05:30~07:29'],['진시','진시 (辰時) 07:30~09:29'],['사시','사시 (巳時) 09:30~11:29'],['오시','오시 (午時) 11:30~13:29'],['미시','미시 (未時) 13:30~15:29'],['신시','신시 (申時) 15:30~17:29'],['유시','유시 (酉時) 17:30~19:29'],['술시','술시 (戌時) 19:30~21:29'],['해시','해시 (亥時) 21:30~23:29']];
 const yr=new Date().getFullYear();
 const opt=(a,ph)=>`<option value="">${ph}</option>`+a.map(([v,t])=>`<option value="${esc(v)}">${esc(t)}</option>`).join('');
@@ -259,8 +269,13 @@ ${C.payment&&C.payment.enabled?`<div class="testbadge" id="testbadge">테스트 
 <div class="done" id="done"><b>신청이 접수되었습니다</b><span style="color:var(--sub)">${esc(C.doneText||'')}</span></div>
 </section>
 ${C.faq&&C.faq.length?`<section><span class="eyebrow">FAQ</span><h2 class="reveal">자주 묻는 질문</h2>${C.faq.map(f=>`<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}${C.refund?`<div class="refund reveal"><b>환불 안내</b><br>${esc(C.refund)}</div>`:''}</section>`:''}
-<footer>${esc(C.business.name)}${C.business.rep?' · 대표 '+esc(C.business.rep):''}<br>${C.business.regno?'사업자등록번호 '+esc(C.business.regno)+'<br>':''}${C.business.salesno?'통신판매업 신고번호 '+esc(C.business.salesno)+'<br>':''}${C.business.contact?'문의 '+esc(C.business.contact)+'<br>':''}${esc(C.business.note||'')}${C.business.privacy&&/^(https:\/\/|[A-Za-z0-9_\-./]+$)/.test(C.business.privacy)?'<br><a href="'+esc(C.business.privacy)+'" target="_blank" rel="noopener" style="color:var(--gold)">개인정보처리방침</a>':''}</footer>`;
+${(()=>{const kk=CT.kakao&&/^https:\/\/(pf|open)\.kakao\.com\//.test(CT.kakao)?CT.kakao:'',tel=CT.phone&&/^[0-9\-+ ()]{7,20}$/.test(CT.phone)?CT.phone:'',ad=C.business.addr||'';if(!kk&&!tel&&!ad)return '';return '<section class="contactblk"><span class="eyebrow">CONTACT</span><h2 class="reveal">문의하기</h2><div class="cbtns">'+(kk?'<a class="cb" data-m="kakao" href="'+esc(kk)+'" target="_blank" rel="noopener">카카오톡 상담</a>':'')+(tel?'<a class="cb" data-m="tel" href="tel:'+esc(tel.replace(/[^0-9+]/g,''))+'">전화 '+esc(tel)+'</a>':'')+(ad?'<a class="cb" data-m="map" href="https://map.naver.com/p/search/'+encodeURIComponent(ad)+'" target="_blank" rel="noopener">지도 보기</a>':'')+'</div>'+(ad?'<p class="caddr">'+esc(ad)+'</p>':'')+'</section>'})()}
+<footer>${esc(C.business.name)}${C.business.rep?' · 대표 '+esc(C.business.rep):''}<br>${C.business.regno?'사업자등록번호 '+esc(C.business.regno)+'<br>':''}${C.business.salesno?'통신판매업 신고번호 '+esc(C.business.salesno)+'<br>':''}${C.business.addr?'주소 '+esc(C.business.addr)+'<br>':''}${C.business.contact?'문의 '+esc(C.business.contact)+'<br>':''}${esc(C.business.note||'')}${C.business.privacy&&/^(https:\/\/|[A-Za-z0-9_\-./]+$)/.test(C.business.privacy)?'<br><a href="'+esc(C.business.privacy)+'" target="_blank" rel="noopener" style="color:var(--gold)">개인정보처리방침</a>':''}</footer>`;
 
+// 빠른 문의 버튼 + 클릭 추적
+(function(){const kk=CT.kakao&&/^https:\/\/(pf|open)\.kakao\.com\//.test(CT.kakao)?CT.kakao:'',tel=CT.phone&&/^[0-9\-+ ()]{7,20}$/.test(CT.phone)?CT.phone:'';
+ if(kk||tel){const q=document.createElement('div');q.className='quick';q.innerHTML=(kk?'<a class="qk" data-m="kakao" href="'+esc(kk)+'" target="_blank" rel="noopener">카톡 상담</a>':'')+(tel?'<a class="qt" data-m="tel" href="tel:'+esc(tel.replace(/[^0-9+]/g,''))+'">전화 상담</a>':'');document.body.appendChild(q)}
+ document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a[data-m]');if(a)window.__track({ga:'contact',fb:'Contact'},{method:a.dataset.m})})})();
 // reveal
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
 $$('.reveal').forEach(e=>io.observe(e));
@@ -306,7 +321,7 @@ async function showWidget(amount){
 }
 if(PAY){$('#psel').addEventListener('change',e=>{const p=prods.find(x=>x.id===e.target.value);if(p)showWidget(p.price);else{$('#payb').classList.remove('on');$('#go').textContent=C.submitText||'신청하기'}})}
 async function api(body){const r=await fetch(C.endpoint,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body)});return r.json()}
-function showPaid(j){const f=$('#form');if(f)f.style.display='none';const pb=$('#paynote');if(pb)pb.style.display='none';$('#pdone').style.display='block';
+function showPaid(j){if(j&&j.ok&&!j.again)window.__track({ga:'purchase',fb:'Purchase'},{value:Number(j.amount)||0,currency:'KRW',transaction_id:String(j.orderId||'')});const f=$('#form');if(f)f.style.display='none';const pb=$('#paynote');if(pb)pb.style.display='none';$('#pdone').style.display='block';
  $('#pd-title').textContent=j.ok?'결제가 완료되었습니다':'결제를 완료하지 못했습니다';
  $('#pd-rows').innerHTML=j.ok?['주문번호|'+esc(j.orderId),'상품|'+esc(j.orderName),'결제 금액|'+won(j.amount),'결제 수단|'+esc(j.method||'')].map(s=>{const [a,b]=s.split('|');return '<div><span>'+a+'</span><b style="font-size:14.5px;color:#fff;font-family:inherit">'+b+'</b></div>'}).join('')+(j.receiptUrl?'<div><span>영수증</span><a href="'+esc(j.receiptUrl)+'" target="_blank" rel="noopener">보기</a></div>':''):'';
  $('#pd-msg').textContent=j.ok?(j.test?'[테스트 결제] 실제 결제가 아니며 금액이 빠져나가지 않았습니다. ':'')+'결제 확인 메일을 입력하신 이메일로 보냈습니다. 메일이 보이지 않으면 스팸함을 확인해 주십시오.':(j.message||'결제 정보를 확인하지 못했습니다. 이미 결제되었다면 이중 결제 없이 확인해 드리니 문의해 주십시오.');
@@ -328,7 +343,7 @@ $('#form').addEventListener('submit',async e=>{e.preventDefault();const f=e.targ
  if(badDate){er.textContent='존재하지 않는 양력 날짜입니다. 생년월일을 다시 확인해 주십시오.';er.style.display='block';return}
  const dom=f.ed.value==='__c'?$('#edc').value.trim():f.ed.value;if(!dom){er.textContent='이메일 도메인을 선택하거나 입력해 주십시오.';er.style.display='block';return}
  const mail=f.em.value.trim()+'@'+dom;if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)){er.textContent='이메일 주소를 다시 확인해 주십시오.';er.style.display='block';return}
- const data=Object.fromEntries(new FormData(f).entries());delete data.website;delete data.agree;data.agreed='동의';data.phone='010-'+f.p2.value+'-'+f.p3.value;data.email=f.em.value.trim()+'@'+dom;data.page=C.slug||location.pathname;data.ts=new Date().toISOString();data.elapsed=Date.now()-T0;
+ const data=Object.fromEntries(new FormData(f).entries());delete data.website;delete data.agree;data.agreed='동의';data.phone='010-'+f.p2.value+'-'+f.p3.value;data.email=f.em.value.trim()+'@'+dom;data.page=C.slug||location.pathname;data.utm=UTM;data.ts=new Date().toISOString();data.elapsed=Date.now()-T0;
  if(GEN){const ex=[];FIELDS.forEach((fd,i)=>{const v=String(data['x'+i]||'').trim();delete data['x'+i];if(v)ex.push(fd.label+': '+v)});data.extra=ex.join('\n')}
  const g=$('#go');g.disabled=true;
  if(PAY){
@@ -346,7 +361,7 @@ $('#form').addEventListener('submit',async e=>{e.preventDefault();const f=e.targ
  try{
   if(C.endpoint){await fetch(C.endpoint,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(data)})}
   else{await new Promise(r=>setTimeout(r,700));console.log('DEMO submit',data)}
-  f.style.display='none';$('#done').style.display='block';$('#done').scrollIntoView({block:'center'});
+  f.style.display='none';$('#done').style.display='block';$('#done').scrollIntoView({block:'center'});if(C.endpoint)window.__track({ga:'generate_lead',fb:'Lead'},{});
   if(!C.endpoint)toast('미리보기입니다. 실제로 저장되지 않았어요.')
  }catch(err){g.disabled=false;g.textContent=C.submitText||'신청하기';er.textContent='접수에 실패했습니다. 잠시 후 다시 시도해 주십시오.';er.style.display='block'}
 });

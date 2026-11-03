@@ -18,6 +18,10 @@ window.CONFIG = {
   // 결제: enabled=true 면 신청서에 결제 수단(카드·간편결제)이 나타나고, 결제 후 구매자·판매자 모두에게 확인 메일이 갑니다.
   // clientKey: test_ 로 시작하면 테스트(돈 안 빠짐). 실제 운영은 토스페이먼츠 계약 후 live_ck_ 키로 교체.
   payment: { enabled: true, clientKey: "test_gck_docs_Ovk5rk1EwkEbP0W43n07xlzm" },
+  // 검색·공유 미리보기, 방문자 분석, 문의 버튼 (모두 비워 두면 쓰지 않습니다)
+  seo: { desc: "", image: "", url: "" },
+  track: { ga4: "", meta: "" },
+  contact: { kakao: "", phone: "" },
   showCount: true,
   capacity: null,        // 실제 정원이 있을 때만 숫자
   demoCount: 0,          // 미리보기에서만 보이는 표시 (endpoint 없을 때)
@@ -60,7 +64,8 @@ window.CONFIG = {
     rep: "",          // 대표자명 (사용자 확인 후 입력)
     regno: "",        // 사업자등록번호
     salesno: "",      // 통신판매업 신고번호
-    contact: "",      // 문의 채널
+    contact: "",
+    addr: "",      // 문의 채널
     note: "이 화면은 미리보기이며 실제 운영 전 사업자 정보를 채웁니다."
   }
 };
