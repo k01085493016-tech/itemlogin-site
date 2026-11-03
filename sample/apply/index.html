@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>신청 페이지</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--n0:#070a1c;--n1:#0d1233;--n2:#161d4a;--gold:#e0bb70;--gold2:#fff1c9;--txt:#ece8f7;--sub:#a5a6c8;--line:rgba(224,187,112,.28);--ok:#37d6a0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--n0);color:var(--txt);line-height:1.8;font-size:16.5px;word-break:keep-all;overflow-wrap:break-word;overflow-x:clip}
+#stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+main{position:relative;z-index:2;max-width:520px;margin:0 auto;background:linear-gradient(180deg,rgba(7,10,28,.82),rgba(13,18,51,.9));box-shadow:0 0 80px rgba(0,0,0,.6);min-height:100vh}
+h1,h2,h3,.serif{font-family:'Noto Serif KR',serif;line-height:1.45}
+.gold{background:linear-gradient(100deg,#b88a3b,var(--gold2) 45%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+section{padding:56px 22px;position:relative}
+.eyebrow{display:block;color:var(--gold);font-size:12px;font-weight:700;letter-spacing:.3em;margin-bottom:10px}
+h2{font-size:26px;font-weight:900;margin-bottom:10px}
+.lead{color:var(--sub);font-size:15.5px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+/* top banner */
+.skip{position:absolute;left:-999px;top:0;background:#fff;color:#000;padding:8px 14px;z-index:99}.skip:focus{left:8px;top:8px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.topbar{position:sticky;top:0;z-index:40;background:linear-gradient(90deg,#3a2a08,#6b4a12,#3a2a08);color:var(--gold2);text-align:center;font-size:13.5px;padding:9px 12px;display:none;backdrop-filter:blur(6px)}
+.topbar b{font-family:'Noto Serif KR';letter-spacing:.04em}
+/* hero */
+.hero{padding:70px 22px 46px;text-align:center;overflow:hidden}
+.cosmos{position:relative;width:210px;height:210px;margin:0 auto 26px}
+.moon{position:absolute;left:50%;top:50%;width:46%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 35% 30%,#fffaf0,#f0d28a 55%,#b88a3b);box-shadow:0 0 50px 12px rgba(224,187,112,.4),0 0 110px 34px rgba(224,187,112,.16);animation:br 7s ease-in-out infinite}
+.moon::after{content:"";position:absolute;left:24%;top:-8%;width:100%;height:100%;border-radius:50%;background:#0f1538}
+@keyframes br{50%{box-shadow:0 0 70px 20px rgba(224,187,112,.5),0 0 130px 44px rgba(224,187,112,.2)}}
+.ring{position:absolute;inset:0;animation:sp 60s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.ring svg{width:100%;height:100%}
+.el{position:absolute;width:17%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font-family:'Noto Serif KR';font-weight:900;font-size:15px;color:#0b0e26;background:var(--c);box-shadow:0 0 16px var(--c);transform:translate(-50%,-50%)}
+.el span{animation:sp 60s linear infinite reverse}
+.hero .tag{display:inline-block;border:1px solid var(--line);color:var(--gold);padding:4px 14px;border-radius:999px;font-size:12px;letter-spacing:.14em;margin-bottom:18px}
+.hero h1{font-size:34px;font-weight:900;margin-bottom:14px}
+.hero h1 span{display:block;opacity:0;transform:translateY(18px);animation:up .9s forwards}
+.hero h1 span:nth-child(2){animation-delay:.2s}
+@keyframes up{to{opacity:1;transform:none}}
+.hero p{color:var(--sub)}
+/* count */
+.countbox{display:none;margin:22px auto 0;max-width:360px;border:1px solid var(--line);border-radius:14px;padding:12px 16px;background:rgba(224,187,112,.06);font-size:14px}
+.countbox b{color:var(--gold2);font-family:'Noto Serif KR';font-size:19px}
+.timer{display:none;margin:18px auto 0;max-width:360px}
+.timer .t{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.timer .t div{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:12px;padding:8px 0;text-align:center}
+.timer .t b{display:block;font-family:'Noto Serif KR';font-size:24px;color:var(--gold2);line-height:1.2}
+.timer .t span{font-size:11px;color:var(--sub)}
+.timer small{display:block;text-align:center;color:var(--sub);font-size:12px;margin-bottom:8px}
+/* worries */
+.wr{display:grid;gap:12px;margin-top:22px}
+.w{display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:center;text-align:left;background:rgba(22,29,74,.55);border:1px solid var(--line);border-radius:18px;padding:16px;color:var(--txt);font:inherit;cursor:pointer;transition:.3s;width:100%}
+.w:hover,.w.on{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 12px 30px rgba(224,187,112,.12)}
+.w .ic{width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2a3480,#0b0f2c);border:1px solid var(--gold);display:grid;place-items:center;font-family:'Noto Serif KR';font-size:22px;font-weight:900;color:var(--gold2)}
+.w b{display:block;font-family:'Noto Serif KR';font-size:18px}
+.w span{color:var(--sub);font-size:14px;display:block;line-height:1.55}
+.w.on::after{content:"선택됨 · 신청서에 담깁니다";display:block;color:var(--ok);font-size:12px;margin-top:4px}
+/* process */
+.pr{margin-top:22px;display:grid;gap:0}
+.pr div{display:grid;grid-template-columns:44px 1fr;gap:14px;padding-bottom:20px;position:relative}
+.pr div::before{content:"";position:absolute;left:21px;top:44px;bottom:0;width:1px;background:repeating-linear-gradient(var(--gold) 0 4px,transparent 4px 9px);opacity:.5}
+.pr div:last-child::before{display:none}
+.pr i{font-style:normal;width:44px;height:44px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;font-family:'Noto Serif KR';font-weight:900;color:var(--gold2);background:var(--n1)}
+.pr b{display:block}
+.pr span{color:var(--sub);font-size:14.5px}
+/* products */
+.pd{display:grid;gap:14px;margin-top:22px}
+.p{position:relative;border-radius:20px;padding:2px;background:linear-gradient(160deg,rgba(224,187,112,.5),rgba(224,187,112,.08) 40%,rgba(224,187,112,.35))}
+.p.hot{background:linear-gradient(160deg,#f0d28a,#b88a3b 50%,#f0d28a);box-shadow:0 14px 40px rgba(224,187,112,.22)}
+.p .in{border-radius:18px;background:linear-gradient(170deg,#141b46,#0a0e2a);padding:22px 20px;overflow:hidden;position:relative}
+.rb{position:absolute;right:-34px;top:16px;background:var(--gold);color:#1a1530;font-size:11px;font-weight:700;padding:3px 40px;transform:rotate(38deg)}
+.p h3{font-size:19px}
+.p .d{color:var(--sub);font-size:14px}
+.p .pc{font-family:'Noto Serif KR';font-weight:900;font-size:32px;color:var(--gold2);margin:8px 0}
+.p .pc s{font-size:15px;font-weight:400;color:#7f81a8;margin-right:8px}
+.p .pc small{font-size:14px;font-weight:400;color:var(--sub)}
+.p ul{list-style:none;font-size:14.5px}
+.p li{padding:4px 0 4px 20px;position:relative;border-top:1px solid rgba(255,255,255,.06)}
+.p li::before{content:"◈";position:absolute;left:0;color:var(--gold);font-size:11px;top:8px}
+/* report/faq/reviews */
+.rv{display:grid;gap:12px;margin-top:20px}
+.rv div{background:rgba(22,29,74,.55);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.rv .h{display:flex;justify-content:space-between;color:var(--sub);font-size:12.5px;margin-bottom:6px}
+.rv .st{color:var(--gold)}
+details{background:rgba(13,18,51,.8);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-top:10px}
+details[open]{border-color:var(--gold)}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:8px}
+summary::after{content:"＋";color:var(--gold)}
+details[open] summary::after{content:"－"}
+details p{margin-top:8px;color:var(--sub);font-size:15px}
+.refund{margin-top:20px;border:1.5px solid var(--gold);border-radius:14px;padding:16px 18px;background:linear-gradient(160deg,rgba(224,187,112,.1),transparent);font-size:14.5px}
+.refund b{font-family:'Noto Serif KR';color:var(--gold2)}
+/* form */
+.form{background:rgba(22,29,74,.6);border:1px solid var(--line);border-radius:22px;padding:24px 20px;margin-top:20px}
+.form label.l{display:block;font-weight:700;font-size:14px;margin:16px 0 6px}
+.form label.l i{color:#ff7a7a;font-style:normal}
+.seg{display:flex;gap:8px}
+.seg label{flex:1;position:relative}
+.seg input{position:absolute;opacity:0}
+.seg span{display:block;text-align:center;padding:12px;border:1.5px solid rgba(255,255,255,.2);border-radius:12px;cursor:pointer;transition:.2s}
+.seg input:checked+span{background:var(--gold);border-color:var(--gold);color:#1a1530;font-weight:700}
+.f{width:100%;font:inherit;font-size:16px;padding:13px 14px;border-radius:12px;border:1.5px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff}
+.f:focus{outline:0;border-color:var(--gold)}
+select.f option{color:#111}
+.row{display:flex;gap:8px;align-items:center}
+.row>*{flex:1}
+.row .fix{flex:0 0 auto;color:var(--sub)}
+.hint{font-size:12.5px;color:var(--sub);margin-top:6px}
+.comp{display:none;margin-top:16px;padding:16px;border:1px dashed rgba(224,187,112,.5);border-radius:14px}
+.comp.on{display:block}
+.addc{width:100%;margin-top:16px;padding:13px;border-radius:12px;border:1.5px dashed var(--line);background:transparent;color:var(--gold);font:700 15px 'Noto Sans KR';cursor:pointer}
+.agree{margin-top:18px;border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px 14px}
+.agree label{display:flex;gap:10px;font-size:14px;align-items:flex-start}
+.agree p{display:none;font-size:12.5px;color:var(--sub);margin-top:8px}
+.agree.o p{display:block}
+.agree button{background:none;border:0;color:var(--gold);font:12.5px 'Noto Sans KR';cursor:pointer;margin-top:6px}
+.payb{margin-top:20px;border:1px solid var(--line);border-radius:16px;padding:14px 12px;background:rgba(255,255,255,.96);color:#111;display:none}
+.payb.on{display:block}
+.payb .ptitle{font-weight:700;color:#111;margin:2px 6px 8px;font-size:15px}
+.testbadge{display:none;margin:16px 0 0;padding:9px 12px;border-radius:10px;background:#fff4d6;color:#6b4a00;font-size:13px;font-weight:700}
+.testbadge.on{display:block}
+.paynote{font-size:12.5px;color:var(--sub);margin-top:10px}
+.pdone{display:none;text-align:center;padding:30px 10px}
+.pdone b.t{font-family:'Noto Serif KR',serif;font-size:22px;color:var(--gold2);display:block;margin-bottom:8px}
+.pdone .rows{max-width:340px;margin:14px auto;text-align:left;font-size:14.5px}
+.pdone .rows div{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,.18)}
+.pdone a{color:var(--gold)}
+.go{width:100%;margin-top:20px;padding:17px;border-radius:14px;border:0;background:linear-gradient(120deg,#c9a052,var(--gold2),#c9a052);background-size:200% 100%;color:#1a1530;font:900 18px 'Noto Sans KR';cursor:pointer;box-shadow:0 10px 30px rgba(224,187,112,.3);transition:.4s}
+.go:hover{background-position:100% 0}
+.go:disabled{opacity:.6}
+.err{color:#ff8a8a;font-size:13px;margin-top:6px;display:none}
+.done{display:none;text-align:center;padding:30px 10px}
+.done b{font-family:'Noto Serif KR';font-size:22px;color:var(--gold2);display:block;margin-bottom:8px}
+/* biz */
+footer{padding:34px 22px 120px;font-size:12px;color:#7f81a8;line-height:1.7;border-top:1px solid rgba(224,187,112,.14)}
+.fab{position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(90px);z-index:45;border:0;padding:15px 30px;border-radius:999px;background:linear-gradient(120deg,#c9a052,var(--gold2));color:#1a1530;font:900 17px 'Noto Sans KR';box-shadow:0 12px 34px rgba(0,0,0,.5),0 0 0 0 rgba(224,187,112,.6);cursor:pointer;transition:transform .5s;animation:pl 2.4s infinite}
+.fab.on{transform:translateX(-50%)}
+@keyframes pl{70%{box-shadow:0 12px 34px rgba(0,0,0,.5),0 0 0 16px rgba(224,187,112,0)}}
+.toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,30px);background:#fff;color:#111;padding:12px 22px;border-radius:12px;opacity:0;pointer-events:none;transition:.4s;z-index:100;font-weight:700;font-size:14px;max-width:90%}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.hero h1 span{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+<main id="app"></main>
+<button class="fab" id="fab">신청서 작성하기</button>
+<div class="toast" id="toast"></div>
+<script src="config.js"></script>
+<script>
+const C=window.CONFIG;const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+document.title=C.pageTitle||C.brand;
+const DL=C.deadline?new Date(C.deadline).getTime():null,EXPIRED=DL!==null&&Date.now()>=DL;
+[['og:title',C.pageTitle||C.brand],['og:description',(C.hero&&C.hero.sub)||''],['og:type','website']].forEach(([p,v])=>{const m=document.createElement('meta');m.setAttribute('property',p);m.content=v;document.head.appendChild(m)});
+const md=document.createElement('meta');md.name='description';md.content=(C.hero&&C.hero.sub)||'';document.head.appendChild(md);
+const sijin=[['unknown','모름 / 선택 안함'],['자시','자시 (子時) 23:30~01:29'],['축시','축시 (丑時) 01:30~03:29'],['인시','인시 (寅時) 03:30~05:29'],['묘시','묘시 (卯時) 05:30~07:29'],['진시','진시 (辰時) 07:30~09:29'],['사시','사시 (巳時) 09:30~11:29'],['오시','오시 (午時) 11:30~13:29'],['미시','미시 (未時) 13:30~15:29'],['신시','신시 (申時) 15:30~17:29'],['유시','유시 (酉時) 17:30~19:29'],['술시','술시 (戌時) 19:30~21:29'],['해시','해시 (亥時) 21:30~23:29']];
+const yr=new Date().getFullYear();
+const opt=(a,ph)=>`<option value="">${ph}</option>`+a.map(([v,t])=>`<option value="${esc(v)}">${esc(t)}</option>`).join('');
+const years=Array.from({length:yr-1926},(_,i)=>[yr-i,(yr-i)+'년']),months=Array.from({length:12},(_,i)=>[i+1,(i+1)+'월']),days=Array.from({length:31},(_,i)=>[i+1,(i+1)+'일']);
+const birth=(p)=>`<div class="row"><select class="f" name="${p}y" ${p?'':'required'}>${opt(years,'년도')}</select><select class="f" name="${p}m" ${p?'':'required'}>${opt(months,'월')}</select><select class="f" name="${p}d" ${p?'':'required'}>${opt(days,'일')}</select></div>
+<div class="seg" style="margin-top:8px"><label><input type="radio" name="${p}cal" value="양력" checked><span>양력</span></label><label><input type="radio" name="${p}cal" value="음력"><span>음력</span></label><label><input type="radio" name="${p}cal" value="윤달"><span>윤달</span></label></div>
+<label class="l">태어난 시간 <i>*</i></label><select class="f" name="${p}time" ${p?'':'required'}>${opt(sijin,'시간 선택')}</select>`;
+const comp=`<div class="comp" id="comp"><b class="serif" style="color:var(--gold2)">동반자 정보</b>
+<label class="l">이름 <i>*</i></label><input class="f" name="c_name" placeholder="이름">
+<label class="l">성별</label><div class="seg"><label><input type="radio" name="c_sex" value="남성" checked><span>남성</span></label><label><input type="radio" name="c_sex" value="여성"><span>여성</span></label></div>
+<label class="l">생년월일 <i>*</i></label>${birth('c_')}</div>`;
+const tz=(s)=>String(s).padStart(2,'0');
+
+// render
+// 마감이 지나면 쿠폰가 대신 평소 가격을 보여 줍니다 (끝난 할인가를 광고하지 않기 위함)
+const prods=(C.products||[]).map(p=>EXPIRED?Object.assign({},p,{price:p.priceAfter||p.listPrice||p.price,listPrice:null,ribbon:'',bullets:(p.bullets||[]).filter(b=>!/쿠폰/.test(b))}):p);
+$('#app').innerHTML=`
+<a href="#apply" class="skip">신청서로 건너뛰기</a><div class="topbar" id="topbar"></div>
+<section class="hero"><div class="cosmos" aria-hidden="true"><div class="ring"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="rgba(224,187,112,.4)" stroke-width=".3" stroke-dasharray="1 2"/><polygon points="50,6 92,37 76,86 24,86 8,37" fill="none" stroke="rgba(224,187,112,.4)" stroke-width=".3"/></svg>
+<div class="el" style="--c:#6fcf97;left:50%;top:8%"><span>木</span></div><div class="el" style="--c:#ff6b57;left:92%;top:38%"><span>火</span></div><div class="el" style="--c:#f2c94c;left:76%;top:90%"><span>土</span></div><div class="el" style="--c:#e8e8f0;left:24%;top:90%"><span>金</span></div><div class="el" style="--c:#5aa7ff;left:8%;top:38%"><span>水</span></div></div><div class="moon"></div></div>
+<span class="tag">${esc(C.hero.tag)}</span>
+<h1><span>${esc(C.hero.line1)}</span><span class="gold">${esc(C.hero.line2)}</span></h1>
+<p>${esc(C.hero.sub)}</p>
+<div class="timer" id="timer"><small id="tlabel"></small><div class="t"><div><b id="td">00</b><span>일</span></div><div><b id="th">00</b><span>시간</span></div><div><b id="tm">00</b><span>분</span></div><div><b id="ts">00</b><span>초</span></div></div></div>
+<div class="countbox" id="countbox"></div>
+</section>
+${C.worries&&C.worries.length?`<section><span class="eyebrow">CONCERN</span><h2 class="reveal">${esc(C.worriesTitle||'어떤 점이 궁금하십니까')}</h2><p class="lead reveal">${esc(C.worriesSub||'')}</p><div class="wr reveal">${C.worries.map((w,i)=>`<button type="button" class="w" data-i="${i}"><div class="ic">${esc(w.mark)}</div><div><b>${esc(w.title)}</b><span>${esc(w.q)}</span></div></button>`).join('')}</div></section>`:''}
+${C.process&&C.process.length?`<section><span class="eyebrow">PROCESS</span><h2 class="reveal">${esc(C.processTitle||'이렇게 진행됩니다')}</h2><div class="pr reveal">${C.process.map((p,i)=>`<div><i>${['一','二','三','四','五'][i]}</i><p><b>${esc(p.t)}</b><span>${esc(p.d)}</span></p></div>`).join('')}</div></section>`:''}
+<section id="products"><span class="eyebrow">PRODUCTS</span><h2 class="reveal">${esc(C.productsTitle||'원하는 깊이로 고르십시오')}</h2><div class="pd reveal">${prods.map(p=>`<div class="p${p.hot?' hot':''}"><div class="in">${p.ribbon?`<span class="rb">${esc(p.ribbon)}</span>`:''}<h3>${esc(p.name)}</h3><div class="d">${esc(p.desc)}</div><div class="pc">${p.listPrice?`<s>${Number(p.listPrice).toLocaleString()}원</s>`:''}${Number(p.price).toLocaleString()}<small> 원</small></div><ul>${(p.bullets||[]).map(b=>`<li>${esc(b)}</li>`).join('')}</ul></div></div>`).join('')}</div>${C.productNote?`<p class="hint">${esc(C.productNote)}</p>`:''}</section>
+${C.reviews&&C.reviews.length?`<section><span class="eyebrow">REVIEWS</span><h2 class="reveal">받아 보신 분들의 말씀</h2><div class="rv reveal">${C.reviews.map(r=>`<div><div class="h"><span>${esc(r.name)} · ${esc(r.date)}</span><span class="st">${'★'.repeat(r.stars||5)}</span></div>${esc(r.text)}</div>`).join('')}</div></section>`:''}
+<section id="apply"><span class="eyebrow">APPLY</span><h2 class="reveal">신청서를 작성해 주십시오</h2><p class="lead reveal">${esc(C.applyLead||'')}</p>
+<form class="form reveal" id="form" novalidate>
+<label class="l">성별 <i>*</i></label><div class="seg"><label><input type="radio" name="sex" value="남성" checked><span>남성</span></label><label><input type="radio" name="sex" value="여성"><span>여성</span></label></div>
+<label class="l">이름 <i>*</i></label><input class="f" name="name" placeholder="홍길동" required>
+<label class="l">생년월일 <i>*</i></label>${birth('')}
+<div class="hint">정확한 시간을 모르시면 '모름'을 선택해 주십시오. 모름 선택 시 정오(오시) 기준으로 작성됩니다.</div>
+<label class="l">연락처 <i>*</i></label><div class="row"><span class="fix">010</span><input class="f" name="p2" inputmode="numeric" maxlength="4" placeholder="0000" required><input class="f" name="p3" inputmode="numeric" maxlength="4" placeholder="0000" required></div>
+<label class="l">이메일 <i>*</i></label><div class="row"><input class="f" name="em" placeholder="example" required><span class="fix">@</span><select class="f" name="ed" id="ed"><option value="">선택</option><option>naver.com</option><option>gmail.com</option><option>daum.net</option><option>hanmail.net</option><option>kakao.com</option><option value="__c">직접 입력</option></select></div><input class="f" id="edc" placeholder="도메인 직접 입력 (예: company.co.kr)" style="display:none;margin-top:8px">
+<div class="hint">결과는 이메일로 보내 드립니다.</div>
+<label class="l">상품 선택 <i>*</i></label><select class="f" name="product" id="psel" required><option value="">상품을 선택해 주십시오</option>${prods.map(p=>`<option value="${esc(p.id)}" data-two="${p.two?1:0}">${esc(p.name)} (${Number(p.price).toLocaleString()}원)</option>`).join('')}</select>
+<label class="l">궁금하신 점</label><div class="hint" style="margin:0 0 6px">위에서 고르신 고민이 아래에 자동으로 담깁니다. 자유롭게 고쳐 쓰실 수 있습니다.</div><textarea class="f" name="memo" rows="4" id="memo" placeholder="궁금하신 점을 상세히 적어 주십시오. (결혼 여부, 연애 여부 등)"></textarea>
+<button class="addc" type="button" id="addc">＋ 동반자 추가</button>${comp}
+<div class="agree" id="agree"><label><input type="checkbox" name="agree" required><span>개인정보 수집 및 이용에 동의합니다. (필수)</span></label><button type="button" id="agt">수집·이용 내용 자세히 보기 ▾</button><p>${esc(C.consent)}</p></div>
+${C.payment&&C.payment.enabled?`<div class="testbadge" id="testbadge">테스트 결제 모드입니다. 실제로 돈이 빠져나가지 않습니다.</div><div class="payb" id="payb"><div class="ptitle">결제 수단 선택</div><div id="pay-methods"></div><div id="pay-agree"></div></div><div class="paynote" id="paynote">결제 수단은 카드와 간편결제(토스페이·카카오페이·네이버페이 등)를 지원합니다. 결제가 끝나면 입력하신 이메일로 확인 메일이 발송됩니다.</div>`:''}
+<input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0;width:0" aria-hidden="true">
+<div class="err" id="err" role="alert"></div>
+<button class="go" type="submit" id="go">${esc(C.submitText||'신청하기')}</button>
+</form>
+<div class="pdone" id="pdone"><b class="t" id="pd-title">결제가 완료되었습니다</b><div class="rows" id="pd-rows"></div><span style="color:var(--sub)" id="pd-msg"></span></div>
+<div class="done" id="done"><b>신청이 접수되었습니다</b><span style="color:var(--sub)">${esc(C.doneText||'')}</span></div>
+</section>
+${C.faq&&C.faq.length?`<section><span class="eyebrow">FAQ</span><h2 class="reveal">자주 묻는 질문</h2>${C.faq.map(f=>`<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}${C.refund?`<div class="refund reveal"><b>환불 안내</b><br>${esc(C.refund)}</div>`:''}</section>`:''}
+<footer>${esc(C.business.name)}${C.business.rep?' · 대표 '+esc(C.business.rep):''}<br>${C.business.regno?'사업자등록번호 '+esc(C.business.regno)+'<br>':''}${C.business.salesno?'통신판매업 신고번호 '+esc(C.business.salesno)+'<br>':''}${C.business.contact?'문의 '+esc(C.business.contact)+'<br>':''}${esc(C.business.note||'')}</footer>`;
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+$$('.reveal').forEach(e=>io.observe(e));
+// stars
+const cv=$('#stars'),cx=cv.getContext('2d');let W,H,S=[],sh=null;
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight;S=Array.from({length:Math.round(W*H/9000)},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.2+.2,p:Math.random()*6.28,s:Math.random()*.02+.005}))}
+rs();addEventListener('resize',rs);
+(function d(){cx.clearRect(0,0,W,H);S.forEach(s=>{s.p+=s.s;cx.globalAlpha=.3+.7*Math.abs(Math.sin(s.p));cx.fillStyle='#fff';cx.beginPath();cx.arc(s.x,s.y,s.r,0,6.28);cx.fill()});cx.globalAlpha=1;if(!sh&&Math.random()<.004)sh={x:Math.random()*W*.8,y:Math.random()*H*.4,l:0};if(sh){sh.l++;cx.strokeStyle=`rgba(255,241,201,${Math.max(1-sh.l/40,0)})`;cx.lineWidth=1.3;cx.beginPath();cx.moveTo(sh.x+sh.l*9,sh.y+sh.l*4.5);cx.lineTo(sh.x+sh.l*9-70,sh.y+sh.l*4.5-35);cx.stroke();if(sh.l>40)sh=null}requestAnimationFrame(d)})();
+
+// REAL deadline timer: shown only when CONFIG.deadline is a real date
+if(C.deadline&&!EXPIRED){const end=DL;$('#timer').style.display='block';$('#tlabel').textContent=C.deadlineLabel||'마감까지 남은 시간';
+ const tb=$('#topbar');if(C.banner){tb.style.display='block';tb.innerHTML=C.banner}
+ (function tick(){let l=end-Date.now();if(l<=0){$('#timer').innerHTML='<small>마감되었습니다</small>';if(tb)tb.style.display='none';return}const s=Math.floor(l/1000);$('#td').textContent=tz(Math.floor(s/86400));$('#th').textContent=tz(Math.floor(s%86400/3600));$('#tm').textContent=tz(Math.floor(s%3600/60));$('#ts').textContent=tz(s%60);setTimeout(tick,1000)})()}
+// REAL count: shown only when endpoint returns a real number
+if(C.showCount&&C.endpoint){fetch(C.endpoint+'?action=count').then(r=>r.json()).then(j=>{if(typeof j.count==='number'){const b=$('#countbox');b.style.display='block';b.innerHTML=C.capacity?`현재 접수 <b>${j.count}</b>건 / 정원 ${C.capacity}명`:`지금까지 접수 <b>${j.count}</b>건`}}).catch(()=>{})}
+else if(C.demoCount!=null){const b=$('#countbox');b.style.display='block';b.innerHTML=`<span style="color:var(--sub);font-size:12px">[미리보기 표시] 실제 운영에서는 접수 시트의 진짜 건수가 표시됩니다</span><br>지금까지 접수 <b>${C.demoCount}</b>건`}
+// worries -> memo
+const picked=new Set();
+$$('.w').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;b.classList.toggle('on');picked.has(i)?picked.delete(i):picked.add(i);const t=[...picked].map(k=>`[${C.worries[k].title}] ${C.worries[k].memo}`).join('\n');const m=$('#memo');if(!m.dataset.user)m.value=t});
+$('#memo').addEventListener('input',e=>e.target.dataset.user='1');
+// 동반자
+$('#addc').onclick=()=>{const c=$('#comp');const on=c.classList.toggle('on');$('#addc').textContent=on?'－ 동반자 삭제':'＋ 동반자 추가';c.querySelectorAll('[name^=c_]').forEach(x=>{if(x.tagName==='SELECT'||x.name==='c_name')x.required=on})};
+$('#psel').addEventListener('change',e=>{const o=e.target.selectedOptions[0];if(o&&o.dataset.two==='1'&&!$('#comp').classList.contains('on'))$('#addc').click()});
+$('#ed').onchange=e=>{$('#edc').style.display=e.target.value==='__c'?'block':'none'};
+$('#agt').onclick=()=>{$('#agree').classList.toggle('o')};
+// fab
+const fab=$('#fab');fab.onclick=()=>$('#apply').scrollIntoView();
+addEventListener('scroll',()=>{const a=$('#apply').getBoundingClientRect();fab.classList.toggle('on',scrollY>500&&a.top>innerHeight*.6)},{passive:true});
+const T0=Date.now();
+const toast=t=>{const e=$('#toast');e.textContent=t;e.classList.add('on');setTimeout(()=>e.classList.remove('on'),3200)};
+// ===== 결제 (토스페이먼츠 결제위젯) =====
+const PAY=C.payment&&C.payment.enabled?C.payment:null;
+let tossW=null,tossReady=null,curAmt=0;
+const won=v=>Number(v).toLocaleString('ko-KR')+'원';
+function loadSdk(){return new Promise((res,rej)=>{if(window.TossPayments)return res();const s=document.createElement('script');s.src='https://js.tosspayments.com/v2/standard';s.onload=res;s.onerror=()=>rej(new Error('sdk'));document.head.appendChild(s)})}
+async function showWidget(amount){
+ if(!PAY||!amount)return;curAmt=amount;$('#payb').classList.add('on');
+ if(PAY.clientKey.startsWith('test_'))$('#testbadge').classList.add('on');
+ if(!tossReady){tossReady=(async()=>{await loadSdk();const tp=window.TossPayments(PAY.clientKey);tossW=tp.widgets({customerKey:window.TossPayments.ANONYMOUS});await tossW.setAmount({currency:'KRW',value:amount});await Promise.all([tossW.renderPaymentMethods({selector:'#pay-methods',variantKey:PAY.variantKey||'DEFAULT'}),tossW.renderAgreement({selector:'#pay-agree',variantKey:PAY.agreeKey||'AGREEMENT'})])})().catch(e=>{tossReady=null;$('#err').textContent='결제창을 불러오지 못했습니다. 새로고침 후 다시 시도해 주십시오.';$('#err').style.display='block'})}
+ else{await tossReady;if(tossW)await tossW.setAmount({currency:'KRW',value:amount})}
+ const g=$('#go');if(g)g.textContent=won(amount)+' 결제하고 신청하기';
+}
+if(PAY){$('#psel').addEventListener('change',e=>{const p=prods.find(x=>x.id===e.target.value);if(p)showWidget(p.price);else{$('#payb').classList.remove('on');$('#go').textContent=C.submitText||'신청하기'}})}
+async function api(body){const r=await fetch(C.endpoint,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body)});return r.json()}
+function showPaid(j){const f=$('#form');if(f)f.style.display='none';const pb=$('#paynote');if(pb)pb.style.display='none';$('#pdone').style.display='block';
+ $('#pd-title').textContent=j.ok?'결제가 완료되었습니다':'결제를 완료하지 못했습니다';
+ $('#pd-rows').innerHTML=j.ok?['주문번호|'+esc(j.orderId),'상품|'+esc(j.orderName),'결제 금액|'+won(j.amount),'결제 수단|'+esc(j.method||'')].map(s=>{const [a,b]=s.split('|');return '<div><span>'+a+'</span><b style="font-size:14.5px;color:#fff;font-family:inherit">'+b+'</b></div>'}).join('')+(j.receiptUrl?'<div><span>영수증</span><a href="'+esc(j.receiptUrl)+'" target="_blank" rel="noopener">보기</a></div>':''):'';
+ $('#pd-msg').textContent=j.ok?(j.test?'[테스트 결제] 실제 결제가 아니며 금액이 빠져나가지 않았습니다. ':'')+'결제 확인 메일을 입력하신 이메일로 보냈습니다. 메일이 보이지 않으면 스팸함을 확인해 주십시오.':(j.message||'결제 정보를 확인하지 못했습니다. 이미 결제되었다면 이중 결제 없이 확인해 드리니 문의해 주십시오.');
+ $('#pdone').scrollIntoView({block:'center'})}
+(async()=>{if(!PAY)return;const q=new URLSearchParams(location.search);
+ if(q.get('paymentKey')&&q.get('orderId')){history.replaceState(null,'',location.pathname);$('#apply').scrollIntoView();$('#form').style.display='none';
+  try{const j=await api({action:'confirm',paymentKey:q.get('paymentKey'),orderId:q.get('orderId'),amount:Number(q.get('amount'))});showPaid(j)}catch(e){showPaid({ok:false,message:'결제 확인 중 오류가 발생했습니다. 결제는 완료되었을 수 있으니 문의해 주십시오.'})}}
+ else if(q.get('code')&&q.get('message')){history.replaceState(null,'',location.pathname);const er=$('#err');er.textContent='결제가 취소되었거나 실패했습니다. ('+q.get('message')+') 다시 시도해 주십시오.';er.style.display='block';$('#apply').scrollIntoView()}
+})();
+// submit
+$('#form').addEventListener('submit',async e=>{e.preventDefault();const f=e.target,er=$('#err');er.style.display='none';
+ if(f.website.value){return}
+ if(Date.now()-T0<4000){er.textContent='잠시 후 다시 눌러 주십시오.';er.style.display='block';return}
+ const bad=[...f.querySelectorAll('[required]')].find(x=>x.type==='checkbox'?!x.checked:!x.value);
+ if(bad){er.textContent=bad.type==='checkbox'?'개인정보 수집·이용에 동의해 주십시오.':'필수 항목을 모두 입력해 주십시오.';er.style.display='block';bad.focus&&bad.focus();return}
+ if(!/^\d{4}$/.test(f.p2.value)||!/^\d{4}$/.test(f.p3.value)){er.textContent='연락처를 숫자 4자리씩 입력해 주십시오.';er.style.display='block';return}
+ const vd=(y,m,d)=>{const x=new Date(+y,+m-1,+d);return x.getFullYear()==y&&x.getMonth()==m-1&&x.getDate()==d};
+ const badDate=(f.cal.value==='양력'&&!vd(f.y.value,f.m.value,f.d.value))||(f.c_name.value&&f.c_cal.value==='양력'&&!vd(f.c_y.value,f.c_m.value,f.c_d.value));
+ if(badDate){er.textContent='존재하지 않는 양력 날짜입니다. 생년월일을 다시 확인해 주십시오.';er.style.display='block';return}
+ const dom=f.ed.value==='__c'?$('#edc').value.trim():f.ed.value;if(!dom){er.textContent='이메일 도메인을 선택하거나 입력해 주십시오.';er.style.display='block';return}
+ const mail=f.em.value.trim()+'@'+dom;if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)){er.textContent='이메일 주소를 다시 확인해 주십시오.';er.style.display='block';return}
+ const data=Object.fromEntries(new FormData(f).entries());delete data.website;delete data.agree;data.agreed='동의';data.phone='010-'+f.p2.value+'-'+f.p3.value;data.email=f.em.value.trim()+'@'+dom;data.page=C.slug||location.pathname;data.ts=new Date().toISOString();
+ const g=$('#go');g.disabled=true;
+ if(PAY){
+  g.textContent='결제창 여는 중...';
+  try{
+   if(!C.endpoint)throw new Error('no endpoint');
+   const prep=await api(Object.assign({action:'prepare'},data));
+   if(!prep.ok)throw new Error(prep.message||'prepare');
+   await tossReady;if(tossW)await tossW.setAmount({currency:'KRW',value:prep.amount});
+   const base=location.origin+location.pathname;
+   await tossW.requestPayment({orderId:prep.orderId,orderName:prep.orderName,successUrl:base,failUrl:base,customerEmail:data.email,customerName:data.name,customerMobilePhone:data.phone.replace(/-/g,'')});
+  }catch(err){g.disabled=false;g.textContent=won(curAmt)+' 결제하고 신청하기';const m=String(err&&err.message||'');er.textContent=/USER_CANCEL|cancel|취소/i.test(m)?'결제를 취소하셨습니다. 다시 시도하시려면 결제 버튼을 눌러 주십시오.':(m&&!/^(prepare|no endpoint)$/.test(m)?m:'결제를 시작하지 못했습니다. 잠시 후 다시 시도해 주십시오.');er.style.display='block'}
+  return}
+ g.textContent='접수 중...';
+ try{
+  if(C.endpoint){await fetch(C.endpoint,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(data)})}
+  else{await new Promise(r=>setTimeout(r,700));console.log('DEMO submit',data)}
+  f.style.display='none';$('#done').style.display='block';$('#done').scrollIntoView({block:'center'});
+  if(!C.endpoint)toast('미리보기입니다. 실제로 저장되지 않았어요.')
+ }catch(err){g.disabled=false;g.textContent=C.submitText||'신청하기';er.textContent='접수에 실패했습니다. 잠시 후 다시 시도해 주십시오.';er.style.display='block'}
+});
+</script>
+</body>
+</html>
