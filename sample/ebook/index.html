@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>AI 직원 만들기 | 코딩 몰라도 클로드 코드로 부업 업무 자동화</title>
+<meta name="description" content="클로드 코드와 함께 반복 업무를 자동화하는 법을 따라 하며 배우는 전자책. A4 99쪽, 스타터 키트와 템플릿 포함.">
+<meta property="og:title" content="AI 직원 만들기">
+<meta property="og:description" content="코딩 몰라도 클로드 코드로 부업 업무 자동화하기">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f6f1e7;--ink:#1d2a26;--sub:#5a6a64;--em:#0f8a6a;--emd:#0a6a51;--coral:#ef6a54;--card:#fffdf8;--line:#e3dac8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{word-break:keep-all;overflow-wrap:break-word}
+body{font-family:'Noto Sans KR',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:0 22px}
+section{padding:72px 0}
+h1,h2,h3{line-height:1.3;letter-spacing:-.02em}
+h2{font-size:clamp(26px,4.4vw,36px);font-weight:900;margin-bottom:14px}
+.eyebrow{display:inline-block;font-size:14px;font-weight:700;color:var(--em);letter-spacing:.04em;margin-bottom:12px}
+.lead{color:var(--sub);font-size:18px;max-width:640px}
+.btn{display:inline-block;background:var(--em);color:#fff;font-weight:700;font-size:18px;padding:16px 30px;border-radius:999px;text-decoration:none;box-shadow:0 6px 0 var(--emd);transition:transform .1s,box-shadow .1s}
+.btn:hover{transform:translateY(2px);box-shadow:0 4px 0 var(--emd)}
+.btn.ghost{background:transparent;color:var(--em);box-shadow:inset 0 0 0 2px var(--em)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 2px var(--em)}
+nav{position:sticky;top:0;z-index:10;background:rgba(246,241,231,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+nav b{font-weight:900}
+nav a.mini{font-size:14px;font-weight:700;color:#fff;background:var(--coral);padding:8px 16px;border-radius:999px;text-decoration:none}
+/* hero */
+.hero{padding:64px 0 56px}
+.hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(34px,6.4vw,56px);font-weight:900;margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--coral)}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.hero small{display:block;margin-top:16px;color:var(--sub);font-size:14px}
+.badge{background:var(--card);border:2px solid var(--ink);border-radius:20px;padding:26px 24px;transform:rotate(2.5deg);box-shadow:8px 8px 0 var(--ink);max-width:330px;justify-self:center}
+.badge .top{height:10px;width:70px;background:var(--ink);border-radius:6px;margin:0 auto 18px}
+.badge .role{font-size:13px;color:var(--sub);font-weight:700}
+.badge .name{font-size:26px;font-weight:900;margin:2px 0 14px}
+.badge ul{list-style:none;font-size:15px}
+.badge li{padding:7px 0;border-top:1px dashed var(--line);display:flex;justify-content:space-between}
+.badge li span:last-child{color:var(--em);font-weight:700}
+/* pain */
+.pain{background:var(--ink);color:#f6f1e7}
+.pain h2{color:#fff}
+.pain ul{list-style:none;margin-top:26px;display:grid;gap:12px;max-width:680px}
+.pain li{padding:16px 20px;border-radius:14px;background:rgba(255,255,255,.07);font-size:18px}
+.pain li::before{content:"✓ ";color:#7be0bd;font-weight:900}
+.pain p.after{margin-top:26px;font-size:20px;font-weight:700;color:#ffd7cf}
+/* staff */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:34px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 24px}
+.card .n{width:38px;height:38px;border-radius:50%;background:var(--em);color:#fff;font-weight:900;display:grid;place-items:center;margin-bottom:14px}
+.card:nth-child(even) .n{background:var(--coral)}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{color:var(--sub);font-size:16px}
+/* steps */
+.steps{counter-reset:s;margin-top:34px;display:grid;gap:14px;max-width:760px}
+.step{counter-increment:s;display:grid;grid-template-columns:54px 1fr;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.step::before{content:counter(s);width:46px;height:46px;border-radius:12px;background:var(--ink);color:#fff;font-weight:900;font-size:20px;display:grid;place-items:center}
+.step b{display:block;font-size:18px}
+.step span{color:var(--sub);font-size:16px}
+/* contents */
+.pkg{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:34px}
+.pk{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:28px 24px;display:flex;flex-direction:column}
+.pk.hot{border-color:var(--em);position:relative}
+.pk .btn{text-align:center;padding:14px 20px;font-size:17px}
+.pk h3{font-size:22px;margin-bottom:6px}
+.pk .tag{font-size:14px;color:var(--em);font-weight:700;margin-bottom:12px}
+.pk ul{list-style:none;margin:8px 0 20px;flex:1}
+.pk li{padding:6px 0 6px 22px;position:relative;font-size:16px}
+.pk li::before{content:"•";position:absolute;left:4px;color:var(--coral);font-weight:900}
+.note{margin-top:20px;font-size:14px;color:var(--sub)}
+/* author */
+.author{background:#efe7d6}
+.stats{display:flex;gap:16px;flex-wrap:wrap;margin:26px 0 12px}
+.stat{background:var(--card);border-radius:16px;padding:18px 24px;min-width:150px;border:1px solid var(--line)}
+.stat b{display:block;font-size:34px;font-weight:900;color:var(--em);line-height:1.1}
+.stat span{font-size:14px;color:var(--sub)}
+.quote{margin-top:22px;border-left:5px solid var(--coral);padding:4px 0 4px 18px;font-size:20px;font-weight:700;max-width:640px}
+/* faq */
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:12px;max-width:780px}
+summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";font-size:24px;line-height:1;color:var(--em)}
+details[open] summary::after{content:"–"}
+details p{margin-top:12px;color:var(--sub);font-size:16px}
+/* honest */
+.honest{background:var(--card);border:2px dashed var(--coral);border-radius:20px;padding:28px;max-width:780px}
+.honest h3{font-size:20px;margin-bottom:10px;color:var(--coral)}
+.honest li{margin:6px 0 6px 20px;color:var(--ink);font-size:16px}
+/* final */
+.final{text-align:center;background:var(--em);color:#fff}
+.final h2{color:#fff}
+.final p{color:#d6f3e9;margin:0 auto 28px;max-width:560px}
+.final .btn{background:#fff;color:var(--emd);box-shadow:0 6px 0 rgba(0,0,0,.25)}
+footer{padding:36px 0 90px;font-size:13px;color:var(--sub);text-align:center}
+.sticky{display:none}
+@media(max-width:760px){
+ body{font-size:16px}
+ section{padding:54px 0}
+ .hero .grid{grid-template-columns:1fr}
+ .badge{transform:rotate(1.5deg);margin-top:8px}
+ .btn{width:100%;text-align:center}
+ .sticky{display:block;position:fixed;left:0;right:0;bottom:0;padding:10px 16px;background:rgba(246,241,231,.96);border-top:1px solid var(--line);z-index:20}
+ .sticky .btn{padding:13px;font-size:17px}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><b>AI 직원 만들기</b><a class="mini" href="#buy">구매하기</a></div></nav>
+
+<header class="hero"><div class="wrap grid">
+  <div>
+    <span class="eyebrow">전자책 · A4 99쪽 · 스타터 키트 포함</span>
+    <h1>코딩 몰라도,<br><em>AI 직원</em>은<br>뽑을 수 있어요</h1>
+    <p class="lead">클로드 코드에게 묻고, 고치고, 되돌리며 반복 업무를 맡기는 법. 필요한 건 질문하는 습관 하나예요.</p>
+    <div class="cta">
+      <a class="btn" href="#buy" id="cta1">크몽에서 자세히 보기</a>
+      <a class="btn ghost" href="#how">어떤 내용인지 먼저 보기</a>
+    </div>
+    <small>※ 수익이나 조회수는 보장하지 않습니다. 이 책은 자동화 방법을 알려 드립니다.</small>
+  </div>
+  <div class="badge" aria-hidden="true">
+    <div class="top"></div>
+    <div class="role">AI 직원 사원증</div>
+    <div class="name">신입 · 클로드</div>
+    <ul>
+      <li><span>주제 정하기</span><span>자동</span></li>
+      <li><span>영상·그림 모으기</span><span>자동</span></li>
+      <li><span>올리기</span><span>자동</span></li>
+      <li><span>결과 확인</span><span>사람</span></li>
+    </ul>
+  </div>
+</div></header>
+
+<section class="pain"><div class="wrap">
+  <span class="eyebrow" style="color:#7be0bd">이런 분께 맞아요</span>
+  <h2>하나라도 해당되면, 이 책이 맞습니다</h2>
+  <ul>
+    <li>부업은 하고 싶은데 매일 같은 작업에 시간이 다 가요</li>
+    <li>자동화는 개발자만 하는 거라고 생각했어요</li>
+    <li>수백만 원짜리 강의 대신 직접 해 보고 싶어요</li>
+    <li>무엇부터 물어봐야 할지 몰라서 시작을 못 했어요</li>
+  </ul>
+  <p class="after">시작은 "무엇을 맡길지" 적어 보는 것부터입니다.</p>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <span class="eyebrow">책의 핵심</span>
+  <h2>사람은 확인만, 일은 AI 직원이</h2>
+  <p class="lead">책에서는 하나의 일을 역할별로 나눠, 직원 한 명씩 맡기는 방식으로 설명해요.</p>
+  <div class="cards">
+    <div class="card"><div class="n">1</div><h3>기획 직원</h3><p>무엇을 만들지 후보를 받고, 점수표로 골라요.</p></div>
+    <div class="card"><div class="n">2</div><h3>재료 직원</h3><p>필요한 그림과 영상을 모아 정리해요.</p></div>
+    <div class="card"><div class="n">3</div><h3>제작 직원</h3><p>모은 재료로 결과물을 만들어요.</p></div>
+    <div class="card"><div class="n">4</div><h3>업로드 직원</h3><p>정해 둔 시간에 올려요.</p></div>
+    <div class="card"><div class="n">5</div><h3>점검 직원</h3><p>잘못되면 멈추도록 확인 규칙을 걸어요.</p></div>
+  </div>
+</div></section>
+
+<section style="background:#efe7d6"><div class="wrap">
+  <span class="eyebrow">진행 순서</span>
+  <h2>따라 하면 이렇게 진행돼요</h2>
+  <div class="steps">
+    <div class="step"><div><b>클로드 코드 설치</b><span>윈도우·맥 모두 안내해요. 한 줄 붙여넣기로 설치합니다.</span></div></div>
+    <div class="step"><div><b>맡길 반복 업무 5개 적기</b><span>워크시트에 채우면 내 설계도가 됩니다.</span></div></div>
+    <div class="step"><div><b>복사해서 쓰는 프롬프트로 첫 직원 만들기</b><span>질문 틀(4블록)이 들어 있어서 그대로 쓰면 돼요.</span></div></div>
+    <div class="step"><div><b>막히면 고치고, 안 되면 되돌리기</b><span>실패에서 나온 규칙 3가지를 알려 드려요.</span></div></div>
+  </div>
+</div></section>
+
+<section id="buy"><div class="wrap">
+  <span class="eyebrow">구성</span>
+  <h2>필요한 만큼 고르세요</h2>
+  <p class="lead">정확한 가격과 할인 조건은 크몽 상품 페이지에서 확인해 주세요.</p>
+  <div class="pkg">
+    <div class="pk"><h3>기본</h3><div class="tag">책으로 먼저 시작</div>
+      <ul><li>전자책 PDF (A4 99쪽)</li><li>복사용 프롬프트 모음</li><li>워크시트</li></ul>
+      <a class="btn ghost" href="#" data-kmong>크몽에서 보기</a></div>
+    <div class="pk hot"><h3>실전</h3><div class="tag">바로 따라 하기</div>
+      <ul><li>기본 구성 전체</li><li>스타터 키트 (윈도우·맥)</li><li>템플릿 모음</li></ul>
+      <a class="btn" href="#" data-kmong>크몽에서 보기</a></div>
+    <div class="pk"><h3>코칭</h3><div class="tag">막힐 때 물어보기</div>
+      <ul><li>실전 구성 전체</li><li>30일간 크몽 메시지 질문</li><li>원격 접속·설치 없음</li></ul>
+      <a class="btn ghost" href="#" data-kmong>크몽에서 보기</a></div>
+  </div>
+  <p class="note">패키지 구성은 크몽 상품 페이지의 안내가 기준입니다.</p>
+</div></section>
+
+<section class="author"><div class="wrap">
+  <span class="eyebrow">지은이</span>
+  <h2>Automatic AI System</h2>
+  <p class="lead">직접 만든 자동화 시스템으로 운영한 기록이에요.</p>
+  <div class="stats">
+    <div class="stat"><b>508편</b><span>2026.10.01~10.28<br>유튜브 업로드</span></div>
+    <div class="stat"><b>약 2일</b><span>첫 결과물까지</span></div>
+    <div class="stat"><b>1개월</b><span>시스템이 자리잡기까지</span></div>
+  </div>
+  <p style="font-size:14px;color:var(--sub)">※ 업로드 편수 기준이며 조회수·수익은 보장하지 않습니다.</p>
+  <p class="quote">"저는 특별한 사람이 아니었어요. 다른 점은 묻기를 멈추지 않았다는 것뿐입니다."</p>
+</div></section>
+
+<section><div class="wrap">
+  <span class="eyebrow">자주 묻는 질문</span>
+  <h2>구매 전에 확인하세요</h2>
+  <details><summary>코딩을 전혀 몰라도 되나요?</summary><p>네. 코드를 직접 쓰는 방식이 아니라, 클로드 코드에게 말로 요청하는 방식을 알려 드려요.</p></details>
+  <details><summary>비용이 더 드나요?</summary><p>클로드 코드는 유료 구독(Pro 이상)이 필요합니다. 무료 요금제로는 사용할 수 없어요. 구독 요금은 사용 시점의 공식 안내를 확인해 주세요.</p></details>
+  <details><summary>윈도우와 맥 모두 되나요?</summary><p>스타터 키트는 윈도우와 맥 모두 시험했습니다. 맥은 첫 실행 때 오른쪽 클릭 후 "열기"를 눌러야 해요.</p></details>
+  <details><summary>환불은 되나요?</summary><p>단순 변심은 다운로드 후 환불이 어렵습니다. 파일 불량이나 설명과 다른 경우에는 환불해 드려요.</p></details>
+  <details><summary>이 책으로 돈을 벌 수 있나요?</summary><p>수익은 보장하지 않습니다. 책은 반복 업무를 자동화하는 방법을 알려 드리고, 결과는 하는 분마다 달라요.</p></details>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="honest">
+    <h3>미리 알려 드려요</h3>
+    <ul>
+      <li>클로드 유료 구독이 필요합니다.</li>
+      <li>프로그램 화면과 설치 명령은 바뀔 수 있어요. 막히면 공식 안내를 함께 확인하세요.</li>
+      <li>결과(조회수·수익 등)는 보장하지 않습니다.</li>
+    </ul>
+  </div>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <h2>오늘 첫 직원을 뽑아 보세요</h2>
+  <p>맡길 일 하나만 정해 오시면 됩니다. 나머지는 책이 안내해요.</p>
+  <a class="btn" href="#" data-kmong>크몽에서 자세히 보기</a>
+</div></section>
+
+<footer><div class="wrap">
+  상호 아이템로그 · 통신판매업 신고 완료<br>
+  이 페이지는 샘플입니다. 버튼 링크는 상품 승인 후 연결됩니다.
+</div></footer>
+
+<div class="sticky"><a class="btn" href="#buy">크몽에서 자세히 보기</a></div>
+</body>
+</html>
