@@ -168,12 +168,20 @@ function __prep(cfg){const c=Object.assign({},cfg);
 async function __loadCfg(C0){
  if(!C0.endpoint||C0.remote===false)return C0;
  const key='cfg:'+(C0.slug||'x');
- try{const ctl=new AbortController(),t=setTimeout(()=>ctl.abort(),5000);
-  const r=await fetch(C0.endpoint+'?mode=config&_='+Date.now(),{signal:ctl.signal});clearTimeout(t);
-  const j=await r.json();
-  if(j&&j.ok&&j.cfg){try{localStorage.setItem(key,JSON.stringify(j.cfg))}catch(e){}return __merge(C0,__prep(j.cfg))}}catch(e){}
- try{const c=JSON.parse(localStorage.getItem(key)||'null');if(c)return __merge(C0,__prep(c))}catch(e){}
+ let cached=null;try{cached=localStorage.getItem(key)}catch(e){}
+ const fresh=()=>fetch(C0.endpoint+'?mode=config&_='+Date.now()).then(r=>r.json()).then(j=>{if(j&&j.ok&&j.cfg){const s=JSON.stringify(j.cfg);try{localStorage.setItem(key,s)}catch(e){}return s}return null}).catch(()=>null);
+ // 1) 저장된 값이 있으면 기다리지 않고 바로 그린다. 뒤에서 최신 값을 확인해 달라졌고 방문자가 아직 입력 전이면 한 번만 새로 불러온다.
+ if(cached){
+  fresh().then(s=>{if(s&&s!==cached&&!window.__touched&&!/paymentKey|code=/.test(location.search))location.reload()});
+  try{return __merge(C0,__prep(JSON.parse(cached)))}catch(e){}
+ }
+ // 2) 처음 방문: 시트 응답을 최대 1.5초만 기다리고, 늦으면 config.js 값으로 먼저 그린다. 늦게 온 값은 저장하고, 방문자가 입력 전이면 한 번 새로 불러와 최신 값으로 바꾼다.
+ const fp=fresh();
+ const first=await Promise.race([fp,new Promise(r=>setTimeout(()=>r(null),1500))]);
+ if(first){try{return __merge(C0,__prep(JSON.parse(first)))}catch(e){}}
+ fp.then(s=>{if(s&&!window.__touched&&!/paymentKey|code=/.test(location.search))location.reload()});
  return C0}
+addEventListener('input',()=>{window.__touched=1},true);
 </script>
 <script>
 async function __boot(){
