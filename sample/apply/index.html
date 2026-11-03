@@ -144,6 +144,7 @@ footer{padding:34px 22px 120px;font-size:12px;color:#7f81a8;line-height:1.7;bord
 .toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,30px);background:#fff;color:#111;padding:12px 22px;border-radius:12px;opacity:0;pointer-events:none;transition:.4s;z-index:100;font-weight:700;font-size:14px;max-width:90%}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.hero h1 span{opacity:1;transform:none}}
+#app:empty::before{content:"불러오는 중...";display:block;text-align:center;padding:40vh 0;color:rgba(255,255,255,.55);font-size:14px;letter-spacing:.05em}
 </style>
 </head>
 <body>
@@ -153,7 +154,27 @@ footer{padding:34px 22px 120px;font-size:12px;color:#7f81a8;line-height:1.7;bord
 <div class="toast" id="toast"></div>
 <script src="config.js"></script>
 <script>
-const C=window.CONFIG;const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+// 관리자 시트(구글 시트)의 내용을 불러와 config.js 기본값 위에 덮어씁니다. 못 불러오면 마지막으로 성공한 값, 그것도 없으면 config.js 값으로 뜹니다.
+function __esc(s){return String(s==null?'':s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
+function __merge(base,over){const o=Array.isArray(base)?base.slice():Object.assign({},base);
+ Object.keys(over).forEach(k=>{const v=over[k];
+  if(v&&typeof v==='object'&&!Array.isArray(v)&&base[k]&&typeof base[k]==='object'&&!Array.isArray(base[k]))o[k]=__merge(base[k],v);else o[k]=v});return o}
+function __prep(cfg){const c=Object.assign({},cfg);
+ if(typeof c.banner==='string'){const i=c.banner.indexOf(' · ');c.banner=c.banner?(i>0?'<b>'+__esc(c.banner.slice(0,i))+'</b> · '+__esc(c.banner.slice(i+3)):'<b>'+__esc(c.banner)+'</b>'):''}
+ return c}
+async function __loadCfg(C0){
+ if(!C0.endpoint||C0.remote===false)return C0;
+ const key='cfg:'+(C0.slug||'x');
+ try{const ctl=new AbortController(),t=setTimeout(()=>ctl.abort(),5000);
+  const r=await fetch(C0.endpoint+'?mode=config&_='+Date.now(),{signal:ctl.signal});clearTimeout(t);
+  const j=await r.json();
+  if(j&&j.ok&&j.cfg){try{localStorage.setItem(key,JSON.stringify(j.cfg))}catch(e){}return __merge(C0,__prep(j.cfg))}}catch(e){}
+ try{const c=JSON.parse(localStorage.getItem(key)||'null');if(c)return __merge(C0,__prep(c))}catch(e){}
+ return C0}
+</script>
+<script>
+async function __boot(){
+const C=await __loadCfg(window.CONFIG);const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
 document.title=C.pageTitle||C.brand;
 const DL=C.deadline?new Date(C.deadline).getTime():null,EXPIRED=DL!==null&&Date.now()>=DL;
@@ -300,6 +321,8 @@ $('#form').addEventListener('submit',async e=>{e.preventDefault();const f=e.targ
   if(!C.endpoint)toast('미리보기입니다. 실제로 저장되지 않았어요.')
  }catch(err){g.disabled=false;g.textContent=C.submitText||'신청하기';er.textContent='접수에 실패했습니다. 잠시 후 다시 시도해 주십시오.';er.style.display='block'}
 });
+}
+__boot();
 </script>
 </body>
 </html>
