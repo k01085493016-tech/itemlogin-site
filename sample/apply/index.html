@@ -7,14 +7,14 @@
 <title>신청 페이지</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--n0:#070a1c;--n1:#0d1233;--n2:#161d4a;--gold:#e0bb70;--gold2:#fff1c9;--txt:#ece8f7;--sub:#a5a6c8;--line:rgba(224,187,112,.28);--ok:#37d6a0}
+:root{--ar:224,187,112;--gold3:#b88a3b;--gold4:#f0d28a;--tb1:#3a2a08;--tb2:#6b4a12;--n0:#070a1c;--n1:#0d1233;--n2:#161d4a;--gold:#e0bb70;--gold2:#fff1c9;--txt:#ece8f7;--sub:#a5a6c8;--line:rgba(var(--ar),.28);--ok:#37d6a0}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:clip}
 body{font-family:'Noto Sans KR',sans-serif;background:var(--n0);color:var(--txt);line-height:1.8;font-size:16.5px;word-break:keep-all;overflow-wrap:break-word;overflow-x:clip}
 #stars{position:fixed;inset:0;z-index:0;pointer-events:none}
 main{position:relative;z-index:2;max-width:520px;margin:0 auto;background:linear-gradient(180deg,rgba(7,10,28,.82),rgba(13,18,51,.9));box-shadow:0 0 80px rgba(0,0,0,.6);min-height:100vh}
 h1,h2,h3,.serif{font-family:'Noto Serif KR',serif;line-height:1.45}
-.gold{background:linear-gradient(100deg,#b88a3b,var(--gold2) 45%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.gold{background:linear-gradient(100deg,var(--gold3),var(--gold2) 45%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
 section{padding:56px 22px;position:relative}
 .eyebrow{display:block;color:var(--gold);font-size:12px;font-weight:700;letter-spacing:.3em;margin-bottom:10px}
 h2{font-size:26px;font-weight:900;margin-bottom:10px}
@@ -24,14 +24,14 @@ h2{font-size:26px;font-weight:900;margin-bottom:10px}
 /* top banner */
 .skip{position:absolute;left:-999px;top:0;background:#fff;color:#000;padding:8px 14px;z-index:99}.skip:focus{left:8px;top:8px}
 :focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-.topbar{position:sticky;top:0;z-index:40;background:linear-gradient(90deg,#3a2a08,#6b4a12,#3a2a08);color:var(--gold2);text-align:center;font-size:13.5px;padding:9px 12px;display:none;backdrop-filter:blur(6px)}
+.topbar{position:sticky;top:0;z-index:40;background:linear-gradient(90deg,var(--tb1),var(--tb2),var(--tb1));color:var(--gold2);text-align:center;font-size:13.5px;padding:9px 12px;display:none;backdrop-filter:blur(6px)}
 .topbar b{font-family:'Noto Serif KR';letter-spacing:.04em}
 /* hero */
 .hero{padding:70px 22px 46px;text-align:center;overflow:hidden}
 .cosmos{position:relative;width:210px;height:210px;margin:0 auto 26px}
-.moon{position:absolute;left:50%;top:50%;width:46%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 35% 30%,#fffaf0,#f0d28a 55%,#b88a3b);box-shadow:0 0 50px 12px rgba(224,187,112,.4),0 0 110px 34px rgba(224,187,112,.16);animation:br 7s ease-in-out infinite}
+.moon{position:absolute;left:50%;top:50%;width:46%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 35% 30%,#fffaf0,var(--gold4) 55%,var(--gold3));box-shadow:0 0 50px 12px rgba(var(--ar),.4),0 0 110px 34px rgba(var(--ar),.16);animation:br 7s ease-in-out infinite}
 .moon::after{content:"";position:absolute;left:24%;top:-8%;width:100%;height:100%;border-radius:50%;background:#0f1538}
-@keyframes br{50%{box-shadow:0 0 70px 20px rgba(224,187,112,.5),0 0 130px 44px rgba(224,187,112,.2)}}
+@keyframes br{50%{box-shadow:0 0 70px 20px rgba(var(--ar),.5),0 0 130px 44px rgba(var(--ar),.2)}}
 .ring{position:absolute;inset:0;animation:sp 60s linear infinite}
 @keyframes sp{to{transform:rotate(360deg)}}
 .ring svg{width:100%;height:100%}
@@ -44,7 +44,7 @@ h2{font-size:26px;font-weight:900;margin-bottom:10px}
 @keyframes up{to{opacity:1;transform:none}}
 .hero p{color:var(--sub)}
 /* count */
-.countbox{display:none;margin:22px auto 0;max-width:360px;border:1px solid var(--line);border-radius:14px;padding:12px 16px;background:rgba(224,187,112,.06);font-size:14px}
+.countbox{display:none;margin:22px auto 0;max-width:360px;border:1px solid var(--line);border-radius:14px;padding:12px 16px;background:rgba(var(--ar),.06);font-size:14px}
 .countbox b{color:var(--gold2);font-family:'Noto Serif KR';font-size:19px}
 .timer{display:none;margin:18px auto 0;max-width:360px}
 .timer .t{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
@@ -55,7 +55,7 @@ h2{font-size:26px;font-weight:900;margin-bottom:10px}
 /* worries */
 .wr{display:grid;gap:12px;margin-top:22px}
 .w{display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:center;text-align:left;background:rgba(22,29,74,.55);border:1px solid var(--line);border-radius:18px;padding:16px;color:var(--txt);font:inherit;cursor:pointer;transition:.3s;width:100%}
-.w:hover,.w.on{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 12px 30px rgba(224,187,112,.12)}
+.w:hover,.w.on{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 12px 30px rgba(var(--ar),.12)}
 .w .ic{width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2a3480,#0b0f2c);border:1px solid var(--gold);display:grid;place-items:center;font-family:'Noto Serif KR';font-size:22px;font-weight:900;color:var(--gold2)}
 .w b{display:block;font-family:'Noto Serif KR';font-size:18px}
 .w span{color:var(--sub);font-size:14px;display:block;line-height:1.55}
@@ -70,8 +70,8 @@ h2{font-size:26px;font-weight:900;margin-bottom:10px}
 .pr span{color:var(--sub);font-size:14.5px}
 /* products */
 .pd{display:grid;gap:14px;margin-top:22px}
-.p{position:relative;border-radius:20px;padding:2px;background:linear-gradient(160deg,rgba(224,187,112,.5),rgba(224,187,112,.08) 40%,rgba(224,187,112,.35))}
-.p.hot{background:linear-gradient(160deg,#f0d28a,#b88a3b 50%,#f0d28a);box-shadow:0 14px 40px rgba(224,187,112,.22)}
+.p{position:relative;border-radius:20px;padding:2px;background:linear-gradient(160deg,rgba(var(--ar),.5),rgba(var(--ar),.08) 40%,rgba(var(--ar),.35))}
+.p.hot{background:linear-gradient(160deg,var(--gold4),var(--gold3) 50%,var(--gold4));box-shadow:0 14px 40px rgba(var(--ar),.22)}
 .p .in{border-radius:18px;background:linear-gradient(170deg,#141b46,#0a0e2a);padding:22px 20px;overflow:hidden;position:relative}
 .rb{position:absolute;right:-34px;top:16px;background:var(--gold);color:#1a1530;font-size:11px;font-weight:700;padding:3px 40px;transform:rotate(38deg)}
 .p h3{font-size:19px}
@@ -93,7 +93,7 @@ summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-cont
 summary::after{content:"＋";color:var(--gold)}
 details[open] summary::after{content:"－"}
 details p{margin-top:8px;color:var(--sub);font-size:15px}
-.refund{margin-top:20px;border:1.5px solid var(--gold);border-radius:14px;padding:16px 18px;background:linear-gradient(160deg,rgba(224,187,112,.1),transparent);font-size:14.5px}
+.refund{margin-top:20px;border:1.5px solid var(--gold);border-radius:14px;padding:16px 18px;background:linear-gradient(160deg,rgba(var(--ar),.1),transparent);font-size:14.5px}
 .refund b{font-family:'Noto Serif KR';color:var(--gold2)}
 /* form */
 .form{background:rgba(22,29,74,.6);border:1px solid var(--line);border-radius:22px;padding:24px 20px;margin-top:20px}
@@ -111,7 +111,7 @@ select.f option{color:#111}
 .row>*{flex:1}
 .row .fix{flex:0 0 auto;color:var(--sub)}
 .hint{font-size:12.5px;color:var(--sub);margin-top:6px}
-.comp{display:none;margin-top:16px;padding:16px;border:1px dashed rgba(224,187,112,.5);border-radius:14px}
+.comp{display:none;margin-top:16px;padding:16px;border:1px dashed rgba(var(--ar),.5);border-radius:14px}
 .comp.on{display:block}
 .addc{width:100%;margin-top:16px;padding:13px;border-radius:12px;border:1.5px dashed var(--line);background:transparent;color:var(--gold);font:700 15px 'Noto Sans KR';cursor:pointer}
 .agree{margin-top:18px;border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px 14px}
@@ -130,21 +130,24 @@ select.f option{color:#111}
 .pdone .rows{max-width:340px;margin:14px auto;text-align:left;font-size:14.5px}
 .pdone .rows div{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,.18)}
 .pdone a{color:var(--gold)}
-.go{width:100%;margin-top:20px;padding:17px;border-radius:14px;border:0;background:linear-gradient(120deg,#c9a052,var(--gold2),#c9a052);background-size:200% 100%;color:#1a1530;font:900 18px 'Noto Sans KR';cursor:pointer;box-shadow:0 10px 30px rgba(224,187,112,.3);transition:.4s}
+.go{width:100%;margin-top:20px;padding:17px;border-radius:14px;border:0;background:linear-gradient(120deg,#c9a052,var(--gold2),#c9a052);background-size:200% 100%;color:#1a1530;font:900 18px 'Noto Sans KR';cursor:pointer;box-shadow:0 10px 30px rgba(var(--ar),.3);transition:.4s}
 .go:hover{background-position:100% 0}
 .go:disabled{opacity:.6}
 .err{color:#ff8a8a;font-size:13px;margin-top:6px;display:none}
 .done{display:none;text-align:center;padding:30px 10px}
 .done b{font-family:'Noto Serif KR';font-size:22px;color:var(--gold2);display:block;margin-bottom:8px}
 /* biz */
-footer{padding:34px 22px 120px;font-size:12px;color:#7f81a8;line-height:1.7;border-top:1px solid rgba(224,187,112,.14)}
-.fab{position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(90px);z-index:45;border:0;padding:15px 30px;border-radius:999px;background:linear-gradient(120deg,#c9a052,var(--gold2));color:#1a1530;font:900 17px 'Noto Sans KR';box-shadow:0 12px 34px rgba(0,0,0,.5),0 0 0 0 rgba(224,187,112,.6);cursor:pointer;transition:transform .5s;animation:pl 2.4s infinite}
+footer{padding:34px 22px 120px;font-size:12px;color:#7f81a8;line-height:1.7;border-top:1px solid rgba(var(--ar),.14)}
+.fab{position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(90px);z-index:45;border:0;padding:15px 30px;border-radius:999px;background:linear-gradient(120deg,#c9a052,var(--gold2));color:#1a1530;font:900 17px 'Noto Sans KR';box-shadow:0 12px 34px rgba(0,0,0,.5),0 0 0 0 rgba(var(--ar),.6);cursor:pointer;transition:transform .5s;animation:pl 2.4s infinite}
 .fab.on{transform:translateX(-50%)}
-@keyframes pl{70%{box-shadow:0 12px 34px rgba(0,0,0,.5),0 0 0 16px rgba(224,187,112,0)}}
+@keyframes pl{70%{box-shadow:0 12px 34px rgba(0,0,0,.5),0 0 0 16px rgba(var(--ar),0)}}
 .toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,30px);background:#fff;color:#111;padding:12px 22px;border-radius:12px;opacity:0;pointer-events:none;transition:.4s;z-index:100;font-weight:700;font-size:14px;max-width:90%}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.hero h1 span{opacity:1;transform:none}}
 #app:empty::before{content:"불러오는 중...";display:block;text-align:center;padding:40vh 0;color:rgba(255,255,255,.55);font-size:14px;letter-spacing:.05em}
+.heroimg{display:block;width:100%;max-width:360px;max-height:300px;object-fit:cover;border-radius:22px;margin:0 auto 26px;border:1px solid var(--line);box-shadow:0 18px 50px rgba(0,0,0,.45)}
+.hero.noart{padding-top:56px}
+.sajuonly{display:block}
 </style>
 </head>
 <body>
@@ -174,7 +177,9 @@ async function __loadCfg(C0){
 </script>
 <script>
 async function __boot(){
-const C=await __loadCfg(window.CONFIG);const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const C=await __loadCfg(window.CONFIG);
+const THEMES={'민트':{'--gold':'#6fe3c1','--gold2':'#d9fff2','--gold3':'#2a9d7f','--gold4':'#9cf0d8','--ar':'111,227,193','--tb1':'#0b3a30','--tb2':'#14705a'},'코랄':{'--gold':'#ff9d84','--gold2':'#ffe3da','--gold3':'#d4583a','--gold4':'#ffc1b0','--ar':'255,157,132','--tb1':'#4a1a10','--tb2':'#8a3a24'},'하늘색':{'--gold':'#7db8ff','--gold2':'#e0efff','--gold3':'#3c78c8','--gold4':'#b4d6ff','--ar':'125,184,255','--tb1':'#0e2a52','--tb2':'#1d4f94'}};
+if(THEMES[C.theme])Object.entries(THEMES[C.theme]).forEach(([k,v])=>document.documentElement.style.setProperty(k,v));const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
 document.title=C.pageTitle||C.brand;
 const DL=C.deadline?new Date(C.deadline).getTime():null,EXPIRED=DL!==null&&Date.now()>=DL;
@@ -196,10 +201,24 @@ const tz=(s)=>String(s).padStart(2,'0');
 // render
 // 마감이 지나면 쿠폰가 대신 평소 가격을 보여 줍니다 (끝난 할인가를 광고하지 않기 위함)
 const prods=(C.products||[]).map(p=>EXPIRED?Object.assign({},p,{price:p.priceAfter||p.listPrice||p.price,listPrice:null,ribbon:'',bullets:(p.bullets||[]).filter(b=>!/쿠폰/.test(b))}):p);
+const GEN=!!(C.form&&C.form.mode==='general');
+const FIELDS=GEN?((C.form&&C.form.fields)||[]):[];
+const CUSTOM=FIELDS.map((fd,i)=>{const r=fd.required?' required':'';const n='name="x'+i+'"';const ph=fd.placeholder?' placeholder="'+esc(fd.placeholder)+'"':'';let ctl;
+ if(fd.type==='textarea')ctl='<textarea class="f" '+n+' rows="3"'+ph+r+'></textarea>';
+ else if(fd.type==='select')ctl='<select class="f" '+n+r+'><option value="">선택해 주십시오</option>'+(fd.options||[]).map(o=>'<option>'+esc(o)+'</option>').join('')+'</select>';
+ else if(fd.type==='date')ctl='<input class="f" type="date" '+n+r+'>';
+ else if(fd.type==='number')ctl='<input class="f" type="number" inputmode="numeric" '+n+ph+r+'>';
+ else ctl='<input class="f" '+n+ph+r+'>';
+ return '<label class="l">'+esc(fd.label)+(fd.required?' <i>*</i>':'')+'</label>'+ctl}).join('');
+const ART=(C.hero&&C.hero.art)||'stars';
+const HEROART=ART==='none'?'':(ART==='image'&&C.hero&&C.hero.image?'<img class="heroimg" src="'+esc(C.hero.image)+'" alt="">':"<div class=\"cosmos\" aria-hidden=\"true\"><div class=\"ring\"><svg viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"46\" fill=\"none\" stroke=\"rgba(224,187,112,.4)\" stroke-width=\".3\" stroke-dasharray=\"1 2\"/><polygon points=\"50,6 92,37 76,86 24,86 8,37\" fill=\"none\" stroke=\"rgba(224,187,112,.4)\" stroke-width=\".3\"/></svg>\n<div class=\"el\" style=\"--c:#6fcf97;left:50%;top:8%\"><span>木</span></div><div class=\"el\" style=\"--c:#ff6b57;left:92%;top:38%\"><span>火</span></div><div class=\"el\" style=\"--c:#f2c94c;left:76%;top:90%\"><span>土</span></div><div class=\"el\" style=\"--c:#e8e8f0;left:24%;top:90%\"><span>金</span></div><div class=\"el\" style=\"--c:#5aa7ff;left:8%;top:38%\"><span>水</span></div></div><div class=\"moon\"></div></div>");
+const EMAILHINT=C.emailHint!==undefined?C.emailHint:'결과는 이메일로 보내 드립니다.';
+const MEMOLABEL=C.memoLabel!==undefined?C.memoLabel:'궁금하신 점';
+const MEMOHINT=C.memoHint!==undefined?C.memoHint:'위에서 고르신 고민이 아래에 자동으로 담깁니다. 자유롭게 고쳐 쓰실 수 있습니다.';
+const MEMOPH=C.memoPlaceholder!==undefined?C.memoPlaceholder:'궁금하신 점을 상세히 적어 주십시오. (결혼 여부, 연애 여부 등)';
 $('#app').innerHTML=`
 <a href="#apply" class="skip">신청서로 건너뛰기</a><div class="topbar" id="topbar"></div>
-<section class="hero"><div class="cosmos" aria-hidden="true"><div class="ring"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="rgba(224,187,112,.4)" stroke-width=".3" stroke-dasharray="1 2"/><polygon points="50,6 92,37 76,86 24,86 8,37" fill="none" stroke="rgba(224,187,112,.4)" stroke-width=".3"/></svg>
-<div class="el" style="--c:#6fcf97;left:50%;top:8%"><span>木</span></div><div class="el" style="--c:#ff6b57;left:92%;top:38%"><span>火</span></div><div class="el" style="--c:#f2c94c;left:76%;top:90%"><span>土</span></div><div class="el" style="--c:#e8e8f0;left:24%;top:90%"><span>金</span></div><div class="el" style="--c:#5aa7ff;left:8%;top:38%"><span>水</span></div></div><div class="moon"></div></div>
+<section class="hero${ART==='none'?' noart':''}">${HEROART}
 <span class="tag">${esc(C.hero.tag)}</span>
 <h1><span>${esc(C.hero.line1)}</span><span class="gold">${esc(C.hero.line2)}</span></h1>
 <p>${esc(C.hero.sub)}</p>
@@ -210,18 +229,18 @@ ${C.worries&&C.worries.length?`<section><span class="eyebrow">CONCERN</span><h2 
 ${C.process&&C.process.length?`<section><span class="eyebrow">PROCESS</span><h2 class="reveal">${esc(C.processTitle||'이렇게 진행됩니다')}</h2><div class="pr reveal">${C.process.map((p,i)=>`<div><i>${['一','二','三','四','五'][i]}</i><p><b>${esc(p.t)}</b><span>${esc(p.d)}</span></p></div>`).join('')}</div></section>`:''}
 <section id="products"><span class="eyebrow">PRODUCTS</span><h2 class="reveal">${esc(C.productsTitle||'원하는 깊이로 고르십시오')}</h2><div class="pd reveal">${prods.map(p=>`<div class="p${p.hot?' hot':''}"><div class="in">${p.ribbon?`<span class="rb">${esc(p.ribbon)}</span>`:''}<h3>${esc(p.name)}</h3><div class="d">${esc(p.desc)}</div><div class="pc">${p.listPrice?`<s>${Number(p.listPrice).toLocaleString()}원</s>`:''}${Number(p.price).toLocaleString()}<small> 원</small></div><ul>${(p.bullets||[]).map(b=>`<li>${esc(b)}</li>`).join('')}</ul></div></div>`).join('')}</div>${C.productNote?`<p class="hint">${esc(C.productNote)}</p>`:''}</section>
 ${C.reviews&&C.reviews.length?`<section><span class="eyebrow">REVIEWS</span><h2 class="reveal">받아 보신 분들의 말씀</h2><div class="rv reveal">${C.reviews.map(r=>`<div><div class="h"><span>${esc(r.name)} · ${esc(r.date)}</span><span class="st">${'★'.repeat(r.stars||5)}</span></div>${esc(r.text)}</div>`).join('')}</div></section>`:''}
-<section id="apply"><span class="eyebrow">APPLY</span><h2 class="reveal">신청서를 작성해 주십시오</h2><p class="lead reveal">${esc(C.applyLead||'')}</p>
+<section id="apply"><span class="eyebrow">APPLY</span><h2 class="reveal">${esc(C.applyTitle||'신청서를 작성해 주십시오')}</h2><p class="lead reveal">${esc(C.applyLead||'')}</p>
 <form class="form reveal" id="form" novalidate>
-<label class="l">성별 <i>*</i></label><div class="seg"><label><input type="radio" name="sex" value="남성" checked><span>남성</span></label><label><input type="radio" name="sex" value="여성"><span>여성</span></label></div>
+<div class="sajuonly"><label class="l">성별 <i>*</i></label><div class="seg"><label><input type="radio" name="sex" value="남성" checked><span>남성</span></label><label><input type="radio" name="sex" value="여성"><span>여성</span></label></div></div>
 <label class="l">이름 <i>*</i></label><input class="f" name="name" placeholder="홍길동" required>
-<label class="l">생년월일 <i>*</i></label>${birth('')}
-<div class="hint">정확한 시간을 모르시면 '모름'을 선택해 주십시오. 모름 선택 시 정오(오시) 기준으로 작성됩니다.</div>
+<div class="sajuonly"><label class="l">생년월일 <i>*</i></label>${birth('')}
+<div class="hint">정확한 시간을 모르시면 '모름'을 선택해 주십시오. 모름 선택 시 정오(오시) 기준으로 작성됩니다.</div></div>
 <label class="l">연락처 <i>*</i></label><div class="row"><span class="fix">010</span><input class="f" name="p2" inputmode="numeric" maxlength="4" placeholder="0000" required><input class="f" name="p3" inputmode="numeric" maxlength="4" placeholder="0000" required></div>
 <label class="l">이메일 <i>*</i></label><div class="row"><input class="f" name="em" placeholder="example" required><span class="fix">@</span><select class="f" name="ed" id="ed"><option value="">선택</option><option>naver.com</option><option>gmail.com</option><option>daum.net</option><option>hanmail.net</option><option>kakao.com</option><option value="__c">직접 입력</option></select></div><input class="f" id="edc" placeholder="도메인 직접 입력 (예: company.co.kr)" style="display:none;margin-top:8px">
-<div class="hint">결과는 이메일로 보내 드립니다.</div>
-<label class="l">상품 선택 <i>*</i></label><select class="f" name="product" id="psel" required><option value="">상품을 선택해 주십시오</option>${prods.map(p=>`<option value="${esc(p.id)}" data-two="${p.two?1:0}">${esc(p.name)} (${Number(p.price).toLocaleString()}원)</option>`).join('')}</select>
-<label class="l">궁금하신 점</label><div class="hint" style="margin:0 0 6px">위에서 고르신 고민이 아래에 자동으로 담깁니다. 자유롭게 고쳐 쓰실 수 있습니다.</div><textarea class="f" name="memo" rows="4" id="memo" placeholder="궁금하신 점을 상세히 적어 주십시오. (결혼 여부, 연애 여부 등)"></textarea>
-<button class="addc" type="button" id="addc">＋ 동반자 추가</button>${comp}
+${EMAILHINT?`<div class="hint">${esc(EMAILHINT)}</div>`:''}${CUSTOM}
+<div ${prods.length?'':'style="display:none"'}><label class="l">상품 선택 <i>*</i></label><select class="f" name="product" id="psel" ${prods.length?'required':''}><option value="">상품을 선택해 주십시오</option>${prods.map(p=>`<option value="${esc(p.id)}" data-two="${p.two?1:0}">${esc(p.name)} (${Number(p.price).toLocaleString()}원)</option>`).join('')}</select></div>
+<div ${MEMOLABEL?'':'style="display:none"'}><label class="l">${esc(MEMOLABEL)}</label>${MEMOHINT?`<div class="hint" style="margin:0 0 6px">${esc(MEMOHINT)}</div>`:''}<textarea class="f" name="memo" rows="4" id="memo" placeholder="${esc(MEMOPH)}"></textarea></div>
+<div class="sajuonly"><button class="addc" type="button" id="addc">＋ 동반자 추가</button>${comp}</div>
 <div class="agree" id="agree"><label><input type="checkbox" name="agree" required><span>개인정보 수집 및 이용에 동의합니다. (필수)</span></label><button type="button" id="agt">수집·이용 내용 자세히 보기 ▾</button><p>${esc(C.consent)}</p></div>
 ${C.payment&&C.payment.enabled?`<div class="testbadge" id="testbadge">테스트 결제 모드입니다. 실제로 돈이 빠져나가지 않습니다.</div><div class="payb" id="payb"><div class="ptitle">결제 수단 선택</div><div id="pay-methods"></div><div id="pay-agree"></div></div><div class="paynote" id="paynote">결제 수단은 카드와 간편결제(토스페이·카카오페이·네이버페이 등)를 지원합니다. 결제가 끝나면 입력하신 이메일로 확인 메일이 발송됩니다.</div>`:''}
 <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0;width:0" aria-hidden="true">
@@ -237,6 +256,7 @@ ${C.faq&&C.faq.length?`<section><span class="eyebrow">FAQ</span><h2 class="revea
 // reveal
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
 $$('.reveal').forEach(e=>io.observe(e));
+if(GEN)$$('.sajuonly').forEach(w=>{w.style.display='none';w.querySelectorAll('input,select,textarea').forEach(x=>{x.disabled=true;x.required=false})});
 // stars
 const cv=$('#stars'),cx=cv.getContext('2d');let W,H,S=[],sh=null;
 function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight;S=Array.from({length:Math.round(W*H/9000)},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.2+.2,p:Math.random()*6.28,s:Math.random()*.02+.005}))}
@@ -256,7 +276,7 @@ $$('.w').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;b.classList.toggle('on')
 $('#memo').addEventListener('input',e=>e.target.dataset.user='1');
 // 동반자
 $('#addc').onclick=()=>{const c=$('#comp');const on=c.classList.toggle('on');$('#addc').textContent=on?'－ 동반자 삭제':'＋ 동반자 추가';c.querySelectorAll('[name^=c_]').forEach(x=>{if(x.tagName==='SELECT'||x.name==='c_name')x.required=on})};
-$('#psel').addEventListener('change',e=>{const o=e.target.selectedOptions[0];if(o&&o.dataset.two==='1'&&!$('#comp').classList.contains('on'))$('#addc').click()});
+$('#psel').addEventListener('change',e=>{const o=e.target.selectedOptions[0];if(!GEN&&o&&o.dataset.two==='1'&&!$('#comp').classList.contains('on'))$('#addc').click()});
 $('#ed').onchange=e=>{$('#edc').style.display=e.target.value==='__c'?'block':'none'};
 $('#agt').onclick=()=>{$('#agree').classList.toggle('o')};
 // fab
@@ -296,11 +316,12 @@ $('#form').addEventListener('submit',async e=>{e.preventDefault();const f=e.targ
  if(bad){er.textContent=bad.type==='checkbox'?'개인정보 수집·이용에 동의해 주십시오.':'필수 항목을 모두 입력해 주십시오.';er.style.display='block';bad.focus&&bad.focus();return}
  if(!/^\d{4}$/.test(f.p2.value)||!/^\d{4}$/.test(f.p3.value)){er.textContent='연락처를 숫자 4자리씩 입력해 주십시오.';er.style.display='block';return}
  const vd=(y,m,d)=>{const x=new Date(+y,+m-1,+d);return x.getFullYear()==y&&x.getMonth()==m-1&&x.getDate()==d};
- const badDate=(f.cal.value==='양력'&&!vd(f.y.value,f.m.value,f.d.value))||(f.c_name.value&&f.c_cal.value==='양력'&&!vd(f.c_y.value,f.c_m.value,f.c_d.value));
+ const badDate=!GEN&&((f.cal.value==='양력'&&!vd(f.y.value,f.m.value,f.d.value))||(f.c_name.value&&f.c_cal.value==='양력'&&!vd(f.c_y.value,f.c_m.value,f.c_d.value)));
  if(badDate){er.textContent='존재하지 않는 양력 날짜입니다. 생년월일을 다시 확인해 주십시오.';er.style.display='block';return}
  const dom=f.ed.value==='__c'?$('#edc').value.trim():f.ed.value;if(!dom){er.textContent='이메일 도메인을 선택하거나 입력해 주십시오.';er.style.display='block';return}
  const mail=f.em.value.trim()+'@'+dom;if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)){er.textContent='이메일 주소를 다시 확인해 주십시오.';er.style.display='block';return}
- const data=Object.fromEntries(new FormData(f).entries());delete data.website;delete data.agree;data.agreed='동의';data.phone='010-'+f.p2.value+'-'+f.p3.value;data.email=f.em.value.trim()+'@'+dom;data.page=C.slug||location.pathname;data.ts=new Date().toISOString();
+ const data=Object.fromEntries(new FormData(f).entries());delete data.website;delete data.agree;data.agreed='동의';data.phone='010-'+f.p2.value+'-'+f.p3.value;data.email=f.em.value.trim()+'@'+dom;data.page=C.slug||location.pathname;data.ts=new Date().toISOString();data.elapsed=Date.now()-T0;
+ if(GEN){const ex=[];FIELDS.forEach((fd,i)=>{const v=String(data['x'+i]||'').trim();delete data['x'+i];if(v)ex.push(fd.label+': '+v)});data.extra=ex.join('\n')}
  const g=$('#go');g.disabled=true;
  if(PAY){
   g.textContent='결제창 여는 중...';
