@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 직원 만들기 전자책 | 클로드 코드로 부업 업무 자동화</title>
+<meta name="description" content="코딩 몰라도 클로드 코드에게 말로 시켜 반복 업무를 자동으로 돌리는 방법. 전자책 A4 99쪽 + 스타터 키트(윈도우·맥).">
+<link rel="canonical" href="https://itemlogin.com/ai/">
+<meta property="og:type" content="article"><meta property="og:url" content="https://itemlogin.com/ai/"><meta property="og:title" content="AI 직원 만들기 전자책 | 클로드 코드로 부업 업무 자동화">
+<meta property="og:description" content="코딩 몰라도 클로드 코드에게 말로 시켜 반복 업무를 자동으로 돌리는 방법. 전자책 A4 99쪽 + 스타터 키트(윈도우·맥)."><meta property="og:image" content="https://itemlogin.com/logo.png">
+<link rel="icon" type="image/png" href="/favicon-v3.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.min.css">
+<style>:root{--bg:#141414;--card:#1e1e1e;--line:#2c2c2c;--text:#f2f2f2;--sub:#a8a8a8;--accent:#ff8a1f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Pretendard,system-ui,sans-serif;line-height:1.7}
+a{color:inherit}
+.top{display:flex;align-items:center;gap:10px;max-width:760px;margin:0 auto;padding:18px 16px}
+.top img{height:28px}.top a{text-decoration:none;font-weight:700}
+main{max-width:760px;margin:0 auto;padding:0 16px 60px}
+.crumb{color:var(--sub);font-size:14px}.crumb a{text-decoration:none}
+h2.sec{font-size:21px;margin:34px 0 10px;padding-left:10px;border-left:4px solid var(--accent)}
+.pill{display:inline-block;background:var(--accent);color:#111;font-weight:800;text-decoration:none;padding:12px 20px;border-radius:999px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.src{color:var(--sub);font-size:14px}
+.tags span{display:inline-block;margin:4px 6px 0 0;padding:4px 10px;border:1px solid var(--line);border-radius:999px;font-size:14px;color:var(--sub)}
+.wrap-hero{position:relative;margin:8px -16px 0;padding:26px 16px 30px;border-radius:0 0 28px 28px;
+  background:radial-gradient(120% 90% at 85% 0%,rgba(255,138,31,.18),transparent 60%),linear-gradient(180deg,#1b1b1b,#141414)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px;border:1px solid rgba(255,138,31,.5);color:var(--accent);background:rgba(255,138,31,.08)}
+.chip.mute{border-color:var(--line);color:var(--sub);background:transparent}
+h1.t{font-size:34px;line-height:1.25;letter-spacing:-.02em;margin:0}
+h1.t em{font-style:normal;color:var(--accent);background:linear-gradient(transparent 62%,rgba(255,138,31,.25) 62%);padding:0 2px}
+.meta{display:flex;gap:16px;flex-wrap:wrap;color:var(--sub);font-size:14px;margin:14px 0 0}.meta b{color:var(--text)}
+.hero2{display:grid;grid-template-columns:250px 1fr;gap:26px;align-items:center;margin-top:26px}
+.vid{position:relative;display:block;border-radius:22px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.06)}
+.vid img{display:block;width:100%;transition:transform .4s}.vid:hover img{transform:scale(1.04)}
+.vid .play{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(255,138,31,.95);display:grid;place-items:center;box-shadow:0 6px 20px rgba(255,138,31,.5)}
+.vid .play:after{content:"";border-left:20px solid #111;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+.steps{display:grid;gap:12px}
+.step{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;transition:border-color .2s,transform .2s}
+.step:hover{border-color:rgba(255,138,31,.6);transform:translateX(3px)}
+.step .n{flex:none;width:34px;height:34px;border-radius:10px;background:var(--accent);color:#111;font-weight:900;display:grid;place-items:center;font-size:17px}
+.step b{display:block;font-size:17px}.step span{color:var(--sub);font-size:14px}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.ghost{border:1px solid var(--line);color:var(--text);padding:12px 18px;border-radius:999px;background:transparent;cursor:pointer;font:inherit;font-weight:700}
+.ghost:hover{border-color:var(--accent)}
+.more{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.more a{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.more img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover}.more b{display:block;padding:8px 10px;font-size:14px;line-height:1.4}
+.prod{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center;background:var(--card);border:1px solid rgba(255,138,31,.45);border-radius:18px;padding:16px;margin-top:8px}
+.prod .pi{display:block;aspect-ratio:1;background:#fff;border-radius:12px;overflow:hidden}.prod .pi img{width:100%;height:100%;object-fit:contain;display:block}
+.prod small{color:var(--accent);font-weight:700;font-size:13px}.prod h3{margin:2px 0 6px;font-size:19px;line-height:1.35}
+.prod ul{margin:0 0 12px;padding:0;list-style:none;color:#d6d6d6;font-size:14.5px}.prod li{padding-left:18px;position:relative;margin:2px 0}.prod li:before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:900}
+.prod .row{display:flex;gap:8px;flex-wrap:wrap}.prod .pill{padding:10px 16px;font-size:15px}.prod .ghost{padding:10px 16px;font-size:15px;text-decoration:none}
+.disc{color:var(--sub);font-size:12.5px;margin:8px 2px 0}
+.shoplink{display:inline-block;margin-top:6px;color:var(--accent);font-weight:700;text-decoration:none}
+@media(max-width:640px){h1.t{font-size:27px}.hero2{grid-template-columns:1fr}.vid{max-width:250px;margin:0 auto}.prod{grid-template-columns:96px 1fr;gap:12px}}
+.grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.grid2 a{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.grid2 img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover}.grid2 img.sq{aspect-ratio:1;object-fit:contain;background:#fff}
+.grid2 b{display:block;padding:8px 10px;font-size:14px;line-height:1.4}
+.item{display:grid;grid-template-columns:120px 1fr;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin:12px 0;text-decoration:none}
+.item img{width:120px;aspect-ratio:9/16;object-fit:cover;border-radius:10px}.item h3{margin:0 0 6px;font-size:18px;line-height:1.35}
+.item ul{margin:0;padding-left:18px;color:#d6d6d6;font-size:15px}.item .go{display:inline-block;margin-top:8px;color:var(--accent);font-weight:700}
+.lead{color:var(--sub);font-size:16px;margin:10px 0 0}
+.key{background:rgba(255,138,31,.1);border:1px solid rgba(255,138,31,.55);border-radius:16px;padding:16px 18px;margin-top:6px}
+.key b{color:var(--accent)}
+ol.how{padding-left:0;list-style:none;counter-reset:s}ol.how li{counter-increment:s;position:relative;padding:12px 14px 12px 56px;margin:8px 0;background:var(--card);border:1px solid var(--line);border-radius:14px}
+ol.how li:before{content:counter(s);position:absolute;left:14px;top:11px;width:30px;height:30px;border-radius:9px;background:var(--accent);color:#111;font-weight:900;display:grid;place-items:center}
+ol.how li.k{border-color:var(--accent)}ol.how li.k:after{content:"핵심";position:absolute;right:12px;top:12px;font-size:12px;font-weight:800;color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:18px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}.stat b{display:block;font-size:28px;color:var(--accent)}.stat span{color:var(--sub);font-size:14px}
+.chcard{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:10px 0}
+.chcard b{font-size:18px}.chcard span{display:block;color:var(--sub);font-size:14px;margin-top:4px}
+@media(max-width:640px){.item{grid-template-columns:90px 1fr}.item img{width:90px}}</style></head>
+<body>
+<header class="top"><img src="/logo.png" alt=""><a href="https://itemlogin.com/">itemlog · 아이템로그</a></header>
+<main>
+<div class="crumb"><a href="https://itemlogin.com/">홈</a> › 전자책</div>
+<section class="wrap-hero"><div class="chips"><span class="chip">전자책</span><span class="chip mute">크몽 판매 중</span></div>
+<h1 class="t"><em>AI 직원 만들기</em><br>클로드 코드로 부업 업무 자동화하기</h1>
+<p class="lead">코딩을 몰라도, 클로드 코드에게 말로 시켜서 영상 만들기·올리기 같은 반복 업무를 자동으로 돌리는 방법을 따라 하며 배우는 책이에요.</p>
+<div class="cta"><a class="pill" href="https://kmong.com/gig/849054" target="_blank" rel="noopener">크몽에서 보기 →</a></div></section>
+<h2 class="sec">무료 맛보기판 먼저 읽어 보기</h2>
+<div class="box"><b>「나도 AI 직원 만들 수 있을까?」 무료 맛보기판 (A4 20쪽, PDF)</b><br>
+일 나누는 법, 무료 AI로 내 자동화 설계도 받기, 클로드 코드 설치(윈도우·맥)와 첫 대화까지 담았어요. 가입 없이 바로 받을 수 있어요.
+<div class="cta" style="margin-top:12px"><a class="pill" href="/ai/ai-staff-free.pdf" download>무료 맛보기판 받기 (PDF)</a></div></div>
+<h2 class="sec">무엇이 들어 있나요</h2>
+<div class="steps">
+<div class="step"><span class="n">1</span><div><b>전자책 PDF (A4 99쪽)</b><span>처음 설치부터 자동 실행까지, 한국어 화면 기준으로 차근차근.</span></div></div>
+<div class="step"><span class="n">2</span><div><b>스타터 키트</b><span>더블클릭 파일로 설치·첫 영상 만들기·진단까지. 윈도우와 맥 모두 시험했어요.</span></div></div>
+<div class="step"><span class="n">3</span><div><b>실습편</b><span>이론보다 먼저 손으로 따라 하는 실습으로 구성했어요.</span></div></div>
+</div>
+<h2 class="sec">만든 사람의 기록</h2>
+<div class="box">이 책의 방식으로 2026년 10월 1~28일 유튜브에 508편을 올렸어요(예약 포함). 조회수·수익을 보장하지는 않아요.</div>
+<h2 class="sec">패키지</h2>
+<div class="box"><ul style="margin:0"><li><b>기본</b> 전자책 + 스타터 키트</li><li><b>실전</b> 기본 + 템플릿 3종 + 30일 질문 답변</li><li><b>코칭</b> 실전 + 내 컴퓨터 맞춤 해결 + 작업실 안내서 첨삭 (원격 접속 없음)</li></ul></div>
+<p class="src">가격과 할인은 크몽 상품 페이지에서 확인해 주세요.</p>
+<div class="cta"><a class="pill" href="https://kmong.com/gig/849054" target="_blank" rel="noopener">크몽에서 보기 →</a></div>
+<p style="margin-top:34px"><a class="pill" href="https://itemlogin.com/">🏠 itemlog 홈으로 →</a></p>
+<p class="disc" style="margin-top:18px"><a href="/privacy.html">개인정보처리방침</a> · © 2026 itemlog</p>
+</main></body></html>
