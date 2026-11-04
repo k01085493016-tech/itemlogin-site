@@ -200,6 +200,14 @@ footer{padding:40px 0 100px;text-align:center;font-size:13px;color:#5d6e93;borde
 .order{margin-top:46px;background:linear-gradient(160deg,#0f2a3d,#0b1326);border:1px solid rgba(25,230,163,.4);border-radius:28px;padding:40px}
 .order h3{font-size:30px;margin-bottom:6px}
 .order .sub{color:var(--sub);margin-bottom:24px}
+.mt{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px}
+.mt label{cursor:pointer}.mt input{position:absolute;opacity:0}
+.mt span{display:block;border:2px solid var(--line);border-radius:16px;padding:14px 16px;background:var(--card);transition:.2s}
+.mt b{display:block;font-size:17px}.mt small{display:block;color:var(--sub);font-size:13px;margin-top:2px}
+.mt input:checked+span{border-color:var(--em);background:rgba(25,230,163,.1)}
+.mt input:focus-visible+span{outline:2px solid #fff}
+.escbox{background:rgba(255,215,94,.08);border:1px solid rgba(255,215,94,.4);border-radius:16px;padding:18px 22px;margin:14px 0;font-size:15px}
+.escbox ol{margin:8px 0 0 20px}.escbox li{margin:4px 0}
 .pk{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px}
 .pk label{cursor:pointer}
 .pk input{position:absolute;opacity:0}
@@ -229,7 +237,7 @@ footer{padding:40px 0 100px;text-align:center;font-size:13px;color:#5d6e93;borde
 .order button.btn{border:0;cursor:pointer;font-family:inherit}
 .order button.btn:disabled{opacity:.5;animation:none;cursor:wait}
 .pbox.cta .btn{font-size:16px;padding:15px 26px}
-@media(max-width:900px){.pk{grid-template-columns:1fr}.fg{grid-template-columns:1fr}.order{padding:26px 20px}}
+@media(max-width:900px){.mt{grid-template-columns:1fr}.pk{grid-template-columns:1fr}.fg{grid-template-columns:1fr}.order{padding:26px 20px}}
 </style>
 </head>
 <body>
@@ -360,6 +368,10 @@ footer{padding:40px 0 100px;text-align:center;font-size:13px;color:#5d6e93;borde
     <label><input type="radio" name="pkg" value="pro"><span><b>실전</b><s data-o="69000"></s><em data-p="49000"></em></span></label>
     <label><input type="radio" name="pkg" value="coach"><span><b>코칭</b><s data-o="129000"></s><em data-p="99000"></em></span></label>
    </div>
+   <div class="mt" role="radiogroup" aria-label="결제 방법 선택">
+    <label><input type="radio" name="method" value="normal" checked><span><b>일반 계좌이체</b><small>주문 후 입금 계좌를 알려 드려요</small></span></label>
+    <label><input type="radio" name="method" value="escrow"><span><b>KB에스크로 이체</b><small>구매안전서비스 · KB 인터넷뱅킹 이용자</small></span></label>
+   </div>
    <div class="fg">
     <label class="f">이름 (입금자명과 같게)<input type="text" name="name" autocomplete="name" maxlength="20" required></label>
     <label class="f">이메일 (파일 안내를 받을 주소)<input type="email" name="email" autocomplete="email" maxlength="80" required></label>
@@ -373,7 +385,7 @@ footer{padding:40px 0 100px;text-align:center;font-size:13px;color:#5d6e93;borde
      <li>공급 시기: 입금 확인 후 이메일로 파일 안내를 보냅니다. 보통 하루 안에, 늦어도 입금일부터 3일 안에 보내요.</li>
      <li>청약철회: 입금 후 파일을 받기 전에는 전액 환불됩니다. 파일 제공이 시작되면 단순 변심에 의한 철회는 제한됩니다(전자상거래법 제17조 제2항). 파일이 열리지 않거나 소개 내용과 다른 경우에는 받은 날부터 3개월 안, 알게 된 날부터 30일 안에 환불을 요청할 수 있어요.</li>
      <li>구매 전 목차와 소개를 충분히 확인해 주세요. 조회수·수익은 보장하지 않으며, Claude 유료 구독(Pro 이상)이 별도로 필요합니다.</li>
-     <li>구매안전서비스: KB국민은행 KB에스크로 이체 판매자 인증(서비스 등록번호 41-2007-0018678, 확인 연락처 1588-9999). 50,000원 이상 계좌이체 주문은 구매안전서비스를 이용할 수 있어요. 원하시면 입금 전에 아래 문의처로 알려 주세요.</li>
+     <li>구매안전서비스(KB에스크로 이체): 위에서 "KB에스크로 이체"를 고르면 이용할 수 있어요. 구매자 본인의 KB국민은행 개인 인터넷뱅킹(인증서)에서 판매자 계좌번호·휴대폰번호·이메일을 입력해 이체하면 대금이 은행에 예치되고, 구매자가 구매승인을 하거나 거래 시작일을 포함해 8일이 지나면 판매자에게 지급됩니다. 서비스 수수료는 구매자 부담이며 KB 안내 기준 현재 면제 중입니다. 23:40~00:20은 점검으로 이용할 수 없어요. (서비스 등록번호 41-2007-0018678, KB 확인 연락처 1588-9999)</li>
      <li>문의: 주문 확인 메일에 답장하거나 k01085493016@gmail.com, 010-8549-3016</li>
     </ul></div>
    <label class="chk"><input type="checkbox" name="agreeTerms"><span>위 거래조건을 확인했고, 파일 제공 후에는 단순 변심 청약철회가 제한되는 점에 동의합니다. (필수)</span></label>
@@ -393,6 +405,7 @@ footer{padding:40px 0 100px;text-align:center;font-size:13px;color:#5d6e93;borde
     <div><span>예금주</span><b id="r-holder"></b></div>
     <div><span>입금자명</span><b id="r-name"></b></div>
    </div>
+   <div class="escbox" id="escbox" style="display:none"><b style="color:#fff">KB에스크로 이체로 결제하는 방법</b><ol><li>본인 KB국민은행 개인 인터넷뱅킹(인증서)에서 "KB에스크로 이체"를 선택해요. (23:40~00:20 점검 시간 제외)</li><li>판매자 정보를 입력해요: 위 계좌, 휴대폰 <span id="e-phone"></span>, 이메일 <span id="e-mail"></span>, 입금 금액.</li><li>대금은 은행에 예치되고, 예치를 확인한 판매자가 "거래시작"을 승인하면 파일 안내 메일을 보내 드려요.</li><li>파일을 확인한 뒤 인터넷뱅킹에서 "구매승인"을 눌러 주세요. 승인하지 않으면 거래 시작일 포함 8일 뒤 자동 지급돼요.</li></ol></div>
    <p class="sub">입금자명이 주문하신 이름과 다르면 이 페이지의 문의처로 알려 주세요. 입금이 확인되면 이메일로 파일 안내를 드립니다.</p>
   </div>
  </div>
@@ -460,8 +473,8 @@ $$('.emp').forEach(e=>e.addEventListener('click',()=>e.classList.toggle('flip'))
 const ORDER_URL='https://script.google.com/macros/s/AKfycby-omEX2JpHTeUNjXCSf-0tsZEygwQZWoF7zlPfWwO-rCN2vW1oDrH4aipR_Hup7YfSUw/exec';
 const fmt=n=>(+n).toLocaleString('ko-KR')+'원';
 function pkgNow(){return document.querySelector('input[name=pkg]:checked').value}
-function paintPk(){const L=Date.now()<=Date.parse('2026-11-30T23:59:59+09:00');$$('.pk label').forEach(l=>{const s=l.querySelector('s'),e=l.querySelector('em');e.textContent=fmt(L?e.dataset.p:s.dataset.o);s.textContent=L?fmt(s.dataset.o):''});const sel=document.querySelector('input[name=pkg]:checked');const l=sel.closest('label');$('#sum').innerHTML='선택한 상품: 전자책 「AI 직원 만들기」 <b>'+l.querySelector('b').textContent+'</b> 패키지 · 입금 금액 <b>'+l.querySelector('em').textContent+'</b>'}
-$$('input[name=pkg]').forEach(r=>r.addEventListener('change',paintPk));paintPk();
+function paintPk(){const L=Date.now()<=Date.parse('2026-11-30T23:59:59+09:00');$$('.pk label').forEach(l=>{const s=l.querySelector('s'),e=l.querySelector('em');e.textContent=fmt(L?e.dataset.p:s.dataset.o);s.textContent=L?fmt(s.dataset.o):''});const sel=document.querySelector('input[name=pkg]:checked');const l=sel.closest('label');$('#sum').innerHTML='선택한 상품: 전자책 「AI 직원 만들기」 <b>'+l.querySelector('b').textContent+'</b> 패키지 · '+(document.querySelector('input[name=method]:checked').value==='escrow'?'에스크로 결제':'입금')+' 금액 <b>'+l.querySelector('em').textContent+'</b>'}
+$$('input[name=pkg],input[name=method]').forEach(r=>r.addEventListener('change',paintPk));paintPk();
 $$('[data-pk]').forEach(a=>a.addEventListener('click',()=>{document.querySelector('input[name=pkg][value='+a.dataset.pk+']').checked=true;paintPk()}));
 $$('#tabs button').forEach(b=>b.addEventListener('click',()=>{const k=['basic','pro','coach'][+b.dataset.t];document.querySelector('input[name=pkg][value='+k+']').checked=true;paintPk()}));
 const t0=Date.now();let lastR=null;
@@ -475,11 +488,11 @@ $('#of').addEventListener('submit',async ev=>{
  if(!f.elements.agreeTerms.checked||!f.elements.agreePrivacy.checked)return er.textContent='필수 동의 항목에 모두 체크해 주세요.';
  bt.disabled=true;bt.textContent='접수 중...';
  try{
-  const res=await fetch(ORDER_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({pkg:pkgNow(),name:v('name'),email:v('email'),phone:v('phone'),cash:v('cash'),agreeTerms:true,agreePrivacy:true,hp:v('hp'),elapsed:Date.now()-t0})});
+  const res=await fetch(ORDER_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({method:document.querySelector('input[name=method]:checked').value,pkg:pkgNow(),name:v('name'),email:v('email'),phone:v('phone'),cash:v('cash'),agreeTerms:true,agreePrivacy:true,hp:v('hp'),elapsed:Date.now()-t0})});
   const d=await res.json();
   if(!d.ok){er.textContent=d.msg||'접수하지 못했어요. 잠시 뒤 다시 시도해 주세요.';bt.disabled=false;bt.textContent='주문하고 입금 계좌 확인하기';return}
   lastR=d;$('#r-id').textContent=d.orderId;$('#r-pkg').textContent='전자책 '+d.pkg+' 패키지';$('#r-amt').textContent=fmt(d.amount);$('#r-acc').textContent=d.bank.bank+' '+d.bank.account;$('#r-holder').textContent=d.bank.holder;$('#r-name').textContent=d.name;
-  f.style.display='none';$('#ook').classList.add('show');$('#order').scrollIntoView({behavior:'smooth'});
+  f.style.display='none';$('#ook').classList.add('show');if(d.method==='escrow'){$('#escbox').style.display='block';$('#e-phone').textContent=(d.contact&&d.contact.phone)||'';$('#e-mail').textContent=(d.contact&&d.contact.email)||''}$('#order').scrollIntoView({behavior:'smooth'});
  }catch(x){er.textContent='연결에 실패했어요. 잠시 뒤 다시 시도하거나 크몽에서 구매해 주세요.';bt.disabled=false;bt.textContent='주문하고 입금 계좌 확인하기'}
 });
 $$('.cp').forEach(b=>b.addEventListener('click',async()=>{if(!lastR)return;const txt=b.dataset.c==='amt'?String(lastR.amount):lastR.bank.account;try{await navigator.clipboard.writeText(txt);b.textContent='복사됨'}catch(e){b.textContent=txt}}));
