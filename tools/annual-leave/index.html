@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>연차 계산기 | 입사일 기준 연차일수·연차수당 계산</title>
+<meta name="description" content="입사일과 기준일을 넣으면 1년 미만 월차, 1년 이상 연차일수를 계산하고 미사용 연차수당도 구한다. 근로기준법 제60조 기준.">
+<link rel="canonical" href="https://itemlogin.com/tools/annual-leave/">
+<meta property="og:type" content="website"><meta property="og:title" content="연차 계산기 | 입사일 기준 연차일수·연차수당 계산"><meta property="og:description" content="입사일과 기준일을 넣으면 1년 미만 월차, 1년 이상 연차일수를 계산하고 미사용 연차수당도 구한다. 근로기준법 제60조 기준."><meta property="og:url" content="https://itemlogin.com/tools/annual-leave/"><meta property="og:locale" content="ko_KR">
+<link rel="stylesheet" href="/tools/assets/style.css">
+<link rel="icon" href="/favicon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "1년 미만일 때 연차는 며칠인가?", "acceptedAnswer": {"@type": "Answer", "text": "개근한 달마다 1일씩, 최대 11일까지 생긴다."}}, {"@type": "Question", "name": "연차가 25일을 넘을 수 있나?", "acceptedAnswer": {"@type": "Answer", "text": "법정 연차는 최대 25일이다. 회사가 더 주는 것은 자유다."}}, {"@type": "Question", "name": "연차수당은 어떻게 계산하나?", "acceptedAnswer": {"@type": "Answer", "text": "1일 통상임금에 쓰지 않은 연차일수를 곱한다. 이 계산기는 월급을 209시간으로 나눠 시급을 구하고 8시간을 곱해 1일 통상임금으로 삼는다."}}, {"@type": "Question", "name": "5인 미만 사업장도 연차가 있나?", "acceptedAnswer": {"@type": "Answer", "text": "근로기준법상 연차유급휴가 규정은 상시 5인 미만 사업장에는 적용되지 않는다."}}]}</script>
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="/tools/">아이템로그 <i>계산기</i></a><nav><a href="/tools/">전체 계산기</a><a href="/tools/about/">소개·기준</a></nav></div></header>
+<main class="wrap">
+<div class="crumb"><a href="/tools/">계산기</a> › 연차일수·연차수당</div>
+<h1>연차 계산기</h1>
+<p class="lead">입사일을 넣으면 지금까지 생긴 연차와 근속연수별 연차일수를 알려준다. 쓰지 못한 연차가 있으면 연차수당도 계산한다.</p>
+<section class="card" id="calc"><div class="grid"><div class="f"><label for="join">입사일</label><input id="join" type="date" value="2023-03-02"></div><div class="f"><label for="base">기준일</label><input id="base" type="date" value=""></div><div class="f"><label for="unused">쓰지 않은 연차일수</label><input id="unused" type="number" inputmode="decimal" step="0.5" min="0" max="60" value="5"><div class="hint">연차수당을 알고 싶을 때</div></div><div class="f"><label for="monthly">월 통상임금</label><input id="monthly" type="text" inputmode="numeric" data-money value="3,000,000" placeholder=""><div class="hint">월급(통상임금) 기준</div></div></div><button class="btn" id="go">계산하기</button><div id="res"></div></section><section class="prose">
+<h2>연차가 생기는 규칙</h2>
+<ul><li>입사 후 1년 미만: 1개월 개근할 때마다 1일, 최대 11일.</li>
+<li>입사 1년 이상, 출근율 80% 이상: 연차 15일.</li>
+<li>3년 이상 근속: 2년마다 1일씩 늘어나 최대 25일.</li></ul>
+<div class="formula">연차일수 = 15 + (근속연수 − 1) ÷ 2 (소수 버림), 최대 25일<br>1일 통상임금 = 월 통상임금 ÷ 209시간 × 8시간<br>연차수당 = 1일 통상임금 × 쓰지 않은 연차일수</div>
+<p>연차는 일한 기간에 따라 생기고, 연차를 쓰지 못하면 수당으로 받을 수 있다. 다만 회사가 연차사용촉진 절차를 법대로 밟았다면 수당을 주지 않아도 되는 경우가 있다.</p>
+<h2>알아둘 점</h2>
+<ul><li>회사에 따라 회계연도 기준으로 연차를 주기도 한다. 그 경우 일수가 이 계산과 다를 수 있으나 법정 기준 이상이어야 한다.</li>
+<li>5인 미만 사업장에는 연차 규정이 적용되지 않는다.</li>
+<li>연차는 사용 가능 기간이 지나면 소멸하는 것이 원칙이고, 소멸 시점에 미사용분을 수당으로 정산한다.</li></ul>
+</section><section class="faq"><h2>자주 묻는 질문</h2><details><summary>1년 미만일 때 연차는 며칠인가?</summary><p>개근한 달마다 1일씩, 최대 11일까지 생긴다.</p></details><details><summary>연차가 25일을 넘을 수 있나?</summary><p>법정 연차는 최대 25일이다. 회사가 더 주는 것은 자유다.</p></details><details><summary>연차수당은 어떻게 계산하나?</summary><p>1일 통상임금에 쓰지 않은 연차일수를 곱한다. 이 계산기는 월급을 209시간으로 나눠 시급을 구하고 8시간을 곱해 1일 통상임금으로 삼는다.</p></details><details><summary>5인 미만 사업장도 연차가 있나?</summary><p>근로기준법상 연차유급휴가 규정은 상시 5인 미만 사업장에는 적용되지 않는다.</p></details></section><h2>다른 계산기</h2><div class="related"><a href="/tools/severance/"><b>퇴직금</b><small>평균임금으로 퇴직금 계산</small></a><a href="/tools/min-wage/"><b>최저시급·주휴수당</b><small>시급으로 주휴수당과 월급 계산</small></a><a href="/tools/dday/"><b>D-day·날짜</b><small>일수 차이와 N일 뒤 날짜</small></a></div><p class="base">기준일 2026-11-10. 법령과 요율이 바뀌면 갱신한다. 계산 기준은 <a href="/tools/about/">소개·계산 기준</a>에서 확인할 수 있다.</p>
+</main>
+<footer><div class="in"><p><a href="/">아이템로그 홈</a><a href="/tools/about/">소개·계산 기준</a><a href="/tools/privacy/">개인정보처리방침</a></p>
+<p>아이템로그 · 계산 결과는 참고용이며 법적·세무적 효력이 없다. 입력한 값은 서버로 전송되거나 저장되지 않고 이 브라우저 안에서만 계산된다.</p></div></footer>
+<script src="/tools/assets/calc.js"></script>
+<script>
+
+bindMoney();
+if(!$('base').value){$('base').value=ymd(new Date());}
+function leaveOfYear(n){return Math.min(25,15+Math.floor((n-1)/2));}
+onChange(function(){
+ var j=parseDate($('join').value),t=parseDate($('base').value);
+ if(!j||!t){setRes('');return;}
+ if(t<j){setRes(note('warn','기준일이 입사일보다 빠르다.'));return;}
+ var years=0;while(!(addMonths(j,12*(years+1))>t)){years++;if(years>60)break;}
+ var months=0;while(!(addMonths(j,months+1)>t)){months++;if(months>1200)break;}
+ var list=[];
+ list.push(['근속기간',years+'년 '+(months-years*12)+'개월 (입사 후 '+months+'개월)']);
+ if(years<1){
+  var m=Math.min(11,months);
+  list.push(['1년 미만 동안 생긴 연차(월 1일)',m+'일',1]);
+  list.push(['입사 1주년(연차 15일 발생)',ymd(addMonths(j,12))]);
+ } else {
+  var cur=leaveOfYear(years);
+  list.push(['입사 '+years+'주년에 생긴 연차',cur+'일',1]);
+  list.push(['다음 연차 발생일(입사 기념일)',ymd(addMonths(j,12*(years+1)))+' → '+leaveOfYear(years+1)+'일']);
+ }
+ var un=parseNum($('unused').value),mo=parseNum($('monthly').value);
+ var html='<div class="res">'+rows(list)+'</div>';
+ if(un>0&&mo>0){
+  var daily=mo/209*8;
+  html+='<h3>연차수당(참고)</h3><div class="res">'+rows([
+   ['1일 통상임금(월급 ÷ 209시간 × 8시간)',won(daily)],
+   ['미사용 연차수당',won(daily*un),1]
+  ])+'</div>';
+ }
+ var tb='<h3>근속연수별 연차일수</h3><div class="tw"><table class="t"><tr><th>근속</th><th>연차</th></tr>';
+ for(var y=1;y<=21;y++){tb+='<tr><td>'+y+'년 근속 후</td><td>'+leaveOfYear(y)+'일</td></tr>';}
+ tb+='</table></div>';
+ html+=tb;
+ html+=note('info','직전 1년 출근율이 80% 이상이어야 연차 15일 이상이 생긴다. 1주 소정근로시간이 15시간 미만이면 연차가 없다. 월 환산 시간은 주 40시간 기준 209시간을 썼다.');
+ setRes(html);
+});
+
+</script></body></html>

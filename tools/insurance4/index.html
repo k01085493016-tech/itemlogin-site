@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4대보험료 계산기 | 2026년 국민연금·건강보험·고용보험 근로자 부담</title>
+<meta name="description" content="월 급여와 비과세 금액을 넣으면 2026년 요율로 국민연금, 건강보험, 장기요양보험, 고용보험 근로자·사업주 부담액을 계산한다.">
+<link rel="canonical" href="https://itemlogin.com/tools/insurance4/">
+<meta property="og:type" content="website"><meta property="og:title" content="4대보험료 계산기 | 2026년 국민연금·건강보험·고용보험 근로자 부담"><meta property="og:description" content="월 급여와 비과세 금액을 넣으면 2026년 요율로 국민연금, 건강보험, 장기요양보험, 고용보험 근로자·사업주 부담액을 계산한다."><meta property="og:url" content="https://itemlogin.com/tools/insurance4/"><meta property="og:locale" content="ko_KR">
+<link rel="stylesheet" href="/tools/assets/style.css">
+<link rel="icon" href="/favicon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "4대보험은 총급여에서 계산하나, 비과세를 뺀 금액에서 계산하나?", "acceptedAnswer": {"@type": "Answer", "text": "소득세법상 비과세 근로소득을 뺀 금액을 기준으로 한다. 식대 월 20만 원 한도 등 비과세 항목은 4대보험료 계산에서 빠진다."}}, {"@type": "Question", "name": "장기요양보험료는 왜 월급이 아니라 건강보험료에 곱하나?", "acceptedAnswer": {"@type": "Answer", "text": "장기요양보험료는 건강보험료에 일정 비율(2026년 13.14%)을 곱해 정한다. 월급에 13.14%를 바로 곱하면 안 된다."}}, {"@type": "Question", "name": "국민연금에 상한이 있나?", "acceptedAnswer": {"@type": "Answer", "text": "있다. 기준소득월액이 2026년 7월부터 2027년 6월까지는 하한 41만 원, 상한 659만 원이라 월급이 아무리 많아도 그 범위의 금액으로 계산한다."}}, {"@type": "Question", "name": "급여명세서와 금액이 다른 이유는?", "acceptedAnswer": {"@type": "Answer", "text": "회사가 10원 단위 처리 방식이 다르거나, 비과세 금액 또는 보수월액 기준이 다를 때 차이가 난다."}}]}</script>
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="/tools/">아이템로그 <i>계산기</i></a><nav><a href="/tools/">전체 계산기</a><a href="/tools/about/">소개·기준</a></nav></div></header>
+<main class="wrap">
+<div class="crumb"><a href="/tools/">계산기</a> › 4대보험료</div>
+<h1>4대보험료 계산기</h1>
+<p class="lead">월 급여를 넣으면 국민연금, 건강보험, 장기요양보험, 고용보험이 얼마나 빠지는지 근로자 부담과 사업주 부담으로 나눠 계산한다. 2026년 요율 기준이다.</p>
+<section class="card" id="calc"><div class="grid"><div class="f"><label for="pay">월 급여(세전)</label><input id="pay" type="text" inputmode="numeric" data-money value="3,000,000" placeholder=""><div class="hint">기본급과 각종 수당을 모두 더한 금액</div></div><div class="f"><label for="free">비과세 금액</label><input id="free" type="text" inputmode="numeric" data-money value="200,000" placeholder=""><div class="hint">식대 월 20만 원 한도 등. 없으면 0</div></div></div><button class="btn" id="go">계산하기</button><div id="res"></div></section><section class="prose">
+<h2>2026년 요율</h2>
+<table class="t"><tr><th>보험</th><th>전체 요율</th><th>근로자</th><th>사업주</th></tr>
+<tr><td>국민연금</td><td>9.5%</td><td>4.75%</td><td>4.75%</td></tr>
+<tr><td>건강보험</td><td>7.19%</td><td>3.595%</td><td>3.595%</td></tr>
+<tr><td>장기요양보험</td><td>건강보험료의 13.14%</td><td>절반</td><td>절반</td></tr>
+<tr><td>고용보험(실업급여)</td><td>1.8%</td><td>0.9%</td><td>0.9%</td></tr>
+<tr><td>고용안정·직업능력개발</td><td>0.25~0.85%</td><td>없음</td><td>전액(150인 미만 0.25%)</td></tr>
+<tr><td>산재보험</td><td>업종별</td><td>없음</td><td>전액</td></tr></table>
+<div class="formula">국민연금 = 기준소득월액(41만~659만 원 범위) × 4.75%<br>건강보험 = 보수월액 × 3.595%<br>장기요양보험 = 건강보험료 × 13.14%<br>고용보험 = 보수월액 × 0.9%</div>
+<p>예를 들어 월 급여 300만 원에 비과세 식대 20만 원이면 보수월액은 280만 원이다. 국민연금 133,000원, 건강보험 100,660원, 장기요양 13,220원, 고용보험 25,200원이 빠져 근로자 부담 합계는 272,080원이다.</p>
+<p class="hint">출처: 보건복지부·국민건강보험공단·국민연금공단 고시 요율, 2026년 4대보험 요율 안내. 국민연금은 2033년까지 매년 0.5%p씩 올라 13%가 될 예정이다.</p>
+<h2>알아둘 점</h2>
+<ul><li>월 60시간(주 15시간) 미만 근무하는 초단시간 근로자는 일부 보험이 적용되지 않을 수 있다.</li>
+<li>만 60세 이상은 국민연금 의무가입 대상이 아니고, 만 65세 이후 새로 고용되면 실업급여 보험료가 없는 등 예외가 있다.</li>
+<li>7월에는 전년도 소득을 반영한 정기결정으로 국민연금 기준소득월액이 바뀔 수 있다.</li></ul>
+</section><section class="faq"><h2>자주 묻는 질문</h2><details><summary>4대보험은 총급여에서 계산하나, 비과세를 뺀 금액에서 계산하나?</summary><p>소득세법상 비과세 근로소득을 뺀 금액을 기준으로 한다. 식대 월 20만 원 한도 등 비과세 항목은 4대보험료 계산에서 빠진다.</p></details><details><summary>장기요양보험료는 왜 월급이 아니라 건강보험료에 곱하나?</summary><p>장기요양보험료는 건강보험료에 일정 비율(2026년 13.14%)을 곱해 정한다. 월급에 13.14%를 바로 곱하면 안 된다.</p></details><details><summary>국민연금에 상한이 있나?</summary><p>있다. 기준소득월액이 2026년 7월부터 2027년 6월까지는 하한 41만 원, 상한 659만 원이라 월급이 아무리 많아도 그 범위의 금액으로 계산한다.</p></details><details><summary>급여명세서와 금액이 다른 이유는?</summary><p>회사가 10원 단위 처리 방식이 다르거나, 비과세 금액 또는 보수월액 기준이 다를 때 차이가 난다.</p></details></section><h2>다른 계산기</h2><div class="related"><a href="/tools/min-wage/"><b>최저시급·주휴수당</b><small>시급으로 주휴수당과 월급 계산</small></a><a href="/tools/severance/"><b>퇴직금</b><small>평균임금으로 퇴직금 계산</small></a><a href="/tools/salary/"><b>연봉·월급·시급 환산</b><small>세전 금액 서로 바꾸기</small></a></div><p class="base">기준일 2026-11-10. 법령과 요율이 바뀌면 갱신한다. 계산 기준은 <a href="/tools/about/">소개·계산 기준</a>에서 확인할 수 있다.</p>
+</main>
+<footer><div class="in"><p><a href="/">아이템로그 홈</a><a href="/tools/about/">소개·계산 기준</a><a href="/tools/privacy/">개인정보처리방침</a></p>
+<p>아이템로그 · 계산 결과는 참고용이며 법적·세무적 효력이 없다. 입력한 값은 서버로 전송되거나 저장되지 않고 이 브라우저 안에서만 계산된다.</p></div></footer>
+<script src="/tools/assets/calc.js"></script>
+<script>
+
+bindMoney();
+function f10(x){return Math.floor(x/10)*10;}
+onChange(function(){
+ var pay=parseNum($('pay').value),free=parseNum($('free').value);
+ var base=Math.max(0,pay-free);
+ if(!base){setRes('');return;}
+ var npBase=Math.min(6590000,Math.max(410000,base));npBase=Math.floor(npBase/1000)*1000;
+ var np=f10(npBase*475/10000);
+ var hi=f10(base*3595/100000);
+ var lt=f10(hi*1314/10000);
+ var ei=Math.floor(base*9/1000);
+ var tot=np+hi+lt+ei;
+ var ei2=Math.floor(base*25/10000);
+ var tot2=np+hi+lt+ei+ei2;
+ var html='<div class="res">'+rows([
+  ['보수월액(급여 − 비과세)',won(base)],
+  ['국민연금 4.75%',won(np)],
+  ['건강보험 3.595%',won(hi)],
+  ['장기요양보험(건강보험료의 13.14%)',won(lt)],
+  ['고용보험 0.9%',won(ei)],
+  ['근로자 부담 합계',won(tot),1],
+  ['급여에서 4대보험만 뺀 금액',won(pay-tot)]
+ ])+'</div>';
+ html+='<h3>사업주 부담(참고)</h3><div class="res">'+rows([
+  ['국민연금·건강·장기요양·고용(실업급여)',won(tot)],
+  ['고용안정·직업능력개발(150인 미만 0.25%)',won(ei2)],
+  ['사업주 부담 합계(산재보험 제외)',won(tot2),1]
+ ])+'</div>';
+ if(base<410000||base>6590000){html+=note('info','국민연금은 기준소득월액 하한 41만 원, 상한 659만 원(2026년 7월~2027년 6월) 안에서만 계산한다. 이 금액은 그 범위로 맞춰 계산했다.');}
+ html+=note('info','소득세와 지방소득세는 4대보험이 아니라 세금이라 빠져 있다. 10원 미만은 버렸으므로 급여명세서와 몇십 원 차이가 날 수 있다.');
+ setRes(html);
+});
+
+</script></body></html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>연봉 월급 시급 환산 계산기 | 세전 연봉을 월급·시급으로</title>
+<meta name="description" content="연봉, 월급, 시급 중 하나만 넣으면 나머지를 세전 기준으로 환산한다. 월 209시간 기준과 최저임금 비교.">
+<link rel="canonical" href="https://itemlogin.com/tools/salary/">
+<meta property="og:type" content="website"><meta property="og:title" content="연봉 월급 시급 환산 계산기 | 세전 연봉을 월급·시급으로"><meta property="og:description" content="연봉, 월급, 시급 중 하나만 넣으면 나머지를 세전 기준으로 환산한다. 월 209시간 기준과 최저임금 비교."><meta property="og:url" content="https://itemlogin.com/tools/salary/"><meta property="og:locale" content="ko_KR">
+<link rel="stylesheet" href="/tools/assets/style.css">
+<link rel="icon" href="/favicon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "연봉과 월급은 어떻게 바꾸나?", "acceptedAnswer": {"@type": "Answer", "text": "연봉을 12로 나누면 월급이다."}}, {"@type": "Question", "name": "퇴직금이 연봉에 포함되어 있으면?", "acceptedAnswer": {"@type": "Answer", "text": "연봉을 13으로 나눠야 월 급여가 나온다. 12로 나누면 실제보다 많게 계산된다."}}, {"@type": "Question", "name": "월 209시간은 어디서 나왔나?", "acceptedAnswer": {"@type": "Answer", "text": "주 40시간 근로자의 월 유급 근로시간으로, 주 40시간과 주휴 8시간을 더해 한 달 평균 주 수를 곱한 값이다."}}, {"@type": "Question", "name": "실수령액도 알 수 있나?", "acceptedAnswer": {"@type": "Answer", "text": "이 계산기는 세전 금액이다. 4대보험은 별도 계산기에서 계산할 수 있다."}}]}</script>
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="/tools/">아이템로그 <i>계산기</i></a><nav><a href="/tools/">전체 계산기</a><a href="/tools/about/">소개·기준</a></nav></div></header>
+<main class="wrap">
+<div class="crumb"><a href="/tools/">계산기</a> › 연봉·월급·시급 환산</div>
+<h1>연봉·월급·시급 환산 계산기</h1>
+<p class="lead">연봉, 월급, 시급 중 아는 것 하나만 넣으면 나머지를 세전으로 바꿔 준다. 최저임금과도 바로 비교한다.</p>
+<section class="card" id="calc"><div class="grid"><div class="f"><label for="kind">아는 금액</label><select id="kind"><option value="y">연봉</option><option value="m">월급</option><option value="h">시급</option></select></div><div class="f"><label for="amt">금액</label><input id="amt" type="text" inputmode="numeric" data-money value="36,000,000" placeholder=""></div><div class="f"><label for="hrs">월 소정근로시간</label><input id="hrs" type="number" inputmode="decimal" step="1" min="1" max="300" value="209"><div class="hint">주 40시간이면 209시간(주휴 포함)</div></div></div><button class="btn" id="go">계산하기</button><div id="res"></div></section><section class="prose">
+<h2>계산식</h2>
+<div class="formula">월급 = 연봉 ÷ 12<br>시급 = 월급 ÷ 월 소정근로시간(주 40시간이면 209시간)<br>일급 = 시급 × 8시간</div>
+<p>연봉 3,600만 원이면 월급은 300만 원, 시급은 약 14,354원이다. 월 209시간은 주 40시간에 주휴 8시간을 더한 값을 월 평균 주 수로 환산한 것이다.</p>
+<h2>실수령액과는 다르다</h2>
+<p>연봉에서 4대보험과 소득세를 빼야 통장에 찍히는 금액이 된다. 4대보험은 <a href="/tools/insurance4/">4대보험료 계산기</a>에서 확인할 수 있다.</p>
+</section><section class="faq"><h2>자주 묻는 질문</h2><details><summary>연봉과 월급은 어떻게 바꾸나?</summary><p>연봉을 12로 나누면 월급이다.</p></details><details><summary>퇴직금이 연봉에 포함되어 있으면?</summary><p>연봉을 13으로 나눠야 월 급여가 나온다. 12로 나누면 실제보다 많게 계산된다.</p></details><details><summary>월 209시간은 어디서 나왔나?</summary><p>주 40시간 근로자의 월 유급 근로시간으로, 주 40시간과 주휴 8시간을 더해 한 달 평균 주 수를 곱한 값이다.</p></details><details><summary>실수령액도 알 수 있나?</summary><p>이 계산기는 세전 금액이다. 4대보험은 별도 계산기에서 계산할 수 있다.</p></details></section><h2>다른 계산기</h2><div class="related"><a href="/tools/insurance4/"><b>4대보험료</b><small>월급에서 빠지는 4대보험</small></a><a href="/tools/min-wage/"><b>최저시급·주휴수당</b><small>시급으로 주휴수당과 월급 계산</small></a><a href="/tools/overtime/"><b>연장·야간·휴일수당</b><small>가산수당 계산</small></a></div><p class="base">기준일 2026-11-10. 법령과 요율이 바뀌면 갱신한다. 계산 기준은 <a href="/tools/about/">소개·계산 기준</a>에서 확인할 수 있다.</p>
+</main>
+<footer><div class="in"><p><a href="/">아이템로그 홈</a><a href="/tools/about/">소개·계산 기준</a><a href="/tools/privacy/">개인정보처리방침</a></p>
+<p>아이템로그 · 계산 결과는 참고용이며 법적·세무적 효력이 없다. 입력한 값은 서버로 전송되거나 저장되지 않고 이 브라우저 안에서만 계산된다.</p></div></footer>
+<script src="/tools/assets/calc.js"></script>
+<script>
+
+bindMoney();
+$('kind').addEventListener('change',function(){var d={y:'36,000,000',m:'3,000,000',h:'10,320'};$('amt').value=d[$('kind').value];});
+onChange(function(){
+ var a=parseNum($('amt').value),hrs=parseNum($('hrs').value),k=$('kind').value;
+ if(!a||!hrs){setRes('');return;}
+ var m,y,h;
+ if(k==='y'){y=a;m=a/12;h=m/hrs;} else if(k==='m'){m=a;y=a*12;h=a/hrs;} else {h=a;m=a*hrs;y=m*12;}
+ var html='<div class="res">'+rows([
+  ['연봉(세전)',won(y)],['월급(세전)',won(m),1],['시급',won(h)],['일급(8시간)',won(h*8)],['주급(주 40시간 + 주휴)',won(h*48)]
+ ])+'</div>';
+ var mw=10320,mw2=10700;
+ html+=note(h>=mw2?'ok':(h>=mw?'info':'warn'),'시급 '+Math.round(h).toLocaleString('ko-KR')+'원은 2026년 최저시급(10,320원) '+(h>=mw?'이상':'미만')+', 2027년 최저시급(10,700원) '+(h>=mw2?'이상':'미만')+'이다.');
+ html+=note('info','세전 금액이다. 4대보험과 소득세를 뺀 실수령액은 아니다. 연봉에 퇴직금이 포함된 경우에는 12가 아니라 13으로 나눠야 월급이 맞다.');
+ setRes(html);
+});
+
+</script></body></html>

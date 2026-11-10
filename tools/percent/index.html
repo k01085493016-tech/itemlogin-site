@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>퍼센트 계산기 | 할인율·증감률·몇 % 계산</title>
+<meta name="description" content="A의 B%는 얼마인지, A는 B의 몇 %인지, 증가율과 할인가를 쉽게 계산한다.">
+<link rel="canonical" href="https://itemlogin.com/tools/percent/">
+<meta property="og:type" content="website"><meta property="og:title" content="퍼센트 계산기 | 할인율·증감률·몇 % 계산"><meta property="og:description" content="A의 B%는 얼마인지, A는 B의 몇 %인지, 증가율과 할인가를 쉽게 계산한다."><meta property="og:url" content="https://itemlogin.com/tools/percent/"><meta property="og:locale" content="ko_KR">
+<link rel="stylesheet" href="/tools/assets/style.css">
+<link rel="icon" href="/favicon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "할인율은 어떻게 구하나?", "acceptedAnswer": {"@type": "Answer", "text": "(원가 − 할인가) ÷ 원가 × 100이다. 원가 50,000원이 40,000원이 되면 20%다."}}, {"@type": "Question", "name": "증가율과 증가분은 다른가?", "acceptedAnswer": {"@type": "Answer", "text": "증가분은 늘어난 숫자 자체이고, 증가율은 원래 값 대비 몇 퍼센트인지다."}}, {"@type": "Question", "name": "부가세 10%를 포함한 금액에서 원래 금액은?", "acceptedAnswer": {"@type": "Answer", "text": "1.1로 나누면 된다. 이건 부가세 계산기에서 바로 구할 수 있다."}}, {"@type": "Question", "name": "%와 %p는 무엇이 다른가?", "acceptedAnswer": {"@type": "Answer", "text": "%는 비율이고 %p는 비율끼리의 차이다."}}]}</script>
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="/tools/">아이템로그 <i>계산기</i></a><nav><a href="/tools/">전체 계산기</a><a href="/tools/about/">소개·기준</a></nav></div></header>
+<main class="wrap">
+<div class="crumb"><a href="/tools/">계산기</a> › 퍼센트·할인율</div>
+<h1>퍼센트 계산기</h1>
+<p class="lead">할인가, 증감률, 몇 퍼센트인지를 한 번에 계산한다. 계산 종류를 고르고 두 숫자만 넣으면 된다.</p>
+<section class="card" id="calc"><div class="grid"><div class="f"><label for="mode">계산 종류</label><select id="mode"><option value="of">A의 B%는 얼마?</option><option value="is">A는 B의 몇 %?</option><option value="chg">A에서 B로 바뀌면 몇 % 증감?</option><option value="disc">원가 A를 B% 할인하면?</option><option value="up">A를 B% 올리면?</option></select></div><div class="f"><label for="a">A</label><input id="a" type="number" inputmode="decimal" step="any" min="" max="" value="50000"></div><div class="f"><label for="b">B</label><input id="b" type="number" inputmode="decimal" step="any" min="" max="" value="20"></div></div><button class="btn" id="go">계산하기</button><div id="res"></div></section><section class="prose">
+<h2>계산식</h2>
+<div class="formula">A의 B% = A × B ÷ 100<br>A는 B의 몇 % = A ÷ B × 100<br>증감률 = (B − A) ÷ A × 100<br>할인가 = 원가 × (1 − 할인율 ÷ 100)</div>
+<h2>자주 헷갈리는 점</h2>
+<ul><li>20% 올렸다가 20% 내리면 원래 값이 아니다. 100 → 120 → 96이 된다.</li>
+<li>10% 할인 뒤 다시 10% 할인은 20% 할인이 아니라 19% 할인이다.</li>
+<li>%p(퍼센트포인트)는 퍼센트끼리의 차이다. 금리 3%에서 5%로 오르면 2%p 올랐고, 증가율은 66.7%다.</li></ul>
+</section><section class="faq"><h2>자주 묻는 질문</h2><details><summary>할인율은 어떻게 구하나?</summary><p>(원가 − 할인가) ÷ 원가 × 100이다. 원가 50,000원이 40,000원이 되면 20%다.</p></details><details><summary>증가율과 증가분은 다른가?</summary><p>증가분은 늘어난 숫자 자체이고, 증가율은 원래 값 대비 몇 퍼센트인지다.</p></details><details><summary>부가세 10%를 포함한 금액에서 원래 금액은?</summary><p>1.1로 나누면 된다. 이건 부가세 계산기에서 바로 구할 수 있다.</p></details><details><summary>%와 %p는 무엇이 다른가?</summary><p>%는 비율이고 %p는 비율끼리의 차이다.</p></details></section><h2>다른 계산기</h2><div class="related"><a href="/tools/vat/"><b>부가세</b><small>공급가액↔합계금액</small></a><a href="/tools/salary/"><b>연봉·월급·시급 환산</b><small>세전 금액 서로 바꾸기</small></a><a href="/tools/pyeong/"><b>평수·㎡ 변환</b><small>평과 제곱미터 바꾸기</small></a></div><p class="base">기준일 2026-11-10. 법령과 요율이 바뀌면 갱신한다. 계산 기준은 <a href="/tools/about/">소개·계산 기준</a>에서 확인할 수 있다.</p>
+</main>
+<footer><div class="in"><p><a href="/">아이템로그 홈</a><a href="/tools/about/">소개·계산 기준</a><a href="/tools/privacy/">개인정보처리방침</a></p>
+<p>아이템로그 · 계산 결과는 참고용이며 법적·세무적 효력이 없다. 입력한 값은 서버로 전송되거나 저장되지 않고 이 브라우저 안에서만 계산된다.</p></div></footer>
+<script src="/tools/assets/calc.js"></script>
+<script>
+
+function fmt(x){return (Math.round(x*100)/100).toLocaleString('ko-KR');}
+onChange(function(){
+ var a=parseNum($('a').value),b=parseNum($('b').value),m=$('mode').value,html='';
+ if(m==='of'){html=rows([[fmt(a)+'의 '+fmt(b)+'%',fmt(a*b/100),1]]);}
+ else if(m==='is'){if(!b){setRes('');return;}html=rows([[fmt(a)+'은(는) '+fmt(b)+'의',fmt(a/b*100)+'%',1]]);}
+ else if(m==='chg'){if(!a){setRes('');return;}var c=(b-a)/a*100;html=rows([['증감률',(c>0?'+':'')+fmt(c)+'%',1],['변화량',(b-a>0?'+':'')+fmt(b-a)]]);}
+ else if(m==='disc'){html=rows([['할인 금액',fmt(a*b/100)],['할인가',fmt(a*(1-b/100)),1]]);}
+ else{html=rows([['올린 금액',fmt(a*b/100)],['올린 후 값',fmt(a*(1+b/100)),1]]);}
+ setRes('<div class="res">'+html+'</div>');
+});
+
+</script></body></html>

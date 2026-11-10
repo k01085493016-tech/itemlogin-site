@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>출산예정일 계산기 | 임신 주수·예정일 계산 (마지막 생리 첫날 기준)</title>
+<meta name="description" content="마지막 생리 시작일을 넣으면 출산예정일과 현재 임신 주수를 계산한다. 네겔레 법칙, 280일 기준.">
+<link rel="canonical" href="https://itemlogin.com/tools/due-date/">
+<meta property="og:type" content="website"><meta property="og:title" content="출산예정일 계산기 | 임신 주수·예정일 계산 (마지막 생리 첫날 기준)"><meta property="og:description" content="마지막 생리 시작일을 넣으면 출산예정일과 현재 임신 주수를 계산한다. 네겔레 법칙, 280일 기준."><meta property="og:url" content="https://itemlogin.com/tools/due-date/"><meta property="og:locale" content="ko_KR">
+<link rel="stylesheet" href="/tools/assets/style.css">
+<link rel="icon" href="/favicon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "출산예정일은 어떻게 계산하나?", "acceptedAnswer": {"@type": "Answer", "text": "마지막 생리 시작일에 280일(40주)을 더한다. 네겔레 법칙은 달에서 3을 빼고 날짜에 7을 더하는 방식으로 같은 날을 구한다."}}, {"@type": "Question", "name": "생리 주기가 불규칙하면?", "acceptedAnswer": {"@type": "Answer", "text": "마지막 생리일로 계산한 날짜가 정확하지 않을 수 있다. 병원에서 초음파로 주수를 확인해야 한다."}}, {"@type": "Question", "name": "임신 주수는 수정일부터 세나?", "acceptedAnswer": {"@type": "Answer", "text": "아니다. 마지막 생리 시작일부터 센다. 그래서 수정 시점에는 이미 약 2주가 지난 것으로 본다."}}, {"@type": "Question", "name": "만삭은 몇 주인가?", "acceptedAnswer": {"@type": "Answer", "text": "37주 0일부터 41주 6일까지를 만삭으로 본다."}}]}</script>
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="/tools/">아이템로그 <i>계산기</i></a><nav><a href="/tools/">전체 계산기</a><a href="/tools/about/">소개·기준</a></nav></div></header>
+<main class="wrap">
+<div class="crumb"><a href="/tools/">계산기</a> › 출산예정일·임신주수</div>
+<h1>출산예정일 계산기</h1>
+<p class="lead">마지막 생리 시작일을 넣으면 출산예정일과 지금이 임신 몇 주 며칠인지 알려준다.</p>
+<section class="card" id="calc"><div class="grid"><div class="f"><label for="lmp">마지막 생리 시작일</label><input id="lmp" type="date" value=""></div><div class="f"><label for="base">기준일</label><input id="base" type="date" value=""></div><div class="f"><label for="cyc">생리 주기(일)</label><input id="cyc" type="number" inputmode="decimal" step="1" min="21" max="45" value="28"><div class="hint">28일보다 길거나 짧으면 보정한다</div></div></div><button class="btn" id="go">계산하기</button><div id="res"></div></section><section class="prose">
+<h2>계산 방법</h2>
+<div class="formula">출산예정일 = 마지막 생리 시작일 + 280일(40주)<br>생리 주기가 28일이 아니면 (주기 − 28)일만큼 보정</div>
+<p>임신 주수는 마지막 생리 시작일을 0주 0일로 본다. 실제 수정은 보통 그로부터 약 2주 뒤에 일어나므로, 임신 4주쯤에 임신 사실을 알게 되는 경우가 많다.</p>
+<h2>알아둘 점</h2>
+<ul><li>예정일에 맞춰 낳는 경우는 드물다. 37주 0일부터 41주 6일 사이를 만삭으로 본다.</li>
+<li>이 계산기는 마지막 생리일을 기준으로 한 추정치다. 병원 초음파로 정한 예정일이 우선한다.</li></ul>
+</section><section class="faq"><h2>자주 묻는 질문</h2><details><summary>출산예정일은 어떻게 계산하나?</summary><p>마지막 생리 시작일에 280일(40주)을 더한다. 네겔레 법칙은 달에서 3을 빼고 날짜에 7을 더하는 방식으로 같은 날을 구한다.</p></details><details><summary>생리 주기가 불규칙하면?</summary><p>마지막 생리일로 계산한 날짜가 정확하지 않을 수 있다. 병원에서 초음파로 주수를 확인해야 한다.</p></details><details><summary>임신 주수는 수정일부터 세나?</summary><p>아니다. 마지막 생리 시작일부터 센다. 그래서 수정 시점에는 이미 약 2주가 지난 것으로 본다.</p></details><details><summary>만삭은 몇 주인가?</summary><p>37주 0일부터 41주 6일까지를 만삭으로 본다.</p></details></section><h2>다른 계산기</h2><div class="related"><a href="/tools/age/"><b>만 나이</b><small>생년월일로 만 나이·다음 생일</small></a><a href="/tools/dday/"><b>D-day·날짜</b><small>일수 차이와 N일 뒤 날짜</small></a><a href="/tools/bmi/"><b>BMI·표준체중</b><small>체질량지수 계산</small></a></div><p class="base">기준일 2026-11-10. 법령과 요율이 바뀌면 갱신한다. 계산 기준은 <a href="/tools/about/">소개·계산 기준</a>에서 확인할 수 있다.</p>
+</main>
+<footer><div class="in"><p><a href="/">아이템로그 홈</a><a href="/tools/about/">소개·계산 기준</a><a href="/tools/privacy/">개인정보처리방침</a></p>
+<p>아이템로그 · 계산 결과는 참고용이며 법적·세무적 효력이 없다. 입력한 값은 서버로 전송되거나 저장되지 않고 이 브라우저 안에서만 계산된다.</p></div></footer>
+<script src="/tools/assets/calc.js"></script>
+<script>
+
+var t0=new Date();
+if(!$('base').value){$('base').value=ymd(t0);}
+if(!$('lmp').value){$('lmp').value=ymd(addDays(t0,-70));}
+onChange(function(){
+ var l=parseDate($('lmp').value),t=parseDate($('base').value),c=parseNum($('cyc').value)||28;
+ if(!l||!t){setRes('');return;}
+ var due=addDays(l,280+(c-28));
+ var d=daysBetween(l,t)-(c-28);
+ if(d<0){setRes(note('warn','기준일이 마지막 생리 시작일보다 빠르다.'));return;}
+ var w=Math.floor(d/7),r=d%7,left=daysBetween(t,due);
+ var html='<div class="res">'+rows([
+  ['출산예정일',ymd(due)+' ('+WD[due.getDay()]+'요일)',1],
+  ['현재 임신 주수',w+'주 '+r+'일'],
+  ['출산예정일까지',left>=0?left+'일 남음':Math.abs(left)+'일 지남'],
+  ['임신 초기(12주) 끝',ymd(addDays(l,84+(c-28)))],
+  ['임신 중기(27주) 끝',ymd(addDays(l,189+(c-28)))]
+ ])+'</div>';
+ if(w>42){html+=note('warn','임신 주수가 42주를 넘는다. 날짜를 다시 확인해 달라.');}
+ html+=note('info','실제 출산일은 예정일과 다를 수 있다. 정확한 주수와 예정일은 초음파 검사로 병원에서 정한다.');
+ setRes(html);
+});
+
+</script></body></html>

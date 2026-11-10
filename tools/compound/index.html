@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>복리 계산기 | 적립식 투자 미래가치·목표금액 월 적립액</title>
+<meta name="description" content="매월 적립액, 연 수익률, 기간으로 만기 금액을 계산하고, 목표 금액을 모으기 위한 월 적립액도 구한다. 복리 효과 확인.">
+<link rel="canonical" href="https://itemlogin.com/tools/compound/">
+<meta property="og:type" content="website"><meta property="og:title" content="복리 계산기 | 적립식 투자 미래가치·목표금액 월 적립액"><meta property="og:description" content="매월 적립액, 연 수익률, 기간으로 만기 금액을 계산하고, 목표 금액을 모으기 위한 월 적립액도 구한다. 복리 효과 확인."><meta property="og:url" content="https://itemlogin.com/tools/compound/"><meta property="og:locale" content="ko_KR">
+<link rel="stylesheet" href="/tools/assets/style.css">
+<link rel="icon" href="/favicon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "복리와 단리의 차이는?", "acceptedAnswer": {"@type": "Answer", "text": "단리는 원금에만 이자가 붙고, 복리는 이자에도 이자가 붙는다. 기간이 길수록 차이가 커진다."}}, {"@type": "Question", "name": "72의 법칙은 무엇인가?", "acceptedAnswer": {"@type": "Answer", "text": "72를 연 수익률로 나누면 원금이 두 배가 되는 대략의 햇수다. 연 6%면 약 12년이다."}}, {"@type": "Question", "name": "세금은 반영되나?", "acceptedAnswer": {"@type": "Answer", "text": "반영되지 않는다. 투자 상품에 따라 세금과 수수료가 다르다."}}, {"@type": "Question", "name": "수익률을 얼마로 넣어야 하나?", "acceptedAnswer": {"@type": "Answer", "text": "보장되는 값이 없으므로 보수적으로 여러 값을 넣어 비교해 보는 것이 좋다."}}]}</script>
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="/tools/">아이템로그 <i>계산기</i></a><nav><a href="/tools/">전체 계산기</a><a href="/tools/about/">소개·기준</a></nav></div></header>
+<main class="wrap">
+<div class="crumb"><a href="/tools/">계산기</a> › 복리·적립식 투자</div>
+<h1>복리·적립식 투자 계산기</h1>
+<p class="lead">매달 일정 금액을 모을 때 연 수익률에 따라 얼마가 되는지, 또는 목표 금액을 모으려면 월 얼마를 넣어야 하는지 계산한다.</p>
+<section class="card" id="calc"><div class="grid"><div class="f"><label for="mode">계산 종류</label><select id="mode"><option value="fv">월 적립액 → 만기 금액</option><option value="pmt">목표 금액 → 필요한 월 적립액</option></select></div><div class="f"><label for="amt">월 적립액</label><input id="amt" type="text" inputmode="numeric" data-money value="500,000" placeholder=""></div><div class="f"><label for="seed">처음 넣는 목돈</label><input id="seed" type="text" inputmode="numeric" data-money value="0" placeholder=""></div><div class="f"><label for="rate">연 수익률(%)</label><input id="rate" type="number" inputmode="decimal" step="0.1" min="0" max="50" value="5"><div class="hint">수익을 보장하지 않는 가정 값이다</div></div><div class="f"><label for="years">기간(년)</label><input id="years" type="number" inputmode="decimal" step="1" min="1" max="60" value="10"></div></div><button class="btn" id="go">계산하기</button><div id="res"></div></section><section class="prose">
+<h2>계산식</h2>
+<div class="formula">월 수익률 i = 연 수익률 ÷ 12, 개월 수 n<br>적립식 미래가치 = 월 적립액 × ((1 + i)<sup>n</sup> − 1) ÷ i<br>목돈 미래가치 = 목돈 × (1 + i)<sup>n</sup></div>
+<p>월 50만 원을 연 5%로 10년 모으면 원금은 6,000만 원이고 만기에는 약 7,764만 원이 된다. 기간이 길수록 이자에 이자가 붙는 복리 효과가 커진다.</p>
+<h2>알아둘 점</h2>
+<ul><li>이 계산은 수익률이 매년 일정하다는 가정이다. 실제 투자 수익률은 해마다 크게 달라지고 손실이 날 수도 있다.</li>
+<li>예금이나 적금은 <a href="/tools/savings/">예금·적금 이자 계산기</a>에서 이자소득세를 반영해 계산할 수 있다.</li></ul>
+</section><section class="faq"><h2>자주 묻는 질문</h2><details><summary>복리와 단리의 차이는?</summary><p>단리는 원금에만 이자가 붙고, 복리는 이자에도 이자가 붙는다. 기간이 길수록 차이가 커진다.</p></details><details><summary>72의 법칙은 무엇인가?</summary><p>72를 연 수익률로 나누면 원금이 두 배가 되는 대략의 햇수다. 연 6%면 약 12년이다.</p></details><details><summary>세금은 반영되나?</summary><p>반영되지 않는다. 투자 상품에 따라 세금과 수수료가 다르다.</p></details><details><summary>수익률을 얼마로 넣어야 하나?</summary><p>보장되는 값이 없으므로 보수적으로 여러 값을 넣어 비교해 보는 것이 좋다.</p></details></section><h2>다른 계산기</h2><div class="related"><a href="/tools/savings/"><b>예금·적금 이자</b><small>세후 만기 수령액</small></a><a href="/tools/loan/"><b>대출 이자</b><small>월 납입액과 총 이자</small></a><a href="/tools/percent/"><b>퍼센트·할인율</b><small>퍼센트, 증감률, 할인가</small></a></div><p class="base">기준일 2026-11-10. 법령과 요율이 바뀌면 갱신한다. 계산 기준은 <a href="/tools/about/">소개·계산 기준</a>에서 확인할 수 있다.</p>
+</main>
+<footer><div class="in"><p><a href="/">아이템로그 홈</a><a href="/tools/about/">소개·계산 기준</a><a href="/tools/privacy/">개인정보처리방침</a></p>
+<p>아이템로그 · 계산 결과는 참고용이며 법적·세무적 효력이 없다. 입력한 값은 서버로 전송되거나 저장되지 않고 이 브라우저 안에서만 계산된다.</p></div></footer>
+<script src="/tools/assets/calc.js"></script>
+<script>
+
+bindMoney();
+$('mode').addEventListener('change',function(){var f=$('mode').value==='fv';document.querySelector('label[for=amt]').textContent=f?'월 적립액':'목표 금액';$('amt').value=f?'500,000':'100,000,000';});
+onChange(function(){
+ var a=parseNum($('amt').value),seed=parseNum($('seed').value),rate=parseNum($('rate').value),y=parseNum($('years').value),n=Math.round(y*12);
+ if(!a||!n){setRes('');return;}
+ var i=rate/100/12,g=i===0?n:(Math.pow(1+i,n)-1)/i,sg=Math.pow(1+i,n);
+ var html;
+ if($('mode').value==='fv'){
+  var fv=a*g+seed*sg,pr=a*n+seed;
+  html=rows([['낸 원금 합계',won(pr)],['불어난 금액(이자·수익)',won(fv-pr)],['만기 금액(세전)',won(fv),1],['원금 대비',(fv/pr*100).toFixed(0)+'%']]);
+ } else {
+  var need=(a-seed*sg)/g;
+  if(need<=0){html=rows([['필요한 월 적립액','목돈만으로 목표를 넘는다',1]]);}
+  else{html=rows([['필요한 월 적립액',won(need),1],['낸 원금 합계',won(need*n+seed)]]);}
+ }
+ setRes('<div class="res">'+html+'</div>'+note('info','매월 말에 적립하고 수익률이 매달 복리로 붙는다고 가정한 계산이다. 세금, 수수료, 수익률 변동은 반영하지 않았다. 투자 수익은 보장되지 않는다.'));
+});
+
+</script></body></html>
