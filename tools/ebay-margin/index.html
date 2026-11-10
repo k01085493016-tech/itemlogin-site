@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>이베이 마진 계산기 | 수수료·환율·배송비 반영 순이익 (한국 판매자)</title>
+<meta name="description" content="사입가, 배송비, eBay 판매가를 넣으면 거래·국제 수수료와 환율을 반영한 순이익, 마진율, 손익분기 판매가를 계산한다. 한국 판매자 국제 수수료 1.45% 기준.">
+<link rel="canonical" href="https://itemlogin.com/tools/ebay-margin/">
+<meta property="og:type" content="website"><meta property="og:title" content="이베이 마진 계산기 | 수수료·환율·배송비 반영 순이익 (한국 판매자)"><meta property="og:description" content="사입가, 배송비, eBay 판매가를 넣으면 거래·국제 수수료와 환율을 반영한 순이익, 마진율, 손익분기 판매가를 계산한다. 한국 판매자 국제 수수료 1.45% 기준."><meta property="og:url" content="https://itemlogin.com/tools/ebay-margin/"><meta property="og:locale" content="ko_KR">
+<link rel="stylesheet" href="/tools/assets/style.css">
+<link rel="icon" href="/favicon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "이베이 수수료는 얼마인가?", "acceptedAnswer": {"@type": "Answer", "text": "대부분 카테고리는 총 결제액의 13.6%와 주문당 0.30~0.40달러이다. 한국 판매자는 여기에 국제 수수료 1.45%가 붙는다. 카테고리와 스토어 구독에 따라 달라진다."}}, {"@type": "Question", "name": "판매세도 수수료 대상인가?", "acceptedAnswer": {"@type": "Answer", "text": "그렇다. eBay는 상품 가격, 배송비, 판매세를 합친 총 결제액에 수수료율을 적용한다."}}, {"@type": "Question", "name": "마진율은 무엇을 기준으로 계산하나?", "acceptedAnswer": {"@type": "Answer", "text": "순이익을 상품 가격과 구매자에게 받은 배송비의 원화 환산액으로 나눈 값이다."}}, {"@type": "Question", "name": "손익분기 판매가는 무엇인가?", "acceptedAnswer": {"@type": "Answer", "text": "순이익이 정확히 0원이 되는 판매가이다. 이 가격보다 높게 팔아야 이익이 난다."}}]}</script>
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="/tools/">아이템로그 <i>계산기</i></a><nav><a href="/tools/">전체 계산기</a><a href="/tools/about/">소개·기준</a></nav></div></header>
+<main class="wrap">
+<div class="crumb"><a href="/tools/">계산기</a> › 이베이 마진·수수료</div>
+<h1>이베이 마진 계산기</h1>
+<p class="lead">한국에서 사서 이베이로 파는 경우의 순이익을 계산한다. eBay 수수료, 한국 판매자 국제 수수료, 환율, 환전 손실, 배송비를 반영하고 손익분기 판매가와 목표 마진 판매가까지 알려준다.</p>
+<section class="card" id="calc"><div class="grid"><div class="f"><label for="cost">사입가(원)</label><input id="cost" type="text" inputmode="numeric" data-money value="50,000" placeholder=""></div><div class="f"><label for="dom">국내 배송비(원)</label><input id="dom" type="text" inputmode="numeric" data-money value="3,000" placeholder=""></div><div class="f"><label for="intl">국제 배송비(원, 내가 부담)</label><input id="intl" type="text" inputmode="numeric" data-money value="25,000" placeholder=""></div><div class="f"><label for="duty">관세·기타 비용(원)</label><input id="duty" type="text" inputmode="numeric" data-money value="0" placeholder=""></div><div class="f"><label for="price">eBay 판매가(USD)</label><input id="price" type="number" inputmode="decimal" step="0.01" min="0" max="" value="120"></div><div class="f"><label for="ship">구매자에게 받는 배송비(USD)</label><input id="ship" type="number" inputmode="decimal" step="0.01" min="0" max="" value="0"></div><div class="f"><label for="tax">판매세(USD, 구매자가 내고 eBay가 대납)</label><input id="tax" type="number" inputmode="decimal" step="0.01" min="0" max="" value="0"><div class="hint">수수료 계산에는 포함되고 내 수입은 아니다</div></div><div class="f"><label for="fx">환율(원/USD)</label><input id="fx" type="number" inputmode="decimal" step="1" min="500" max="3000" value="1340"></div><div class="f"><label for="fvf">eBay 거래 수수료율(%)</label><input id="fvf" type="number" inputmode="decimal" step="0.1" min="0" max="30" value="13.6"><div class="hint">대부분 카테고리 기준. 카테고리마다 다르다</div></div><div class="f"><label for="ad">광고 비율(%)</label><input id="ad" type="number" inputmode="decimal" step="0.1" min="0" max="30" value="0"><div class="hint">Promoted Listings 등</div></div><div class="f"><label for="loss">환전·출금 손실률(%)</label><input id="loss" type="number" inputmode="decimal" step="0.1" min="0" max="10" value="1.3"><div class="hint">페이오니아 등 원화 출금 시 환율 차이</div></div><div class="f"><label for="tgt">목표 마진율(%)</label><input id="tgt" type="number" inputmode="decimal" step="1" min="1" max="80" value="20"></div></div><button class="btn" id="go">계산하기</button><div id="res"></div></section><section class="prose">
+<h2>계산 방법</h2>
+<div class="formula">eBay 수수료 = 구매자 총 결제액 × (거래 수수료율 + 국제 수수료율 + 광고율) + 주문당 고정 수수료<br>받는 금액 = 총 결제액 − eBay 수수료 − 판매세<br>순이익 = 받는 금액 × 환율 × (1 − 환전 손실률) − (사입가 + 국내·국제 배송비 + 관세)</div>
+<p>eBay는 상품 가격만이 아니라 구매자가 낸 배송비와 판매세를 포함한 총 결제액에 수수료를 붙인다. 주문당 고정 수수료는 주문이 10달러 이하면 0.30달러, 10달러를 넘으면 0.40달러이다. 한국에 등록 주소가 있는 판매자에게는 총 결제액의 1.45%가 국제 수수료로 추가된다.</p>
+<h2>기본값의 근거</h2>
+<ul><li>대부분 카테고리의 최종 거래 수수료 13.6%(스토어가 없는 경우, 7,500달러까지), 주문당 0.30달러·0.40달러: eBay 판매 수수료 안내(2026년 11월 확인).</li>
+<li>한국 판매자 국제 수수료 1.45%: eBay 국제 수수료 안내(2026년 11월 확인).</li>
+<li>환전·출금 손실률 1.3%는 예시이다. 쓰는 출금 서비스의 실제 값으로 바꿔야 한다.</li></ul>
+<p>카테고리, 스토어 구독, 판매자 등급에 따라 거래 수수료율이 다르다. 내 실제 정산서의 수수료를 기준으로 위 칸을 맞추면 정확해진다.</p>
+<h2>알아둘 점</h2>
+<ul><li>2026년 12월 2일부터 eBay가 대신 환전해 줄 때의 통화 환전 수수료가 오른다고 eBay가 공지했다. 해당되면 환전 손실률에 반영해야 한다.</li>
+<li>이 계산기는 환불, 반품, 분쟁 비용을 넣지 않는다.</li></ul>
+</section><section class="faq"><h2>자주 묻는 질문</h2><details><summary>이베이 수수료는 얼마인가?</summary><p>대부분 카테고리는 총 결제액의 13.6%와 주문당 0.30~0.40달러이다. 한국 판매자는 여기에 국제 수수료 1.45%가 붙는다. 카테고리와 스토어 구독에 따라 달라진다.</p></details><details><summary>판매세도 수수료 대상인가?</summary><p>그렇다. eBay는 상품 가격, 배송비, 판매세를 합친 총 결제액에 수수료율을 적용한다.</p></details><details><summary>마진율은 무엇을 기준으로 계산하나?</summary><p>순이익을 상품 가격과 구매자에게 받은 배송비의 원화 환산액으로 나눈 값이다.</p></details><details><summary>손익분기 판매가는 무엇인가?</summary><p>순이익이 정확히 0원이 되는 판매가이다. 이 가격보다 높게 팔아야 이익이 난다.</p></details></section><h2>다른 계산기</h2><div class="related"><a href="/tools/percent/"><b>퍼센트·할인율</b><small>퍼센트, 증감률, 할인가</small></a><a href="/tools/salary/"><b>연봉·월급·시급 환산</b><small>세전 금액 서로 바꾸기</small></a><a href="/tools/vat/"><b>부가세</b><small>공급가액↔합계금액</small></a></div><p class="base">기준일 2026-11-10. 법령과 요율이 바뀌면 갱신한다. 계산 기준은 <a href="/tools/about/">소개·계산 기준</a>에서 확인할 수 있다.</p>
+</main>
+<footer><div class="in"><p><a href="/">아이템로그 홈</a><a href="/tools/about/">소개·계산 기준</a><a href="/tools/privacy/">개인정보처리방침</a></p>
+<p>아이템로그 · 계산 결과는 참고용이며 법적·세무적 효력이 없다. 입력한 값은 서버로 전송되거나 저장되지 않고 이 브라우저 안에서만 계산된다.</p></div></footer>
+<script src="/tools/assets/calc.js"></script>
+<script>
+
+bindMoney();
+onChange(function(){
+ var cost=parseNum($('cost').value),dom=parseNum($('dom').value),intl=parseNum($('intl').value),duty=parseNum($('duty').value);
+ var p=parseNum($('price').value),s=parseNum($('ship').value),t=parseNum($('tax').value),fx=parseNum($('fx').value);
+ var r=(parseNum($('fvf').value)+1.45+parseNum($('ad').value))/100,loss=parseNum($('loss').value)/100,m=parseNum($('tgt').value)/100;
+ if(!p||!fx){setRes('');return;}
+ var total=p+s+t,fixed=total<=10?0.30:0.40,fee=total*r+fixed,recv=total-fee-t;
+ var krw=recv*fx*(1-loss),totalCost=cost+dom+intl+duty,profit=krw-totalCost,rev=(p+s)*fx,mg=rev?profit/rev:0;
+ var k=fx*(1-loss),f2=0.40;
+ var be=((totalCost/k+f2+t)/(1-r))-s-t;
+ var den=k*(1-r)-m*fx,tp=den<=0?null:(totalCost+m*fx*s+k*(f2+t)-k*(1-r)*(s+t))/den;
+ var list=[
+  ['구매자 총 결제액',(Math.round(total*100)/100).toLocaleString('ko-KR')+' USD'],
+  ['eBay 수수료(거래+국제 1.45%+광고+고정)',(Math.round(fee*100)/100).toLocaleString('ko-KR')+' USD'],
+  ['내가 받는 금액',(Math.round(recv*100)/100).toLocaleString('ko-KR')+' USD'],
+  ['원화 환산(환전 손실 반영)',won(krw)],
+  ['총 원가(사입+배송+관세)',won(totalCost)],
+  ['순이익',won(profit),1],
+  ['마진율(상품 매출 대비)',(mg*100).toFixed(1)+'%',1],
+  ['손익분기 판매가',be>0?(Math.round(be*100)/100).toLocaleString('ko-KR')+' USD':'-'],
+  ['목표 마진 '+(m*100).toFixed(0)+'% 판매가',tp?(Math.round(tp*100)/100).toLocaleString('ko-KR')+' USD':'불가']
+ ];
+ var html='<div class="res">'+rows(list)+'</div>';
+ html+=profit<0?note('warn','이 조건에서는 손해가 난다. 판매가를 올리거나 원가·배송비를 줄여야 한다.'):note('info','예상치이다. 실제 정산액은 카테고리, 환불, 환율, 배송비 정산에 따라 달라진다. 판매 금지·제한 품목과 통관 규정은 직접 확인해야 한다.');
+ setRes(html);
+});
+
+</script></body></html>
