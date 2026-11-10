@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>부가세 계산기 | 공급가액·합계금액 부가가치세 10% 계산</title>
+<meta name="description" content="공급가액에서 부가세와 합계금액을, 합계금액에서 공급가액과 부가세를 계산한다. 세율은 기본 10%.">
+<link rel="canonical" href="https://itemlogin.com/tools/vat/">
+<meta property="og:type" content="website"><meta property="og:title" content="부가세 계산기 | 공급가액·합계금액 부가가치세 10% 계산"><meta property="og:description" content="공급가액에서 부가세와 합계금액을, 합계금액에서 공급가액과 부가세를 계산한다. 세율은 기본 10%."><meta property="og:url" content="https://itemlogin.com/tools/vat/"><meta property="og:locale" content="ko_KR">
+<link rel="stylesheet" href="/tools/assets/style.css">
+<link rel="icon" href="/favicon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "공급가액과 공급대가는 어떻게 다른가?", "acceptedAnswer": {"@type": "Answer", "text": "공급가액은 부가세를 뺀 금액이고, 공급대가는 부가세를 포함한 금액이다."}}, {"@type": "Question", "name": "부가세를 포함한 금액에서 부가세만 구하려면?", "acceptedAnswer": {"@type": "Answer", "text": "합계금액을 11로 나누면 부가세이다. 110,000원이면 10,000원이다."}}, {"@type": "Question", "name": "세금계산서 금액은 어느 쪽인가?", "acceptedAnswer": {"@type": "Answer", "text": "세금계산서에는 공급가액과 세액을 따로 적는다."}}, {"@type": "Question", "name": "간이과세자도 같은 방식인가?", "acceptedAnswer": {"@type": "Answer", "text": "아니다. 간이과세자는 공급대가에 업종별 부가가치율과 10%를 곱해 납부세액을 계산한다."}}]}</script>
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="/tools/">아이템로그 <i>계산기</i></a><nav><a href="/tools/">전체 계산기</a><a href="/tools/about/">소개·기준</a></nav></div></header>
+<main class="wrap">
+<div class="crumb"><a href="/tools/">계산기</a> › 부가세</div>
+<h1>부가세 계산기</h1>
+<p class="lead">공급가액을 넣으면 부가세와 합계금액이, 합계금액을 넣으면 공급가액과 부가세가 나온다. 견적서와 세금계산서를 만들 때 쓴다.</p>
+<section class="card" id="calc"><div class="grid"><div class="f"><label for="mode">계산 방향</label><select id="mode"><option value="s2t">공급가액 → 합계금액</option><option value="t2s">합계금액 → 공급가액</option></select></div><div class="f"><label for="amt">금액</label><input id="amt" type="text" inputmode="numeric" data-money value="1,000,000" placeholder=""></div><div class="f"><label for="rate">세율(%)</label><input id="rate" type="number" inputmode="decimal" step="0.1" min="0" max="100" value="10"><div class="hint">일반과세자 기본 세율</div></div></div><button class="btn" id="go">계산하기</button><div id="res"></div></section><section class="prose">
+<h2>계산식</h2>
+<div class="formula">부가세 = 공급가액 × 10%<br>합계금액(공급대가) = 공급가액 + 부가세 = 공급가액 × 1.1<br>공급가액 = 합계금액 ÷ 1.1</div>
+<p>합계금액 110,000원이라면 공급가액은 100,000원, 부가세는 10,000원이다. 합계금액에서 부가세를 구할 때는 11로 나눈 값이라고 기억해 두면 편하다.</p>
+<h2>알아둘 점</h2>
+<ul><li>일반과세자의 세율을 기준으로 한 계산이다. 간이과세자는 업종별 부가가치율을 곱해 세액을 계산하므로 다르다.</li>
+<li>면세 품목은 부가세가 없다.</li>
+<li>원 단위 미만은 반올림한다.</li></ul>
+</section><section class="faq"><h2>자주 묻는 질문</h2><details><summary>공급가액과 공급대가는 어떻게 다른가?</summary><p>공급가액은 부가세를 뺀 금액이고, 공급대가는 부가세를 포함한 금액이다.</p></details><details><summary>부가세를 포함한 금액에서 부가세만 구하려면?</summary><p>합계금액을 11로 나누면 부가세이다. 110,000원이면 10,000원이다.</p></details><details><summary>세금계산서 금액은 어느 쪽인가?</summary><p>세금계산서에는 공급가액과 세액을 따로 적는다.</p></details><details><summary>간이과세자도 같은 방식인가?</summary><p>아니다. 간이과세자는 공급대가에 업종별 부가가치율과 10%를 곱해 납부세액을 계산한다.</p></details></section><h2>다른 계산기</h2><div class="related"><a href="/tools/loan/"><b>대출 이자</b><small>월 납입액과 총 이자</small></a><a href="/tools/savings/"><b>예금·적금 이자</b><small>세후 만기 수령액</small></a><a href="/tools/min-wage/"><b>최저시급·주휴수당</b><small>시급으로 주휴수당과 월급 계산</small></a></div><p class="base">기준일 2026-11-10. 법령과 요율이 바뀌면 갱신한다. 계산 기준은 <a href="/tools/about/">소개·계산 기준</a>에서 확인할 수 있다.</p>
+</main>
+<footer><div class="in"><p><a href="/">아이템로그 홈</a><a href="/tools/about/">소개·계산 기준</a><a href="/tools/privacy/">개인정보처리방침</a></p>
+<p>아이템로그 · 계산 결과는 참고용이며 법적·세무적 효력이 없다. 입력한 값은 서버로 전송되거나 저장되지 않고 이 브라우저 안에서만 계산된다.</p></div></footer>
+<script src="/tools/assets/calc.js"></script>
+<script>
+
+bindMoney();
+$('mode').addEventListener('change',function(){document.querySelector('label[for=amt]').textContent=$('mode').value==='s2t'?'공급가액':'합계금액(부가세 포함)';});
+onChange(function(){
+ var a=parseNum($('amt').value),r=parseNum($('rate').value)/100,s,v,t;
+ if(!a){setRes('');return;}
+ if($('mode').value==='s2t'){s=a;v=Math.round(s*r);t=s+v;}
+ else{t=a;s=Math.round(t/(1+r));v=t-s;}
+ setRes('<div class="res">'+rows([['공급가액',won(s)],['부가세',won(v)],['합계금액',won(t),1]])+'</div>');
+});
+
+</script></body></html>

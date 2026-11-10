@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>대출 이자 계산기 | 원리금균등·원금균등·만기일시 상환</title>
+<meta name="description" content="대출금액, 연이자율, 기간을 넣으면 월 납입액과 총 이자, 회차별 상환표를 계산한다. 원리금균등, 원금균등, 만기일시 지원.">
+<link rel="canonical" href="https://itemlogin.com/tools/loan/">
+<meta property="og:type" content="website"><meta property="og:title" content="대출 이자 계산기 | 원리금균등·원금균등·만기일시 상환"><meta property="og:description" content="대출금액, 연이자율, 기간을 넣으면 월 납입액과 총 이자, 회차별 상환표를 계산한다. 원리금균등, 원금균등, 만기일시 지원."><meta property="og:url" content="https://itemlogin.com/tools/loan/"><meta property="og:locale" content="ko_KR">
+<link rel="stylesheet" href="/tools/assets/style.css">
+<link rel="icon" href="/favicon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "원리금균등과 원금균등 중 뭐가 유리한가?", "acceptedAnswer": {"@type": "Answer", "text": "총 이자만 보면 원금균등이 적다. 다만 초기 월 납입액이 커서 소득이 안정적일 때 맞는다. 월 부담을 일정하게 하고 싶다면 원리금균등이 편하다."}}, {"@type": "Question", "name": "연이자율을 월 이자율로 어떻게 바꾸나?", "acceptedAnswer": {"@type": "Answer", "text": "연이자율을 12로 나눈다. 연 4.8%라면 월 0.4%이다."}}, {"@type": "Question", "name": "만기일시상환은 언제 쓰나?", "acceptedAnswer": {"@type": "Answer", "text": "기간 중에는 이자만 내고 만기에 원금을 한 번에 갚는 방식이다. 단기 대출이나 만기에 목돈이 들어올 계획이 있을 때 쓴다."}}, {"@type": "Question", "name": "중도상환수수료는 포함되나?", "acceptedAnswer": {"@type": "Answer", "text": "포함하지 않았다. 중도상환수수료율은 금융기관과 상품마다 다르므로 약관에서 확인해야 한다."}}]}</script>
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="/tools/">아이템로그 <i>계산기</i></a><nav><a href="/tools/">전체 계산기</a><a href="/tools/about/">소개·기준</a></nav></div></header>
+<main class="wrap">
+<div class="crumb"><a href="/tools/">계산기</a> › 대출 이자</div>
+<h1>대출 이자 계산기</h1>
+<p class="lead">대출금액, 연이자율, 기간을 넣으면 월 납입액과 총 이자, 회차별 상환표를 보여준다. 세 가지 상환 방식을 비교해 볼 수 있다.</p>
+<section class="card" id="calc"><div class="grid"><div class="f"><label for="amt">대출금액</label><input id="amt" type="text" inputmode="numeric" data-money value="100,000,000" placeholder=""></div><div class="f"><label for="rate">연이자율(%)</label><input id="rate" type="number" inputmode="decimal" step="0.01" min="0" max="30" value="4.5"></div><div class="f"><label for="term">대출 기간</label><input id="term" type="number" inputmode="decimal" step="1" min="1" max="50" value="20"></div><div class="f"><label for="unit">기간 단위</label><select id="unit"><option value="y">년</option><option value="m">개월</option></select></div><div class="f"><label for="method">상환 방식</label><select id="method"><option value="equal">원리금균등상환</option><option value="principal">원금균등상환</option><option value="bullet">만기일시상환</option></select></div></div><button class="btn" id="go">계산하기</button><div id="res"></div><div id="sched"></div></section><section class="prose">
+<h2>상환 방식 비교</h2>
+<table class="t"><tr><th>방식</th><th>매월 내는 돈</th><th>특징</th></tr>
+<tr><td>원리금균등</td><td>매월 같음</td><td>계획 세우기 쉽다. 초기에는 이자 비중이 크다.</td></tr>
+<tr><td>원금균등</td><td>처음이 가장 많고 점점 줄어듦</td><td>총 이자가 가장 적다. 초기 부담이 크다.</td></tr>
+<tr><td>만기일시</td><td>매월 이자만, 만기에 원금</td><td>월 부담이 가장 적지만 총 이자가 가장 많다.</td></tr></table>
+<h2>계산식</h2>
+<div class="formula">월 이자율 r = 연이자율 ÷ 12<br>원리금균등 월 납입액 = 대출금액 × r ÷ (1 − (1 + r)<sup>−n</sup>) (n은 개월 수)<br>원금균등 월 원금 = 대출금액 ÷ n, 월 이자 = 남은 원금 × r</div>
+<p>이자는 원 단위 미만을 버리고, 마지막 회차에서 남은 원금을 모두 정리한다.</p>
+<h2>알아둘 점</h2>
+<ul><li>거치기간이 있는 대출은 거치기간 동안 이자만 내므로 이 계산기와 다르다.</li>
+<li>변동금리 대출은 금리가 바뀌면 월 납입액도 바뀐다.</li>
+<li>실제 대출 전에는 금융기관의 상환 스케줄을 반드시 확인해야 한다.</li></ul>
+</section><section class="faq"><h2>자주 묻는 질문</h2><details><summary>원리금균등과 원금균등 중 뭐가 유리한가?</summary><p>총 이자만 보면 원금균등이 적다. 다만 초기 월 납입액이 커서 소득이 안정적일 때 맞는다. 월 부담을 일정하게 하고 싶다면 원리금균등이 편하다.</p></details><details><summary>연이자율을 월 이자율로 어떻게 바꾸나?</summary><p>연이자율을 12로 나눈다. 연 4.8%라면 월 0.4%이다.</p></details><details><summary>만기일시상환은 언제 쓰나?</summary><p>기간 중에는 이자만 내고 만기에 원금을 한 번에 갚는 방식이다. 단기 대출이나 만기에 목돈이 들어올 계획이 있을 때 쓴다.</p></details><details><summary>중도상환수수료는 포함되나?</summary><p>포함하지 않았다. 중도상환수수료율은 금융기관과 상품마다 다르므로 약관에서 확인해야 한다.</p></details></section><h2>다른 계산기</h2><div class="related"><a href="/tools/savings/"><b>예금·적금 이자</b><small>세후 만기 수령액</small></a><a href="/tools/jeonse-wolse/"><b>전월세 전환</b><small>전세↔월세, 법정 상한 확인</small></a><a href="/tools/vat/"><b>부가세</b><small>공급가액↔합계금액</small></a></div><p class="base">기준일 2026-11-10. 법령과 요율이 바뀌면 갱신한다. 계산 기준은 <a href="/tools/about/">소개·계산 기준</a>에서 확인할 수 있다.</p>
+</main>
+<footer><div class="in"><p><a href="/">아이템로그 홈</a><a href="/tools/about/">소개·계산 기준</a><a href="/tools/privacy/">개인정보처리방침</a></p>
+<p>아이템로그 · 계산 결과는 참고용이며 법적·세무적 효력이 없다. 입력한 값은 서버로 전송되거나 저장되지 않고 이 브라우저 안에서만 계산된다.</p></div></footer>
+<script src="/tools/assets/calc.js"></script>
+<script>
+
+bindMoney();
+var SCHED=[],SHOWALL=false;
+function drawSched(){
+ var list=SHOWALL?SCHED:SCHED.slice(0,12);
+ var h='<h3>회차별 상환표</h3><div class="tw"><table class="t"><tr><th>회차</th><th>납입액</th><th>원금</th><th>이자</th><th>남은 원금</th></tr>';
+ list.forEach(function(r){h+='<tr><td>'+r[0]+'</td><td>'+r[1].toLocaleString('ko-KR')+'</td><td>'+r[2].toLocaleString('ko-KR')+'</td><td>'+r[3].toLocaleString('ko-KR')+'</td><td>'+r[4].toLocaleString('ko-KR')+'</td></tr>';});
+ h+='</table></div>';
+ if(SCHED.length>12){h+='<p><button class="btn ghost" id="tog">'+(SHOWALL?'12회차만 보기':'전체 '+SCHED.length+'회차 보기')+'</button></p>';}
+ $('sched').innerHTML=h;
+ var t=$('tog'); if(t){t.onclick=function(){SHOWALL=!SHOWALL;drawSched();};}
+}
+onChange(function(){
+ var P=parseNum($('amt').value),rate=parseNum($('rate').value),t=parseNum($('term').value),unit=$('unit').value,m=$('method').value;
+ var n=Math.round(unit==='y'?t*12:t);
+ if(!P||!n||n<1||n>600){setRes('');$('sched').innerHTML='';return;}
+ var r=rate/100/12,bal=P,tot=0,totI=0;SCHED=[];
+ var pmt=r===0?P/n:P*r/(1-Math.pow(1+r,-n));
+ for(var i=1;i<=n;i++){
+  var intr=Math.floor(bal*r),prin,pay;
+  if(m==='equal'){pay=Math.round(pmt);prin=pay-intr;if(i===n||prin>bal){prin=bal;pay=prin+intr;}}
+  else if(m==='principal'){prin=Math.round(P/n);if(i===n||prin>bal){prin=bal;}pay=prin+intr;}
+  else{prin=(i===n)?bal:0;pay=prin+intr;}
+  bal-=prin;SCHED.push([i,pay,prin,intr,bal]);tot+=pay;totI+=intr;
+ }
+ var first=SCHED[0][1],last=SCHED[SCHED.length-1][1];
+ var list=[];
+ if(m==='equal'){list.push(['월 납입액(매월 동일)',won(first),1]);}
+ else if(m==='principal'){list.push(['첫 달 납입액',won(first),1]);list.push(['마지막 달 납입액',won(last)]);}
+ else{list.push(['월 이자(매월)',won(first),1]);list.push(['만기에 원금과 함께 낼 돈',won(last)]);}
+ list.push(['총 이자',won(totI)]);list.push(['총 상환액',won(tot)]);
+ list.push(['원금 대비 이자 비율',(totI/P*100).toFixed(1)+'%']);
+ setRes('<div class="res">'+rows(list)+'</div>'+note('info','중도상환수수료, 인지세, 변동금리 변화는 반영하지 않았다. 은행 계산과 원 단위 차이가 날 수 있다.'));
+ drawSched();
+});
+
+</script></body></html>

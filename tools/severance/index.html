@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>퇴직금 계산기 | 평균임금·재직일수로 퇴직금 계산</title>
+<meta name="description" content="입사일, 퇴사일, 최근 3개월 급여를 넣으면 평균임금과 퇴직금을 계산한다. 상여금과 연차수당 반영, 계산식 공개.">
+<link rel="canonical" href="https://itemlogin.com/tools/severance/">
+<meta property="og:type" content="website"><meta property="og:title" content="퇴직금 계산기 | 평균임금·재직일수로 퇴직금 계산"><meta property="og:description" content="입사일, 퇴사일, 최근 3개월 급여를 넣으면 평균임금과 퇴직금을 계산한다. 상여금과 연차수당 반영, 계산식 공개."><meta property="og:url" content="https://itemlogin.com/tools/severance/"><meta property="og:locale" content="ko_KR">
+<link rel="stylesheet" href="/tools/assets/style.css">
+<link rel="icon" href="/favicon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "퇴직금은 언제부터 받을 수 있나?", "acceptedAnswer": {"@type": "Answer", "text": "계속근로기간이 1년 이상이고, 4주 평균 1주 소정근로시간이 15시간 이상이면 받을 수 있다."}}, {"@type": "Question", "name": "평균임금과 통상임금은 어떻게 다른가?", "acceptedAnswer": {"@type": "Answer", "text": "평균임금은 퇴직 전 3개월 동안 실제로 받은 임금의 1일 평균이고, 통상임금은 정기적·일률적으로 정해진 시간급·일급 기준의 임금이다. 평균임금이 통상임금보다 낮으면 통상임금을 쓴다."}}, {"@type": "Question", "name": "퇴직금에도 세금이 붙나?", "acceptedAnswer": {"@type": "Answer", "text": "퇴직소득세가 붙는다. 근속연수와 퇴직금 액수에 따라 공제가 달라서 이 계산기 결과에는 반영하지 않았다."}}, {"@type": "Question", "name": "퇴직금을 못 받으면 어떻게 하나?", "acceptedAnswer": {"@type": "Answer", "text": "지급 기한이 지났다면 관할 지방고용노동관서에 진정을 낼 수 있다. 고용노동부 상담 전화 1350에서 안내를 받을 수 있다."}}]}</script>
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="/tools/">아이템로그 <i>계산기</i></a><nav><a href="/tools/">전체 계산기</a><a href="/tools/about/">소개·기준</a></nav></div></header>
+<main class="wrap">
+<div class="crumb"><a href="/tools/">계산기</a> › 퇴직금</div>
+<h1>퇴직금 계산기</h1>
+<p class="lead">입사일과 퇴사일, 퇴직 직전 3개월의 급여를 넣으면 1일 평균임금과 예상 퇴직금을 계산한다. 계산식을 그대로 공개하니 결과를 직접 검산할 수 있다.</p>
+<section class="card" id="calc"><div class="grid"><div class="f"><label for="start">입사일</label><input id="start" type="date" value="2022-03-01"></div><div class="f"><label for="end">퇴사일(마지막 근무일)</label><input id="end" type="date" value="2026-12-31"></div><div class="f"><label for="pay3">퇴직 전 3개월 급여 총액(세전)</label><input id="pay3" type="text" inputmode="numeric" data-money value="9,000,000" placeholder=""><div class="hint">기본급과 각종 수당을 모두 더한 금액</div></div><div class="f"><label for="bonus">연간 상여금 총액</label><input id="bonus" type="text" inputmode="numeric" data-money value="0" placeholder=""><div class="hint">퇴직 전 12개월 동안 받은 상여금</div></div><div class="f"><label for="leave">연차수당(퇴직 전 12개월 지급분)</label><input id="leave" type="text" inputmode="numeric" data-money value="0" placeholder=""><div class="hint">연차를 쓰지 못해 받은 수당</div></div></div><button class="btn" id="go">계산하기</button><div id="res"></div></section><section class="prose">
+<h2>계산 방법</h2>
+<div class="formula">1일 평균임금 = (퇴직 전 3개월 임금 + 연간 상여금 × 3/12 + 연차수당 × 3/12) ÷ 퇴직 전 3개월 일수<br>퇴직금 = 1일 평균임금 × 30일 × (계속근로일수 ÷ 365)</div>
+<p>퇴직 전 3개월은 퇴직한 날(마지막 근무일의 다음 날)을 기준으로 거꾸로 센다. 예를 들어 12월 31일에 퇴사하면 10월 1일부터 12월 31일까지 92일이다. 월급이 같아도 3개월에 31일이 들어 있는 달이 많으면 일수가 늘어 평균임금이 조금 낮아진다.</p>
+<h2>상여금과 연차수당은 왜 3/12를 곱하나</h2>
+<p>상여금과 연차수당은 1년 단위로 받는 돈이다. 3개월 평균임금에 넣을 때는 1년치의 4분의 1(3/12)만 반영하는 것이 기본 원칙이다. 상여금이 근로계약이나 취업규칙에 지급 조건이 정해진 임금이어야 한다.</p>
+<h2>지급 시기</h2>
+<p>사용자는 퇴직한 날부터 14일 이내에 퇴직금을 지급해야 한다. 당사자 사이에 합의가 있으면 기한을 연장할 수 있다.</p>
+<h2>알아둘 점</h2>
+<ul><li>퇴직연금(DB형·DC형)에 가입한 경우 지급 방식이 다르다. 회사 퇴직연금 안내를 확인해야 한다.</li>
+<li>퇴직금 중간정산은 법에서 정한 사유가 있을 때만 가능하다.</li>
+<li>이 계산 결과는 참고용이며 실제 금액은 회사의 임금 산정 방식에 따라 달라질 수 있다.</li></ul>
+</section><section class="faq"><h2>자주 묻는 질문</h2><details><summary>퇴직금은 언제부터 받을 수 있나?</summary><p>계속근로기간이 1년 이상이고, 4주 평균 1주 소정근로시간이 15시간 이상이면 받을 수 있다.</p></details><details><summary>평균임금과 통상임금은 어떻게 다른가?</summary><p>평균임금은 퇴직 전 3개월 동안 실제로 받은 임금의 1일 평균이고, 통상임금은 정기적·일률적으로 정해진 시간급·일급 기준의 임금이다. 평균임금이 통상임금보다 낮으면 통상임금을 쓴다.</p></details><details><summary>퇴직금에도 세금이 붙나?</summary><p>퇴직소득세가 붙는다. 근속연수와 퇴직금 액수에 따라 공제가 달라서 이 계산기 결과에는 반영하지 않았다.</p></details><details><summary>퇴직금을 못 받으면 어떻게 하나?</summary><p>지급 기한이 지났다면 관할 지방고용노동관서에 진정을 낼 수 있다. 고용노동부 상담 전화 1350에서 안내를 받을 수 있다.</p></details></section><h2>다른 계산기</h2><div class="related"><a href="/tools/min-wage/"><b>최저시급·주휴수당</b><small>시급으로 주휴수당과 월급 계산</small></a><a href="/tools/age/"><b>만 나이</b><small>생년월일로 만 나이·다음 생일</small></a><a href="/tools/dday/"><b>D-day·날짜</b><small>일수 차이와 N일 뒤 날짜</small></a></div><p class="base">기준일 2026-11-10. 법령과 요율이 바뀌면 갱신한다. 계산 기준은 <a href="/tools/about/">소개·계산 기준</a>에서 확인할 수 있다.</p>
+</main>
+<footer><div class="in"><p><a href="/">아이템로그 홈</a><a href="/tools/about/">소개·계산 기준</a><a href="/tools/privacy/">개인정보처리방침</a></p>
+<p>아이템로그 · 계산 결과는 참고용이며 법적·세무적 효력이 없다. 입력한 값은 서버로 전송되거나 저장되지 않고 이 브라우저 안에서만 계산된다.</p></div></footer>
+<script src="/tools/assets/calc.js"></script>
+<script>
+
+bindMoney();
+function ymdText(days){var y=Math.floor(days/365),r=days-y*365;return y+'년 '+r+'일';}
+onChange(function(){
+ var s=parseDate($('start').value),e=parseDate($('end').value);
+ if(!s||!e){setRes('');return;}
+ if(e<s){setRes(note('warn','퇴사일이 입사일보다 빠르다. 날짜를 다시 확인해 달라.'));return;}
+ var tenure=daysBetween(s,e)+1;
+ var m3=parseNum($('pay3').value),bonus=parseNum($('bonus').value),leave=parseNum($('leave').value);
+ var ref=addDays(e,1),from=addMonths(ref,-3),d3=daysBetween(from,ref);
+ var total=m3+bonus*3/12+leave*3/12;
+ var avg=total/d3;
+ var sev=avg*30*tenure/365;
+ var html='<div class="res">'+rows([
+  ['계속근로기간',tenure.toLocaleString('ko-KR')+'일 ('+ymdText(tenure)+')'],
+  ['퇴직 전 3개월 일수',d3+'일 ('+ymd(from)+' ~ '+ymd(e)+')'],
+  ['3개월 임금 합계(상여·연차수당 포함)',won(total)],
+  ['1일 평균임금',won(avg)],
+  ['예상 퇴직금',won(sev),1]
+ ])+'</div>';
+ if(tenure<365){html+=note('warn','계속근로기간이 1년(365일) 미만이면 법정 퇴직급여 지급 대상이 아니다. 위 금액은 참고용이다.');}
+ else{html+=note('ok','계속근로기간이 1년 이상이다. 1주 소정근로시간이 평균 15시간 이상이면 퇴직급여 지급 대상이다.');}
+ html+=note('info','1일 평균임금이 통상임금보다 낮으면 통상임금을 기준으로 해야 한다. 퇴직소득세는 빠져 있는 금액이다.');
+ setRes(html);
+});
+
+</script></body></html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>전월세 전환 계산기 | 전세 월세 전환율 법정 상한 확인</title>
+<meta name="description" content="전세를 월세로, 월세를 전세로 바꿀 때 월세와 환산 보증금을 계산하고, 법정 전환율 상한(기준금리+2%, 최대 10%)을 함께 확인한다.">
+<link rel="canonical" href="https://itemlogin.com/tools/jeonse-wolse/">
+<meta property="og:type" content="website"><meta property="og:title" content="전월세 전환 계산기 | 전세 월세 전환율 법정 상한 확인"><meta property="og:description" content="전세를 월세로, 월세를 전세로 바꿀 때 월세와 환산 보증금을 계산하고, 법정 전환율 상한(기준금리+2%, 최대 10%)을 함께 확인한다."><meta property="og:url" content="https://itemlogin.com/tools/jeonse-wolse/"><meta property="og:locale" content="ko_KR">
+<link rel="stylesheet" href="/tools/assets/style.css">
+<link rel="icon" href="/favicon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "전월세 전환율은 어떻게 정해지나?", "acceptedAnswer": {"@type": "Answer", "text": "연 10%와 한국은행 기준금리에 연 2%를 더한 값 중 낮은 쪽을 넘지 못한다. 그 안에서 임대인과 임차인이 합의한다."}}, {"@type": "Question", "name": "월세를 전세로 바꾸면 보증금은 얼마가 되나?", "acceptedAnswer": {"@type": "Answer", "text": "월세에 12를 곱한 연 월세를 전환율로 나누면 월세에 해당하는 보증금이 나온다. 여기에 기존 보증금을 더한다."}}, {"@type": "Question", "name": "전환율이 낮을수록 임차인에게 유리한가?", "acceptedAnswer": {"@type": "Answer", "text": "보증금을 월세로 바꿀 때는 전환율이 낮을수록 같은 보증금 감액에 대한 월세가 적어 임차인에게 유리하다."}}, {"@type": "Question", "name": "이 결과를 계약서에 그대로 써도 되나?", "acceptedAnswer": {"@type": "Answer", "text": "참고용이다. 계약 조건은 당사자 합의로 정해지므로 계약서에는 합의한 금액을 적어야 한다."}}]}</script>
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="/tools/">아이템로그 <i>계산기</i></a><nav><a href="/tools/">전체 계산기</a><a href="/tools/about/">소개·기준</a></nav></div></header>
+<main class="wrap">
+<div class="crumb"><a href="/tools/">계산기</a> › 전월세 전환</div>
+<h1>전월세 전환 계산기</h1>
+<p class="lead">보증금을 월세로 바꾸거나 월세를 보증금으로 바꿀 때 금액을 계산한다. 법으로 정해진 전환율 상한도 같이 보여준다.</p>
+<section class="card" id="calc"><div class="grid"><div class="f"><label for="mode">계산 종류</label><select id="mode"><option value="j2w">전세 → 월세 (보증금을 줄이고 월세로)</option><option value="w2j">월세 → 전세 (월세를 보증금으로)</option></select></div><div class="f"><label for="base">한국은행 기준금리(%)</label><input id="base" type="number" inputmode="decimal" step="0.01" min="0" max="20" value="3.00"><div class="hint">2026년 8월 27일 3.00%. 금통위 결정 후 바뀔 수 있어 확인이 필요하다.</div></div><div class="f"><label for="rate">적용할 전환율(%)</label><input id="rate" type="number" inputmode="decimal" step="0.01" min="0" max="30" value="5.00"><div class="hint">비워 두면 법정 상한을 쓴다. 계약서 값이 있으면 입력한다.</div></div><div class="f" id="g1"><label for="dep1">현재 전세보증금</label><input id="dep1" type="text" inputmode="numeric" data-money value="300,000,000"></div><div class="f" id="g2"><label for="dep2">변경 후 보증금</label><input id="dep2" type="text" inputmode="numeric" data-money value="100,000,000"></div><div class="f" id="g3" style="display:none"><label for="dep3">현재 보증금</label><input id="dep3" type="text" inputmode="numeric" data-money value="50,000,000"></div><div class="f" id="g4" style="display:none"><label for="mon">현재 월세</label><input id="mon" type="text" inputmode="numeric" data-money value="800,000"></div></div><button class="btn" id="go">계산하기</button><div id="res"></div></section><section class="prose">
+<h2>법정 전환율 상한</h2>
+<p>주택 임대차에서 보증금의 일부를 월세로 바꿀 때 적용하는 비율에는 상한이 있다. 주택임대차보호법 시행령에 따라 <b>연 10%</b>와 <b>한국은행 기준금리 + 연 2%</b> 중 낮은 쪽이 상한이다. 기준금리가 연 3.00%이면 상한은 5.00%이다.</p>
+<div class="formula">월세 = (줄이는 보증금) × 전환율 ÷ 12<br>환산 보증금 = 월세 × 12 ÷ 전환율</div>
+<p>예를 들어 전세 3억 원을 보증금 1억 원으로 줄이고 나머지 2억 원을 전환율 5%로 월세로 바꾸면, 월세는 2억 × 5% ÷ 12 ≈ 833,333원이다.</p>
+<h2>기준금리가 바뀌면</h2>
+<p>한국은행 기준금리는 금융통화위원회가 정한다. 이 페이지는 2026년 8월 27일 결정한 연 3.00%를 기본값으로 둔다. 기준금리가 달라졌다면 위 칸의 값을 직접 고쳐 쓰면 된다.</p>
+<h2>알아둘 점</h2>
+<ul><li>이 상한은 주택 임대차에 적용된다. 상가는 별도 기준이 있다.</li>
+<li>당사자가 합의하더라도 상한을 넘는 월차임은 효력이 제한될 수 있다.</li>
+<li>실제 계약 전에는 법령과 중개사, 임대차분쟁조정위원회 안내를 함께 확인해야 한다.</li></ul>
+</section><section class="faq"><h2>자주 묻는 질문</h2><details><summary>전월세 전환율은 어떻게 정해지나?</summary><p>연 10%와 한국은행 기준금리에 연 2%를 더한 값 중 낮은 쪽을 넘지 못한다. 그 안에서 임대인과 임차인이 합의한다.</p></details><details><summary>월세를 전세로 바꾸면 보증금은 얼마가 되나?</summary><p>월세에 12를 곱한 연 월세를 전환율로 나누면 월세에 해당하는 보증금이 나온다. 여기에 기존 보증금을 더한다.</p></details><details><summary>전환율이 낮을수록 임차인에게 유리한가?</summary><p>보증금을 월세로 바꿀 때는 전환율이 낮을수록 같은 보증금 감액에 대한 월세가 적어 임차인에게 유리하다.</p></details><details><summary>이 결과를 계약서에 그대로 써도 되나?</summary><p>참고용이다. 계약 조건은 당사자 합의로 정해지므로 계약서에는 합의한 금액을 적어야 한다.</p></details></section><h2>다른 계산기</h2><div class="related"><a href="/tools/loan/"><b>대출 이자</b><small>월 납입액과 총 이자</small></a><a href="/tools/savings/"><b>예금·적금 이자</b><small>세후 만기 수령액</small></a><a href="/tools/dday/"><b>D-day·날짜</b><small>일수 차이와 N일 뒤 날짜</small></a></div><p class="base">기준일 2026-11-10. 법령과 요율이 바뀌면 갱신한다. 계산 기준은 <a href="/tools/about/">소개·계산 기준</a>에서 확인할 수 있다.</p>
+</main>
+<footer><div class="in"><p><a href="/">아이템로그 홈</a><a href="/tools/about/">소개·계산 기준</a><a href="/tools/privacy/">개인정보처리방침</a></p>
+<p>아이템로그 · 계산 결과는 참고용이며 법적·세무적 효력이 없다. 입력한 값은 서버로 전송되거나 저장되지 않고 이 브라우저 안에서만 계산된다.</p></div></footer>
+<script src="/tools/assets/calc.js"></script>
+<script>
+
+bindMoney();
+var dirty=false;
+$('rate').addEventListener('input',function(){dirty=true;});
+function limit(){var b=parseNum($('base').value);return Math.min(10,b+2);}
+$('mode').addEventListener('change',function(){var j=$('mode').value==='j2w';$('g1').style.display=j?'':'none';$('g2').style.display=j?'':'none';$('g3').style.display=j?'none':'';$('g4').style.display=j?'none':'';});
+$('base').addEventListener('input',function(){if(!dirty){$('rate').value=limit().toFixed(2);}});
+onChange(function(){
+ var lim=limit(),rt=$('rate').value===''?lim:parseNum($('rate').value);
+ var list=[['법정 전환율 상한(연)',lim.toFixed(2)+'%'],['적용한 전환율(연)',rt.toFixed(2)+'%']];
+ var html='';
+ if($('mode').value==='j2w'){
+  var d1=parseNum($('dep1').value),d2=parseNum($('dep2').value);
+  if(d2>d1){setRes(note('warn','변경 후 보증금이 현재 보증금보다 크다. 월세로 바꾸려면 보증금을 줄여야 한다.'));return;}
+  var m=(d1-d2)*rt/100/12;
+  list.unshift(['전환할 보증금',won(d1-d2)]);
+  list.push(['변경 후 월세',won(m),1]);
+  list.push(['월세 연 합계',won(m*12)]);
+ } else {
+  var d3=parseNum($('dep3').value),mon=parseNum($('mon').value);
+  if(!rt){setRes('');return;}
+  var add=mon*12/(rt/100);
+  list.push(['월세를 보증금으로 바꾼 금액',won(add)]);
+  list.push(['환산 보증금(현재 보증금 + 환산액)',won(d3+add),1]);
+ }
+ html='<div class="res">'+rows(list)+'</div>';
+ if(rt>lim+1e-9){html+=note('warn','적용한 전환율이 법정 상한보다 높다. 주택 임대차에서 보증금을 월세로 바꿀 때는 상한을 넘기 어렵다.');}
+ else{html+=note('ok','적용한 전환율이 법정 상한 이내이다.');}
+ setRes(html);
+});
+
+</script></body></html>
