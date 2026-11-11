@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ko" class="sf">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>산들 스테이 | 숙박 예약 문의 (예시 페이지)</title>
+<meta name="description" content="독채로 쉬어 가는 펜션의 날짜별 예약을 신청서로 받아요 (제작 샘플용 가상 가게)">
+<meta property="og:title" content="산들 스테이 | 숙박 예약 문의 (예시 페이지)">
+<meta property="og:description" content="독채로 쉬어 가는 펜션의 날짜별 예약을 신청서로 받아요 (제작 샘플용 가상 가게)">
+<meta property="og:image" content="https://itemlogin.com/sample/stay/img/hero.jpg">
+<style>:root{--bg:#fbfaf6;--bg2:#ece9df;--ink:#252a22;--sub:#6a6f62;--acc:#4f7a58;--acc2:#3b6044;--line:#dcdccf;--hero-bg:#1f2a22;--hero-ink:#ffffff;--hero-sub:#c8d2c6;--em:#a8d6a9;--card:#ffffff;--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{counter-reset:sec;font-family:'Pretendard Variable',Pretendard,'Noto Sans KR',-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;font-size:17px;font-weight:400;letter-spacing:-.012em;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--hf);font-weight:var(--hw);line-height:1.22;letter-spacing:var(--hls)}
+:root{--hf:'Pretendard Variable',Pretendard,'Noto Sans KR',sans-serif;--hw:700;--hls:-.035em;--rr:min(var(--r,16px),16px)}
+html.sf{--hf:'Noto Serif KR','Nanum Myeongjo',serif;--hw:600;--hls:-.025em}
+.bar{background:#161616;color:#a9a9a9;text-align:center;font-size:12px;letter-spacing:.01em;padding:9px 14px;line-height:1.5}
+.bar a{color:#e9e9e9;text-underline-offset:3px}
+nav{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 86%,transparent);-webkit-backdrop-filter:saturate(1.4) blur(16px);backdrop-filter:saturate(1.4) blur(16px);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+nav b{font-family:var(--hf);font-weight:var(--hw);font-size:20px;letter-spacing:-.02em;white-space:nowrap}
+nav b i{font-style:normal;color:var(--acc)}
+nav .links{display:flex;gap:30px;font-size:14.5px;font-weight:500}
+nav .links a{color:color-mix(in srgb,var(--ink) 78%,transparent);text-decoration:none;position:relative;padding:4px 0;transition:color .2s}
+nav .links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--acc);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+nav .links a:hover{color:var(--ink)}nav .links a:hover::after{transform:scaleX(1)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 34px;border-radius:12px;background:var(--acc);color:#fff;font-weight:600;font-size:16.5px;letter-spacing:-.01em;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .25s,background .25s,box-shadow .25s;box-shadow:0 12px 28px -12px color-mix(in srgb,var(--acc) 80%,transparent)}
+.btn:hover{background:var(--acc2);transform:translateY(-2px);box-shadow:0 16px 32px -12px color-mix(in srgb,var(--acc) 85%,transparent)}
+.btn.ghost{background:transparent;color:var(--hero-ink);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--hero-ink) 55%,transparent)}
+.btn.ghost:hover{background:var(--hero-ink);color:var(--hero-bg);box-shadow:inset 0 0 0 1px var(--hero-ink)}
+nav .btn{min-height:42px;padding:0 22px;font-size:14px;border-radius:10px;box-shadow:none}
+.hero{position:relative;color:var(--hero-ink);background:linear-gradient(100deg,var(--hero-bg) 0%,color-mix(in srgb,var(--hero-bg) 90%,transparent) 36%,color-mix(in srgb,var(--hero-bg) 30%,transparent) 100%),url(img/hero.jpg) center/cover no-repeat,var(--hero-bg);min-height:min(86vh,800px);display:flex;align-items:center;padding:110px 0 120px}
+.hero .cols{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:center;width:100%}
+.eyebrow{display:flex;align-items:center;gap:14px;font-weight:600;font-size:13px;letter-spacing:.16em;color:var(--acc);margin-bottom:26px}
+.eyebrow::before{content:"";width:36px;height:1px;background:currentColor;flex:none}
+.hero .eyebrow{color:var(--em,var(--acc))}
+.hero h1{font-size:clamp(36px,5.2vw,68px);line-height:1.1;margin-bottom:28px}
+.hero h1 em{font-style:normal;color:var(--em,var(--acc))}
+.hero .lead{color:var(--hero-sub);font-size:19px;line-height:1.85;max-width:520px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:44px}
+.panel{background:color-mix(in srgb,var(--card) 94%,transparent);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);color:var(--ink);border-radius:var(--rr);padding:34px 34px 28px;box-shadow:0 40px 80px -30px rgba(0,0,0,.32),0 0 0 1px rgba(255,255,255,.5) inset}
+.panel h3{font-size:17px;letter-spacing:-.01em;margin-bottom:6px;padding-bottom:16px;border-bottom:1px solid var(--ink)}
+.panel dl{display:grid;grid-template-columns:64px 1fr;font-size:15px}
+.panel dt,.panel dd{padding:13px 0;border-bottom:1px solid var(--line)}
+.panel dt{color:var(--sub);font-size:13.5px;letter-spacing:.04em}
+.panel dd{font-weight:500}
+.panel dt:last-of-type,.panel dd:last-of-type{border-bottom:0}
+section.s{padding:132px 0}
+section.alt{background:var(--bg2)}
+h2{font-size:clamp(30px,4.4vw,50px);margin-bottom:16px}
+section.s h2::before{counter-increment:sec;content:"0" counter(sec);display:flex;align-items:center;gap:14px;font-family:'Pretendard Variable',Pretendard,sans-serif;font-weight:600;font-size:13px;letter-spacing:.2em;color:var(--acc);margin-bottom:22px}
+.sub{color:var(--sub);max-width:600px;font-size:17.5px;line-height:1.85}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:0 44px;margin-top:64px;counter-reset:c}
+.cards.four{grid-template-columns:repeat(4,1fr);gap:0 36px}
+.card{padding:26px 0 8px;border-top:1px solid var(--ink);transition:transform .35s}
+.card:hover{transform:translateY(-4px)}
+.card .ic{font-size:0;line-height:1;margin-bottom:30px;height:14px}
+.card .ic::before{counter-increment:c;content:"0" counter(c);font-size:13px;letter-spacing:.2em;font-weight:600;color:var(--acc);font-family:'Pretendard Variable',Pretendard,sans-serif}
+.card h3{font-size:22px;margin-bottom:12px}
+.card p{color:var(--sub);font-size:16px;line-height:1.8}
+.gal{display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:18px;margin-top:56px;height:min(620px,62vw)}
+.gal figure{position:relative;margin:0;overflow:hidden;border-radius:var(--rr);background:var(--bg2)}
+.gal figure:first-child{grid-row:1/3}
+.gal img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.gal figure:hover img{transform:scale(1.045)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:56px 22px 18px;color:#fff;font-size:14px;font-weight:500;letter-spacing:.01em;background:linear-gradient(transparent,rgba(0,0,0,.55))}
+.list{margin-top:56px;border-top:1px solid var(--ink)}
+.row{display:grid;grid-template-columns:1fr auto;gap:4px 32px;padding:30px 12px;border-bottom:1px solid var(--line);align-items:baseline;transition:background .3s}
+.row:hover{background:rgba(0,0,0,.025)}
+.row b{font-family:var(--hf);font-weight:var(--hw);font-size:21px;letter-spacing:-.025em}
+.row span.d{grid-column:1;color:var(--sub);font-size:15.5px}
+.row .p{grid-column:2;grid-row:1/3;font-family:var(--hf);font-weight:600;font-size:24px;letter-spacing:-.02em;color:var(--ink);white-space:nowrap;align-self:center;font-variant-numeric:tabular-nums}
+.row .p small{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:14px;color:var(--sub);font-weight:400;margin-left:2px}
+.tag{display:inline-block;color:var(--acc);font-size:11.5px;font-weight:600;letter-spacing:.04em;padding:2px 10px;border-radius:999px;margin-left:12px;vertical-align:3px;font-family:'Pretendard Variable',Pretendard,sans-serif;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--acc) 55%,transparent)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0 36px;margin-top:64px;counter-reset:s}
+.step{padding:26px 0 8px;border-top:1px solid var(--ink)}
+.step::before{counter-increment:s;content:"0" counter(s);display:block;font-family:var(--hf);font-weight:300;font-size:60px;line-height:1;letter-spacing:-.04em;color:color-mix(in srgb,var(--acc) 85%,transparent);margin-bottom:26px}
+.step b{display:block;font-family:var(--hf);font-weight:var(--hw);font-size:20px;letter-spacing:-.025em;margin-bottom:10px}
+.step span{color:var(--sub);font-size:15.5px;line-height:1.8;display:block}
+details{border-bottom:1px solid var(--line);padding:0}
+details:first-of-type{border-top:1px solid var(--ink)}
+summary{cursor:pointer;font-weight:600;font-size:18.5px;letter-spacing:-.02em;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px 4px;transition:color .2s}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--acc)}
+summary::after{content:"+";color:var(--acc);font-size:30px;font-weight:300;line-height:1;transition:transform .3s;flex:none}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 4px 30px;color:var(--sub);max-width:720px;animation:fd .4s ease}
+@keyframes fd{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.formwrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:start}
+form{background:var(--card);border-radius:var(--rr);padding:44px;box-shadow:0 50px 90px -40px rgba(0,0,0,.28),0 0 0 1px color-mix(in srgb,var(--ink) 8%,transparent)}
+.f{margin-bottom:20px}
+label.l{display:block;font-weight:600;font-size:14px;letter-spacing:-.005em;margin-bottom:8px}
+label.l small{font-weight:400;color:var(--sub)}
+input[type=text],input[type=tel],input[type=date],select,textarea{width:100%;font:inherit;font-size:16px;letter-spacing:-.01em;padding:0 16px;height:54px;border:1px solid color-mix(in srgb,var(--ink) 18%,transparent);border-radius:10px;background:#fff;color:var(--ink);transition:border-color .2s,box-shadow .2s}
+textarea{height:auto;min-height:110px;padding:14px 16px;resize:vertical;line-height:1.7}
+input:hover,select:hover,textarea:hover{border-color:color-mix(in srgb,var(--ink) 38%,transparent)}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--acc);box-shadow:0 0 0 4px color-mix(in srgb,var(--acc) 16%,transparent)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.chk{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;line-height:1.7;color:var(--sub);margin:8px 0 26px}
+.chk input{margin-top:4px;width:18px;height:18px;flex:none;accent-color:var(--acc)}
+form .btn{width:100%;font-size:17px;min-height:60px}
+.msg{margin-top:16px;padding:16px 18px;border-radius:10px;background:#f1f7ee;color:#2d5a1e;font-size:14.5px;line-height:1.7;display:none}
+.msg.on{display:block}
+.note{font-size:14px;color:var(--sub);margin-top:18px;line-height:1.8}
+footer{background:#121212;color:#9a9a9a;padding:64px 0;font-size:13.5px;line-height:1.9}
+footer b{color:#fff;font-weight:600}
+footer a{color:#e8e8e8;text-underline-offset:3px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+@media(max-width:980px){.cards.four{grid-template-columns:1fr 1fr;gap:0 32px}.formwrap{gap:44px}}
+@media(max-width:860px){.hero .cols,.formwrap{grid-template-columns:1fr}.hero .cols{gap:44px}.cards,.steps{grid-template-columns:1fr 1fr;gap:0 28px}nav .links{display:none}section.s{padding:92px 0}.hero{padding:72px 0 80px;min-height:0;background:linear-gradient(color-mix(in srgb,var(--hero-bg) 92%,transparent),color-mix(in srgb,var(--hero-bg) 80%,transparent)),url(img/hero.jpg) center/cover no-repeat,var(--hero-bg)}.gal{grid-template-columns:1fr;grid-template-rows:none;height:auto;gap:14px}.gal figure,.gal figure:first-child{grid-row:auto;aspect-ratio:4/3}}
+@media(max-width:560px){.wrap{padding:0 22px}.cards,.cards.four,.steps,.two{grid-template-columns:1fr}.cards,.steps{gap:6px 0}nav .wrap{height:58px}nav b{font-size:18px}nav .btn{min-height:38px;padding:0 16px;font-size:13px}body{font-size:16.5px}form{padding:26px 22px}.row{grid-template-columns:1fr;padding:24px 4px}.row .p{grid-column:1;grid-row:auto;margin-top:6px}.panel{padding:26px 24px 20px}.hero .cta .btn{width:100%}section.s{padding:76px 0}.step::before{font-size:48px;margin-bottom:18px}summary{font-size:17px;padding:22px 2px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+nav b small{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:12px;font-weight:500;letter-spacing:0;color:var(--sub);margin-left:12px;padding-left:12px;border-left:1px solid color-mix(in srgb,var(--ink) 22%,transparent);vertical-align:2px}
+.eyebrow{font-size:15px;font-weight:700;letter-spacing:.06em}
+@media(max-width:560px){nav b small{display:none}.eyebrow{font-size:13.5px}}
+</style>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="bar">가상 가게로 만든 예시 페이지입니다 · 실제 영업 정보와 무관해요 · 제작 <a href="https://kmong.com/gig/854075" target="_blank" rel="noopener">아이템로그</a></div>
+<nav><div class="wrap"><b>산들 <i>스테이</i><small>독채 펜션</small></b><div class="links"><a href="#about">숙소 소개</a><a href="#list">객실 요금</a><a href="#flow">진행 순서</a><a href="#faq">자주 묻는 질문</a></div><a class="btn" href="#form">예약 문의하기</a></div></nav>
+<header class="hero" role="img" aria-label="숲이 보이는 거실"><div class="wrap cols"><div><span class="eyebrow">독채 펜션 · 가족 · 커플 · 모임</span><h1>조용히 쉬다 가는<br><em>하루</em></h1><p class="lead">산자락 독채에서 하룻밤 쉬어 가세요. 체크인 날짜와 인원을 남겨 주시면 가능한 날을 확인해 연락드려요.</p><div class="cta"><a class="btn" href="#form">예약 문의하기</a><a class="btn ghost" href="#list">객실 요금 보기</a></div></div>
+<div class="panel"><h3>이용 안내</h3><dl><dt>체크인</dt><dd>15:00부터</dd><dt>체크아웃</dt><dd>다음 날 11:00</dd><dt>인원</dt><dd>기본 2명 · 최대 6명</dd><dt>시설</dt><dd>침실 2 · 주방 · 바비큐</dd><dt>주차</dt><dd>독채 앞 2대</dd></dl></div></div></header>
+<section class="s" id="about"><div class="wrap"><h2>독채로 쓰는 쉼</h2><p class="sub">다른 손님과 마주치지 않는 한 채 숙소예요.</p><div class="cards four"><div class="card"><div class="ic" aria-hidden="true">1</div><h3>독채 사용</h3><p>한 팀만 쓰는 숙소라 조용해요.</p></div><div class="card"><div class="ic" aria-hidden="true">2</div><h3>주방 완비</h3><p>조리도구와 식기가 있어 직접 해 드실 수 있어요.</p></div><div class="card"><div class="ic" aria-hidden="true">3</div><h3>바비큐 공간</h3><p>숯과 그릴은 사전 신청으로 준비해 드려요.</p></div><div class="card"><div class="ic" aria-hidden="true">4</div><h3>반려동물 문의</h3><p>반려동물 동반은 가능 여부를 미리 확인해 주세요.</p></div></div></div></section>
+<section class="s" style="padding-top:0"><div class="wrap"><h2>숙소의 모습</h2><p class="sub">예시 사진입니다. 실제 페이지에는 우리 숙소 사진을 넣어요.</p><div class="gal"><figure><img src="img/g1.jpg" width="1000" height="750" loading="lazy" alt="통나무 거실과 식탁"><figcaption>식사 공간</figcaption></figure><figure><img src="img/g2.jpg" width="1000" height="750" loading="lazy" alt="나무로 지은 숙소 외관"><figcaption>외관</figcaption></figure><figure><img src="img/g3.jpg" width="1000" height="750" loading="lazy" alt="산이 보이는 테라스 전망"><figcaption>전망</figcaption></figure></div></div></section><section class="s alt" id="list"><div class="wrap"><h2>객실과 요금</h2><p class="sub">예시 요금이며 부가세 포함입니다. 성수기에는 달라질 수 있어요.</p><div class="list"><div class="row"><b>평일 1박<span class="tag">인기</span></b><span class="d">일 – 목 · 기본 2명</span><span class="p">150,000<small> 원</small></span></div><div class="row"><b>금 · 토 1박</b><span class="d">기본 2명 · 성수기 별도</span><span class="p">220,000<small> 원</small></span></div><div class="row"><b>인원 추가</b><span class="d">1인 · 최대 6명</span><span class="p">20,000<small> 원</small></span></div><div class="row"><b>바비큐 세트</b><span class="d">숯 · 그릴 · 사전 신청</span><span class="p">30,000<small> 원</small></span></div><div class="row"><b>연박</b><span class="d">2박 이상은 상담</span><span class="p">상담</span></div></div><p class="note">환불과 변경 기준은 예약 확정 때 문서로 보내 드려요. 반려동물 동반은 예약 전에 꼭 확인해 주세요.</p></div></section>
+<section class="s" id="flow"><div class="wrap"><h2>예약은 이렇게 해요</h2><p class="sub">날짜와 인원을 남겨 주시면 가능한 날을 확인해 연락드립니다.</p><div class="steps"><div class="step"><b>문의 남기기</b><span>체크인과 체크아웃 날짜, 인원을 적어 주세요.</span></div><div class="step"><b>가능 여부 확인</b><span>빈 날짜를 확인해 연락드려요.</span></div><div class="step"><b>예약 확정</b><span>요금과 안내를 보내 드려요.</span></div><div class="step"><b>체크인</b><span>약속한 시간에 오시면 열쇠를 드려요.</span></div></div></div></section>
+<section class="s alt" id="faq"><div class="wrap"><h2>자주 묻는 질문</h2><div class="faqwrap" style="margin-top:0"><details><summary>체크인은 몇 시부터인가요?</summary><p>15시부터예요. 일찍 오시면 미리 말씀해 주세요.</p></details><details><summary>바비큐는 어떻게 하나요?</summary><p>사전 신청으로 숯과 그릴을 준비해 드려요.</p></details><details><summary>반려동물과 가도 되나요?</summary><p>가능 여부를 먼저 확인해야 해요. 예약 문의 때 알려 주세요.</p></details><details><summary>인원이 늘어나면요?</summary><p>기본 2명을 넘으면 1인당 추가 요금이 있어요. 최대 6명까지 가능해요.</p></details></div></div></section>
+<section class="s" id="form"><div class="wrap formwrap"><div><h2>숙박 예약 문의</h2><p class="sub">날짜와 인원을 남겨 주세요. 가능한 날을 확인해 연락드립니다.</p><p class="note">문의만으로 예약이 확정되지는 않아요. 확인 연락 후 확정됩니다.</p></div>
+<form id="f" novalidate><input class="hp" type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true"><div class="two"><div class="f"><label class="l" for="f_name">이름</label><input id="f_name" name="name" type="text" required autocomplete="name"></div><div class="f"><label class="l" for="f_phone">연락처</label><input id="f_phone" name="phone" type="tel" required placeholder="010-0000-0000" autocomplete="tel"></div></div><div class="two"><div class="f"><label class="l" for="f_checkin">체크인 날짜</label><input id="f_checkin" name="checkin" type="date" required></div><div class="f"><label class="l" for="f_checkout">체크아웃 날짜</label><input id="f_checkout" name="checkout" type="date" required></div></div><div class="f"><label class="l" for="f_people">인원</label><select id="f_people" name="people" required><option value="">선택해 주세요</option><option>1~2명</option><option>3~4명</option><option>5~6명</option></select></div><div class="f"><label class="l" for="f_memo">요청사항 <small>(선택)</small></label><textarea id="f_memo" name="memo" placeholder="바비큐 신청, 반려동물 동반 문의 등"></textarea></div>
+<label class="chk"><input type="checkbox" name="agreed" id="agreed" required><span>개인정보 수집·이용에 동의합니다. (수집 항목: 이름, 연락처, 체크인·체크아웃 날짜, 인원 / 이용 목적: 문의 확인과 연락 / 보관: 응대가 끝날 때까지)</span></label>
+<button class="btn" type="submit">예약 문의하기</button><div class="msg" id="msg" role="status"></div></form></div></section>
+<footer><div class="wrap"><p><b>산들 스테이</b> · 이 페이지는 가상 가게로 만든 <b>예시 페이지</b>입니다. 주소, 가격, 시간은 실제와 다릅니다. 사진은 예시용 무료 스톡 사진(Pexels)이며, 실제 페이지에는 가게에서 직접 찍은 사진을 사용합니다.</p><p style="margin-top:8px">실제 페이지에서는 입력한 내용이 가게 주인의 구글 시트에 한 줄씩 쌓입니다. 우리 가게도 이런 페이지가 필요하다면 <a href="https://kmong.com/gig/854075" target="_blank" rel="noopener">아이템로그 제작 안내</a>를 확인해 보세요.</p></div></footer>
+<script>
+(function(){var f=document.getElementById('f'),m=document.getElementById('msg');
+f.addEventListener('submit',function(e){e.preventDefault();m.classList.remove('on');
+var bad=[].slice.call(f.querySelectorAll('[required]')).filter(function(x){return x.type==='checkbox'?!x.checked:!String(x.value).trim()});
+if(bad.length){bad[0].focus();m.textContent=bad[0].type==='checkbox'?'개인정보 수집에 동의해 주세요.':'빠진 칸이 있어요. 필수 항목을 채워 주세요.';m.style.background='#fdf1ee';m.style.color='#8a2b13';m.classList.add('on');return}
+m.style.background='#f1f7ee';m.style.color='#2d5a1e';m.textContent='예시 페이지라 실제로 전송되지는 않아요. 실제 페이지에서는 방금 입력한 내용이 가게 구글 시트에 한 줄로 쌓이고, 주인에게 알림 메일이 갑니다.';m.classList.add('on');f.reset()});})();
+</script>
+<script>
+(function(){var d=document,r=d.documentElement;r.classList.add('js');
+var q='.card,.step,.row,details,.gal figure,section.s h2,section.s .sub,.panel,.formwrap>div:first-child,form,.hero .cta,.hero .lead';
+var els=[].slice.call(d.querySelectorAll(q));els.forEach(function(e){e.classList.add('rv')});
+function show(e){e.classList.add('in')}
+if(!('IntersectionObserver' in window)){els.forEach(show);return}
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){var t=x.target,sib=t.parentNode?[].slice.call(t.parentNode.children).indexOf(t):0;t.style.transitionDelay=Math.min(sib,5)*70+'ms';show(t);io.unobserve(t)}})},{rootMargin:'0px 0px -6% 0px',threshold:.08});
+els.forEach(function(e){io.observe(e)});
+setTimeout(function(){els.forEach(show)},4000);
+})();
+</script>
+</body></html>
