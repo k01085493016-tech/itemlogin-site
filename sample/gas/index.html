@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>한마음 주유소 | 세차 예약 · 정기 세차권 (예시 페이지)</title>
+<meta name="description" content="주유와 세차, 간단한 점검을 한곳에서 하는 주유소 (제작 샘플용 가상 가게)">
+<meta property="og:title" content="한마음 주유소 | 세차 예약 · 정기 세차권 (예시 페이지)">
+<meta property="og:description" content="주유와 세차, 간단한 점검을 한곳에서 하는 주유소 (제작 샘플용 가상 가게)">
+<meta property="og:image" content="https://itemlogin.com/sample/gas/img/hero.jpg">
+<style>:root{--bg:#ffffff;--bg2:#eef2f9;--ink:#14284b;--sub:#5d6b85;--acc:#c8102e;--acc2:#9e0c24;--line:#d9e0ee;--hero-bg:#14284b;--hero-ink:#ffffff;--hero-sub:#c3cde6;--em:#ffb020;--serif:'Noto Sans KR',sans-serif;--hw:900;--card:#ffffff;--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{counter-reset:sec;font-family:'Pretendard Variable',Pretendard,'Noto Sans KR',-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;font-size:17px;font-weight:400;letter-spacing:-.012em;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--hf);font-weight:var(--hw);line-height:1.22;letter-spacing:var(--hls)}
+:root{--hf:'Pretendard Variable',Pretendard,'Noto Sans KR',sans-serif;--hw:700;--hls:-.035em;--rr:min(var(--r,16px),16px)}
+html.sf{--hf:'Noto Serif KR','Nanum Myeongjo',serif;--hw:600;--hls:-.025em}
+.bar{background:#161616;color:#a9a9a9;text-align:center;font-size:12px;letter-spacing:.01em;padding:9px 14px;line-height:1.5}
+.bar a{color:#e9e9e9;text-underline-offset:3px}
+nav{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 86%,transparent);-webkit-backdrop-filter:saturate(1.4) blur(16px);backdrop-filter:saturate(1.4) blur(16px);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+nav b{font-family:var(--hf);font-weight:var(--hw);font-size:20px;letter-spacing:-.02em;white-space:nowrap}
+nav b i{font-style:normal;color:var(--acc)}
+nav .links{display:flex;gap:30px;font-size:14.5px;font-weight:500}
+nav .links a{color:color-mix(in srgb,var(--ink) 78%,transparent);text-decoration:none;position:relative;padding:4px 0;transition:color .2s}
+nav .links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--acc);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+nav .links a:hover{color:var(--ink)}nav .links a:hover::after{transform:scaleX(1)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 34px;border-radius:12px;background:var(--acc);color:#fff;font-weight:600;font-size:16.5px;letter-spacing:-.01em;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .25s,background .25s,box-shadow .25s;box-shadow:0 12px 28px -12px color-mix(in srgb,var(--acc) 80%,transparent)}
+.btn:hover{background:var(--acc2);transform:translateY(-2px);box-shadow:0 16px 32px -12px color-mix(in srgb,var(--acc) 85%,transparent)}
+.btn.ghost{background:transparent;color:var(--hero-ink);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--hero-ink) 55%,transparent)}
+.btn.ghost:hover{background:var(--hero-ink);color:var(--hero-bg);box-shadow:inset 0 0 0 1px var(--hero-ink)}
+nav .btn{min-height:42px;padding:0 22px;font-size:14px;border-radius:10px;box-shadow:none}
+.hero{position:relative;color:var(--hero-ink);background:linear-gradient(100deg,var(--hero-bg) 0%,color-mix(in srgb,var(--hero-bg) 90%,transparent) 36%,color-mix(in srgb,var(--hero-bg) 30%,transparent) 100%),url(img/hero.jpg) center/cover no-repeat,var(--hero-bg);min-height:min(86vh,800px);display:flex;align-items:center;padding:110px 0 120px}
+.hero .cols{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:center;width:100%}
+.eyebrow{display:flex;align-items:center;gap:14px;font-weight:600;font-size:13px;letter-spacing:.16em;color:var(--acc);margin-bottom:26px}
+.eyebrow::before{content:"";width:36px;height:1px;background:currentColor;flex:none}
+.hero .eyebrow{color:var(--em,var(--acc))}
+.hero h1{font-size:clamp(36px,5.2vw,68px);line-height:1.1;margin-bottom:28px}
+.hero h1 em{font-style:normal;color:var(--em,var(--acc))}
+.hero .lead{color:var(--hero-sub);font-size:19px;line-height:1.85;max-width:520px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:44px}
+.panel{background:color-mix(in srgb,var(--card) 94%,transparent);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);color:var(--ink);border-radius:var(--rr);padding:34px 34px 28px;box-shadow:0 40px 80px -30px rgba(0,0,0,.32),0 0 0 1px rgba(255,255,255,.5) inset}
+.panel h3{font-size:17px;letter-spacing:-.01em;margin-bottom:6px;padding-bottom:16px;border-bottom:1px solid var(--ink)}
+.panel dl{display:grid;grid-template-columns:64px 1fr;font-size:15px}
+.panel dt,.panel dd{padding:13px 0;border-bottom:1px solid var(--line)}
+.panel dt{color:var(--sub);font-size:13.5px;letter-spacing:.04em}
+.panel dd{font-weight:500}
+.panel dt:last-of-type,.panel dd:last-of-type{border-bottom:0}
+section.s{padding:132px 0}
+section.alt{background:var(--bg2)}
+h2{font-size:clamp(30px,4.4vw,50px);margin-bottom:16px}
+section.s h2::before{counter-increment:sec;content:"0" counter(sec);display:flex;align-items:center;gap:14px;font-family:'Pretendard Variable',Pretendard,sans-serif;font-weight:600;font-size:13px;letter-spacing:.2em;color:var(--acc);margin-bottom:22px}
+.sub{color:var(--sub);max-width:600px;font-size:17.5px;line-height:1.85}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:0 44px;margin-top:64px;counter-reset:c}
+.cards.four{grid-template-columns:repeat(4,1fr);gap:0 36px}
+.card{padding:26px 0 8px;border-top:1px solid var(--ink);transition:transform .35s}
+.card:hover{transform:translateY(-4px)}
+.card .ic{font-size:0;line-height:1;margin-bottom:30px;height:14px}
+.card .ic::before{counter-increment:c;content:"0" counter(c);font-size:13px;letter-spacing:.2em;font-weight:600;color:var(--acc);font-family:'Pretendard Variable',Pretendard,sans-serif}
+.card h3{font-size:22px;margin-bottom:12px}
+.card p{color:var(--sub);font-size:16px;line-height:1.8}
+.gal{display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:18px;margin-top:56px;height:min(620px,62vw)}
+.gal figure{position:relative;margin:0;overflow:hidden;border-radius:var(--rr);background:var(--bg2)}
+.gal figure:first-child{grid-row:1/3}
+.gal img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.gal figure:hover img{transform:scale(1.045)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:56px 22px 18px;color:#fff;font-size:14px;font-weight:500;letter-spacing:.01em;background:linear-gradient(transparent,rgba(0,0,0,.55))}
+.list{margin-top:56px;border-top:1px solid var(--ink)}
+.row{display:grid;grid-template-columns:1fr auto;gap:4px 32px;padding:30px 12px;border-bottom:1px solid var(--line);align-items:baseline;transition:background .3s}
+.row:hover{background:rgba(0,0,0,.025)}
+.row b{font-family:var(--hf);font-weight:var(--hw);font-size:21px;letter-spacing:-.025em}
+.row span.d{grid-column:1;color:var(--sub);font-size:15.5px}
+.row .p{grid-column:2;grid-row:1/3;font-family:var(--hf);font-weight:600;font-size:24px;letter-spacing:-.02em;color:var(--ink);white-space:nowrap;align-self:center;font-variant-numeric:tabular-nums}
+.row .p small{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:14px;color:var(--sub);font-weight:400;margin-left:2px}
+.tag{display:inline-block;color:var(--acc);font-size:11.5px;font-weight:600;letter-spacing:.04em;padding:2px 10px;border-radius:999px;margin-left:12px;vertical-align:3px;font-family:'Pretendard Variable',Pretendard,sans-serif;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--acc) 55%,transparent)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0 36px;margin-top:64px;counter-reset:s}
+.step{padding:26px 0 8px;border-top:1px solid var(--ink)}
+.step::before{counter-increment:s;content:"0" counter(s);display:block;font-family:var(--hf);font-weight:300;font-size:60px;line-height:1;letter-spacing:-.04em;color:color-mix(in srgb,var(--acc) 85%,transparent);margin-bottom:26px}
+.step b{display:block;font-family:var(--hf);font-weight:var(--hw);font-size:20px;letter-spacing:-.025em;margin-bottom:10px}
+.step span{color:var(--sub);font-size:15.5px;line-height:1.8;display:block}
+details{border-bottom:1px solid var(--line);padding:0}
+details:first-of-type{border-top:1px solid var(--ink)}
+summary{cursor:pointer;font-weight:600;font-size:18.5px;letter-spacing:-.02em;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px 4px;transition:color .2s}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--acc)}
+summary::after{content:"+";color:var(--acc);font-size:30px;font-weight:300;line-height:1;transition:transform .3s;flex:none}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 4px 30px;color:var(--sub);max-width:720px;animation:fd .4s ease}
+@keyframes fd{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.formwrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:start}
+form{background:var(--card);border-radius:var(--rr);padding:44px;box-shadow:0 50px 90px -40px rgba(0,0,0,.28),0 0 0 1px color-mix(in srgb,var(--ink) 8%,transparent)}
+.f{margin-bottom:20px}
+label.l{display:block;font-weight:600;font-size:14px;letter-spacing:-.005em;margin-bottom:8px}
+label.l small{font-weight:400;color:var(--sub)}
+input[type=text],input[type=tel],input[type=date],select,textarea{width:100%;font:inherit;font-size:16px;letter-spacing:-.01em;padding:0 16px;height:54px;border:1px solid color-mix(in srgb,var(--ink) 18%,transparent);border-radius:10px;background:#fff;color:var(--ink);transition:border-color .2s,box-shadow .2s}
+textarea{height:auto;min-height:110px;padding:14px 16px;resize:vertical;line-height:1.7}
+input:hover,select:hover,textarea:hover{border-color:color-mix(in srgb,var(--ink) 38%,transparent)}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--acc);box-shadow:0 0 0 4px color-mix(in srgb,var(--acc) 16%,transparent)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.chk{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;line-height:1.7;color:var(--sub);margin:8px 0 26px}
+.chk input{margin-top:4px;width:18px;height:18px;flex:none;accent-color:var(--acc)}
+form .btn{width:100%;font-size:17px;min-height:60px}
+.msg{margin-top:16px;padding:16px 18px;border-radius:10px;background:#f1f7ee;color:#2d5a1e;font-size:14.5px;line-height:1.7;display:none}
+.msg.on{display:block}
+.note{font-size:14px;color:var(--sub);margin-top:18px;line-height:1.8}
+footer{background:#121212;color:#9a9a9a;padding:64px 0;font-size:13.5px;line-height:1.9}
+footer b{color:#fff;font-weight:600}
+footer a{color:#e8e8e8;text-underline-offset:3px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+@media(max-width:980px){.cards.four{grid-template-columns:1fr 1fr;gap:0 32px}.formwrap{gap:44px}}
+@media(max-width:860px){.hero .cols,.formwrap{grid-template-columns:1fr}.hero .cols{gap:44px}.cards,.steps{grid-template-columns:1fr 1fr;gap:0 28px}nav .links{display:none}section.s{padding:92px 0}.hero{padding:72px 0 80px;min-height:0;background:linear-gradient(color-mix(in srgb,var(--hero-bg) 92%,transparent),color-mix(in srgb,var(--hero-bg) 80%,transparent)),url(img/hero.jpg) center/cover no-repeat,var(--hero-bg)}.gal{grid-template-columns:1fr;grid-template-rows:none;height:auto;gap:14px}.gal figure,.gal figure:first-child{grid-row:auto;aspect-ratio:4/3}}
+@media(max-width:560px){.wrap{padding:0 22px}.cards,.cards.four,.steps,.two{grid-template-columns:1fr}.cards,.steps{gap:6px 0}nav .wrap{height:58px}nav b{font-size:18px}nav .btn{min-height:38px;padding:0 16px;font-size:13px}body{font-size:16.5px}form{padding:26px 22px}.row{grid-template-columns:1fr;padding:24px 4px}.row .p{grid-column:1;grid-row:auto;margin-top:6px}.panel{padding:26px 24px 20px}.hero .cta .btn{width:100%}section.s{padding:76px 0}.step::before{font-size:48px;margin-bottom:18px}summary{font-size:17px;padding:22px 2px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+nav b small{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:12px;font-weight:500;letter-spacing:0;color:var(--sub);margin-left:12px;padding-left:12px;border-left:1px solid color-mix(in srgb,var(--ink) 22%,transparent);vertical-align:2px}
+.eyebrow{font-size:15px;font-weight:700;letter-spacing:.06em}
+@media(max-width:560px){nav b small{display:none}.eyebrow{font-size:13.5px}}
+</style>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+</head>
+<body>
+<div class="bar">가상 가게로 만든 예시 페이지입니다 · 실제 영업 정보와 무관해요 · 제작 <a href="https://kmong.com/gig/854075" target="_blank" rel="noopener">아이템로그</a></div>
+<nav><div class="wrap"><b>한마음 <i>주유소</i></b><div class="links"><a href="#about">서비스</a><a href="#list">서비스 가격</a><a href="#flow">진행 순서</a><a href="#faq">자주 묻는 질문</a></div><a class="btn" href="#form">세차 예약하기</a></div></nav>
+<header class="hero" role="img" aria-label="색색의 주유 노즐"><div class="wrap cols"><div><span class="eyebrow">주유 · 세차 · 간단 점검</span><h1>넣고, 닦고, 살피고<br><em>한 번에</em> 끝내세요</h1><p class="lead">주유와 세차, 타이어 공기압 점검까지. 세차 예약과 정기 세차권은 신청서로 받아요.</p><div class="cta"><a class="btn" href="#form">세차 예약하기</a><a class="btn ghost" href="#list">서비스 가격 보기</a></div></div>
+<aside class="panel" aria-label="한눈에 보기"><h3>이용 안내</h3><dl><dt>주유</dt><dd>매일 06:00 – 24:00</dd><dt>세차</dt><dd>09:00 – 18:00 · 예약 우선</dd><dt>휴무</dt><dd>설 · 추석 당일</dd><dt>결제</dt><dd>카드 · 현금 · 포인트</dd><dt>유가</dt><dd>유류 가격은 현장 가격표 기준</dd></dl></aside></div></header>
+<section class="s" id="about"><div class="wrap"><h2>차에 필요한 건 한곳에서</h2><p class="sub">기다리는 동안 할 수 있는 일을 한 번에 모았어요.</p><div class="cards four"><div class="card"><div class="ic" aria-hidden="true">주</div><h3>주유</h3><p>일반 주유와 경유를 취급해요. 가격은 현장 가격표를 확인하세요.</p></div><div class="card"><div class="ic" aria-hidden="true">세</div><h3>세차</h3><p>자동 세차와 손세차, 실내 청소를 예약받아요.</p></div><div class="card"><div class="ic" aria-hidden="true">점</div><h3>간단 점검</h3><p>타이어 공기압과 와이퍼 상태를 무료로 봐 드려요.</p></div><div class="card"><div class="ic" aria-hidden="true">권</div><h3>정기 세차권</h3><p>자주 오시는 분께 월 정기 세차권을 안내해 드려요.</p></div></div></div></section>
+<section class="s" style="padding-top:0"><div class="wrap"><h2>주유소 모습</h2><p class="sub">예시 사진입니다. 실제 페이지에는 우리 주유소 사진을 넣어요.</p><div class="gal"><figure><img src="img/g1.jpg" width="1000" height="750" loading="lazy" alt="밝은 조명 아래의 현대적인 주유소"><figcaption>환한 주유소</figcaption></figure><figure><img src="img/g2.jpg" width="1000" height="750" loading="lazy" alt="녹색 주유 노즐을 잡은 손"><figcaption>주유하는 손</figcaption></figure><figure><img src="img/g3.jpg" width="1000" height="750" loading="lazy" alt="스펀지로 차 유리를 닦는 모습"><figcaption>손세차</figcaption></figure></div></div></section><section class="s alt" id="list"><div class="wrap"><h2>서비스와 가격</h2><p class="sub">예시 가격이며 부가세 포함입니다. 유류 가격은 현장 가격표를 확인해 주세요.</p><div class="list"><div class="row"><b>자동 세차<span class="tag">예약 우선</span></b><span class="d">차종 구분 없이 · 약 10분</span><span class="p">8,000<small> 원</small></span></div><div class="row"><b>손세차 + 실내 청소</b><span class="d">약 90분 · 차종에 따라 달라져요</span><span class="p">40,000<small> 원~</small></span></div><div class="row"><b>엔진오일 교환</b><span class="d">오일 종류와 공임은 차종 확인 후 안내</span><span class="p">상담</span></div><div class="row"><b>타이어 공기압 점검</b><span class="d">주유하실 때 말씀해 주세요</span><span class="p">무료</span></div><div class="row"><b>월 정기 세차권</b><span class="d">4회권 · 유효기간 2개월</span><span class="p">28,000<small> 원</small></span></div></div><p class="note">엔진오일 교환 등 정비는 작업 전에 비용을 먼저 말씀드리고 동의를 받은 뒤 진행해요.</p></div></section>
+<section class="s" id="flow"><div class="wrap"><h2>세차 예약은 이렇게 해요</h2><p class="sub">바쁜 시간에는 전화를 놓칠 수 있어서 신청서로 받아요.</p><div class="steps"><div class="step"><b>신청서 남기기</b><span>서비스와 희망 시간을 적어 주세요.</span></div><div class="step"><b>확인 연락</b><span>가능한 시간을 확인해 연락드려요.</span></div><div class="step"><b>시간 확정</b><span>도착 시간과 소요 시간을 안내해요.</span></div><div class="step"><b>방문</b><span>정해진 시간에 오시면 바로 진행해요.</span></div></div></div></section>
+<section class="s alt" id="faq"><div class="wrap"><h2>자주 묻는 질문</h2><div class="faqwrap" style="margin-top:0"><details><summary>예약 없이 세차할 수 있나요?</summary><p>자동 세차는 바로 가능해요. 손세차와 실내 청소는 시간이 걸려 예약을 권해요.</p></details><details><summary>차가 크면 추가 요금이 있나요?</summary><p>SUV와 화물차는 손세차 요금이 달라질 수 있어요. 신청서에 차종을 알려 주세요.</p></details><details><summary>정비 비용은 어떻게 안내하나요?</summary><p>작업 전에 비용과 시간을 먼저 말씀드리고 동의하신 뒤에만 진행해요.</p></details><details><summary>정기 세차권은 양도되나요?</summary><p>본인 차량 기준으로 발급해요. 가족 차량 사용은 상담해 주세요.</p></details></div></div></section>
+<section class="s" id="form"><div class="wrap formwrap"><div><h2>세차 예약 · 정기권 문의</h2><p class="sub">서비스와 희망 시간만 남겨 주세요. 확인해서 연락드립니다.</p><p class="note">차량 번호나 결제 정보는 받지 않아요. 방문하실 때 확인해요.</p></div>
+<form id="f" novalidate><input class="hp" type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true"><div class="two"><div class="f"><label class="l" for="f_name">이름</label><input id="f_name" name="name" type="text" required autocomplete="name"></div><div class="f"><label class="l" for="f_phone">연락처</label><input id="f_phone" name="phone" type="tel" required placeholder="010-0000-0000" autocomplete="tel"></div></div><div class="two"><div class="f"><label class="l" for="f_car">차종</label><select id="f_car" name="car" required><option value="">선택해 주세요</option><option>승용차</option><option>SUV · RV</option><option>화물차</option><option>기타</option></select></div><div class="f"><label class="l" for="f_service">서비스</label><select id="f_service" name="service" required><option value="">선택해 주세요</option><option>자동 세차</option><option>손세차 + 실내 청소</option><option>엔진오일 교환 상담</option><option>월 정기 세차권</option></select></div></div><div class="two"><div class="f"><label class="l" for="f_date">희망 날짜</label><input id="f_date" name="date" type="date" required></div><div class="f"><label class="l" for="f_time">시간대</label><select id="f_time" name="time" required><option value="">선택해 주세요</option><option>오전 (09–12시)</option><option>오후 (12–15시)</option><option>오후 (15–18시)</option></select></div></div><div class="f"><label class="l" for="f_memo">요청사항 <small>(선택)</small></label><textarea id="f_memo" name="memo" placeholder="자세한 증상이나 요청이 있으면 적어 주세요"></textarea></div>
+<label class="chk"><input type="checkbox" name="agreed" id="agreed" required><span>개인정보 수집·이용에 동의합니다. (수집 항목: 이름, 연락처, 차종, 서비스, 희망 날짜와 시간대 / 이용 목적: 문의 확인과 연락 / 보관: 응대가 끝날 때까지)</span></label>
+<button class="btn" type="submit">예약 신청하기</button><div class="msg" id="msg" role="status"></div></form></div></section>
+<footer><div class="wrap"><p><b>한마음 주유소</b> · 이 페이지는 가상 가게로 만든 <b>예시 페이지</b>입니다. 주소, 가격, 시간은 실제와 다릅니다. 사진은 예시용 무료 스톡 사진(Pexels)이며, 실제 페이지에는 가게에서 직접 찍은 사진을 사용합니다.</p><p style="margin-top:8px">실제 페이지에서는 입력한 내용이 가게 주인의 구글 시트에 한 줄씩 쌓입니다. 우리 가게도 이런 페이지가 필요하다면 <a href="https://kmong.com/gig/854075" target="_blank" rel="noopener">아이템로그 제작 안내</a>를 확인해 보세요.</p></div></footer>
+<script>
+(function(){var f=document.getElementById('f'),m=document.getElementById('msg');
+f.addEventListener('submit',function(e){e.preventDefault();m.classList.remove('on');
+var bad=[].slice.call(f.querySelectorAll('[required]')).filter(function(x){return x.type==='checkbox'?!x.checked:!String(x.value).trim()});
+if(bad.length){bad[0].focus();m.textContent=bad[0].type==='checkbox'?'개인정보 수집에 동의해 주세요.':'빠진 칸이 있어요. 필수 항목을 채워 주세요.';m.style.background='#fdf1ee';m.style.color='#8a2b13';m.classList.add('on');return}
+m.style.background='#f1f7ee';m.style.color='#2d5a1e';m.textContent='예시 페이지라 실제로 전송되지는 않아요. 실제 페이지에서는 방금 입력한 내용이 가게 구글 시트에 한 줄로 쌓이고, 주인에게 알림 메일이 갑니다.';m.classList.add('on');f.reset()});})();
+</script>
+<script>
+(function(){var d=document,r=d.documentElement;r.classList.add('js');
+var q='.card,.step,.row,details,.gal figure,section.s h2,section.s .sub,.panel,.formwrap>div:first-child,form,.hero .cta,.hero .lead';
+var els=[].slice.call(d.querySelectorAll(q));els.forEach(function(e){e.classList.add('rv')});
+function show(e){e.classList.add('in')}
+if(!('IntersectionObserver' in window)){els.forEach(show);return}
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){var t=x.target,sib=t.parentNode?[].slice.call(t.parentNode.children).indexOf(t):0;t.style.transitionDelay=Math.min(sib,5)*70+'ms';show(t);io.unobserve(t)}})},{rootMargin:'0px 0px -6% 0px',threshold:.08});
+els.forEach(function(e){io.observe(e)});
+setTimeout(function(){els.forEach(show)},4000);
+})();
+</script>
+</body></html>
